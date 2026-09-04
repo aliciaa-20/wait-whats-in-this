@@ -7,7 +7,8 @@ import pandas as pd
 API_URL = "https://world.openfoodfacts.org/api/v2/search"
 
 PAGE_SIZE = 100
-MAX_PRODUCTS = 1500
+START_PAGE = 13
+NEW_PRODUCTS = 1000
 
 FIELDS = [
     "code",
@@ -31,144 +32,254 @@ def fetch_page(page):
         "fields": ",".join(FIELDS)
     }
 
-    response = requests.get(
+    return requests.get(
         API_URL,
         params=params,
         headers=HEADERS,
         timeout=30
     )
 
-    return response
-
-
-def save_products(products):
-    if not products:
-        return
-
-    df = pd.DataFrame(products)
-
-    for column in FIELDS:
-        if column not in df.columns:
-            df[column] = ""
-
-    df = df[FIELDS]
-
-    df = df[df["code"].notna()]
-    df = df[df["code"].astype(str).str.strip() != ""]
-    df = df.drop_duplicates(subset="code")
-
-    os.makedirs("data", exist_ok=True)
-
-    df.to_csv("data/products.csv", index=False)
-
-    print(f"Saved {len(df)} products to data/products.csv")
-
 
 def main():
-    products = []
-    page = 1
-    consecutive_failures = 0
 
-    print("Starting Open Food Facts download...")
-    print(f"Target products: {MAX_PRODUCTS}")
-    print("Waiting 7 seconds between API requests.")
+    csv_path = "data/products.csv"
 
-    while len(products) < MAX_PRODUCTS:
+    if not os.path.exists(csv_path):
+        print("ERROR: data/products.csv not found.")
+        return
+
+    # ---------------------------------------------------------
+    # LOAD EXISTING DATA
+    # ---------------------------------------------------------
+
+    existing_df = pd.read_csv(
+        csv_path,
+        dtype=str,
+        keep_default_na=False
+    )
+
+    existing_df["code"] = (
+        existing_df["code"]
+        .astype(str)
+        .str.strip()
+    )
+
+    existing_codes = set(existing_df["code"])
+
+    print("Existing dataset found.")
+    print(f"Existing products: {len(existing_df)}")
+
+    print(f"Target NEW products: {NEW_PRODUCTS}")
+    print(f"Starting from page: {START_PAGE}")
+
+    # ---------------------------------------------------------
+    # COLLECT NEW PRODUCTS
+    # ---------------------------------------------------------
+
+    new_products = []
+    page = START_PAGE
+
+    while len(new_products) < NEW_PRODUCTS:
 
         print(f"\nFetching page {page}...")
 
         try:
+
             response = fetch_page(page)
 
             if response.status_code == 200:
 
                 data = response.json()
+
                 page_products = data.get("products", [])
 
                 if not page_products:
-                    print("No more products returned by the API.")
+                    print("No more products available.")
                     break
 
-                products.extend(page_products)
+                added = 0
 
-                # Remove duplicates while downloading.
-                unique_products = {}
+                for product in page_products:
 
-                for product in products:
                     code = product.get("code")
 
-                    if code:
-                        unique_products[str(code)] = product
+                    if not code:
+                        continue
 
-                products = list(unique_products.values())
+                    code = str(code).strip()
 
-                print(f"Products collected so far: {len(products)}")
+                    # Skip existing products
+                    if code in existing_codes:
+                        continue
 
-                consecutive_failures = 0
-                page += 1
+                    product["code"] = code
 
-                if len(products) >= MAX_PRODUCTS:
-                    break
+                    new_products.append(product)
 
-                # Respect API search rate limit.
-                time.sleep(7)
+                    existing_codes.add(code)
 
-            elif response.status_code in (429, 503):
+                    added += 1
 
-                consecutive_failures += 1
+                    if len(new_products) >= NEW_PRODUCTS:
+                        break
 
+                print(f"New products from page: {added}")
                 print(
-                    f"Server returned {response.status_code}. "
-                    f"Temporary rate/service issue."
+                    f"Progress: "
+                    f"{len(new_products)}/{NEW_PRODUCTS}"
                 )
 
-                if consecutive_failures >= 5:
-                    print("Too many consecutive failures.")
-                    print("Saving products collected so far.")
-                    break
+                page += 1
 
-                wait_time = min(30 * consecutive_failures, 180)
+                if len(new_products) < NEW_PRODUCTS:
+                    time.sleep(7)
 
-                print(f"Waiting {wait_time} seconds before retrying...")
-                time.sleep(wait_time)
+            elif response.status_code == 429:
+
+                print("429: Rate limit reached.")
+                print("Waiting 60 seconds...")
+                time.sleep(60)
+
+            elif response.status_code == 503:
+
+                print("503: OpenFoodFacts temporarily unavailable.")
+                print("Waiting 60 seconds...")
+                time.sleep(60)
 
             elif response.status_code == 401:
 
-                print("Server returned 401 Unauthorized.")
-                print("Stopping instead of retrying indefinitely.")
-                print("Saving products collected so far.")
-                break
+                print("401: Request rejected by OpenFoodFacts.")
+                print("Stopping without changing your CSV.")
+                return
 
             else:
 
-                print(f"Unexpected HTTP status: {response.status_code}")
-                print("Saving products collected so far.")
-                break
+                print(
+                    f"Unexpected HTTP status: "
+                    f"{response.status_code}"
+                )
+
+                print("Stopping without changing your CSV.")
+                return
 
         except requests.RequestException as error:
 
-            consecutive_failures += 1
-
             print(f"Request error: {error}")
+            print("Stopping without changing your CSV.")
+            return
 
-            if consecutive_failures >= 5:
-                print("Too many consecutive failures.")
-                print("Saving products collected so far.")
-                break
+    # ---------------------------------------------------------
+    # SAFETY CHECK
+    # ---------------------------------------------------------
 
-            wait_time = min(30 * consecutive_failures, 180)
+    if len(new_products) < NEW_PRODUCTS:
 
-            print(f"Waiting {wait_time} seconds before retrying...")
-            time.sleep(wait_time)
+        print("\n========================================")
+        print("NOT ENOUGH NEW PRODUCTS COLLECTED")
+        print("CSV HAS NOT BEEN MODIFIED")
+        print("========================================")
 
-    # Limit final dataset to requested size.
-    products = products[:MAX_PRODUCTS]
+        print(
+            f"Collected: {len(new_products)}"
+        )
 
-    save_products(products)
+        print(
+            f"Required: {NEW_PRODUCTS}"
+        )
 
-    print("\n========== DOWNLOAD COMPLETE ==========")
-    print(f"Products saved: {len(products)}")
-    print("File: data/products.csv")
+        return
+
+    # ---------------------------------------------------------
+    # CLEAN NEW DATA
+    # ---------------------------------------------------------
+
+    new_df = pd.DataFrame(new_products)
+
+    for column in FIELDS:
+
+        if column not in new_df.columns:
+            new_df[column] = ""
+
+    new_df = new_df[FIELDS]
+
+    new_df["code"] = (
+        new_df["code"]
+        .astype(str)
+        .str.strip()
+    )
+
+    new_df = new_df.drop_duplicates(
+        subset="code"
+    )
+
+    # Take exactly 1,000
+    new_df = new_df.head(NEW_PRODUCTS)
+
+    # ---------------------------------------------------------
+    # CREATE COMBINED DATASET
+    # ---------------------------------------------------------
+
+    combined_df = pd.concat(
+        [existing_df, new_df],
+        ignore_index=True
+    )
+
+    combined_df = combined_df.drop_duplicates(
+        subset="code",
+        keep="first"
+    )
+
+    # ---------------------------------------------------------
+    # FINAL SAFETY CHECK
+    # ---------------------------------------------------------
+
+    expected_total = len(existing_df) + NEW_PRODUCTS
+
+    if len(combined_df) < expected_total:
+
+        print("\nERROR: Duplicate products detected.")
+        print("CSV HAS NOT BEEN MODIFIED.")
+        return
+
+    # ---------------------------------------------------------
+    # SAVE ONLY AFTER EVERYTHING SUCCEEDS
+    # ---------------------------------------------------------
+
+    temp_path = "data/products_temp.csv"
+
+    combined_df.to_csv(
+        temp_path,
+        index=False
+    )
+
+    os.replace(
+        temp_path,
+        csv_path
+    )
+
+    # ---------------------------------------------------------
+    # COMPLETE
+    # ---------------------------------------------------------
+
+    print("\n========================================")
+    print("DOWNLOAD COMPLETE")
+    print("========================================")
+
+    print(
+        f"Previous products: {len(existing_df)}"
+    )
+
+    print(
+        f"New products added: {len(new_df)}"
+    )
+
+    print(
+        f"Total products: {len(combined_df)}"
+    )
+
+    print(
+        f"File: {csv_path}"
+    )
 
 
 if __name__ == "__main__":
