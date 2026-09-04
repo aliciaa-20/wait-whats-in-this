@@ -1,142 +1,115 @@
 # Wait What's In This?
 
-### AI-Powered Personalized Food Allergen Detection & Risk Assessment
+## AI-Powered Personalized Food Allergen Detection & Risk Assessment
 
-```{=html}
-<p align="center">
-```
-**Scan it. Understand it. Know your risk.**
+> **Scan it. Understand it. Know your risk.**
 
-```{=html}
-</p>
-```
-```{=html}
-<p align="center">
-```
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
-![AI/ML](https://img.shields.io/badge/AI-Machine%20Learning-purple)
-![OCR](https://img.shields.io/badge/OCR-Enabled-orange)
-![NLP](https://img.shields.io/badge/NLP-Enabled-blueviolet)
-![Dataset](https://img.shields.io/badge/Dataset-Open%20Food%20Facts-green)
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+Wait What's In This? is an AI-powered decision-support system designed
+to help users identify potential allergens in packaged food products.
 
-```{=html}
-</p>
-```
+The project combines **OCR, natural language processing, ingredient
+analysis, allergen matching, and personalized risk assessment** to turn
+complex food labels into simple, understandable results.
 
 ------------------------------------------------------------------------
 
-## Overview
-
-**Wait What's In This?** is an AI-powered decision-support system
-designed to help users identify potential allergens in packaged food
-products.
-
-The system combines **Optical Character Recognition (OCR), natural
-language processing, ingredient analysis, allergen matching, and
-personalized risk assessment** to transform complex food labels into
-simple and understandable results.
-
-Instead of manually reading long ingredient lists and trying to
-recognize unfamiliar ingredient names, users can provide a food label
-and receive an assessment based on their selected allergies.
-
-> **The goal is simple: help users understand what's in their food and
-> whether it may pose a risk to them.**
-
-------------------------------------------------------------------------
-
-## The Problem
+## Problem Statement
 
 Food ingredient labels can be difficult to interpret, especially for
-individuals managing food allergies.
+people managing food allergies.
 
 Potential allergens may:
 
 -   Appear under different names or ingredient forms
--   Be hidden within long ingredient lists
+-   Be hidden inside long ingredient lists
 -   Use scientific or unfamiliar terminology
 -   Appear in precautionary statements such as "may contain" or "traces
     of"
--   Require users to manually compare ingredients against their personal
+-   Require users to manually compare ingredients with their personal
     allergy profile
 
-Many existing solutions rely primarily on barcode lookup or basic
-ingredient matching. These approaches may provide limited
-personalization and may not clearly explain **why** a product could be
-risky.
-
-**Wait What's In This?** aims to address this problem through
-personalized allergen detection and explainable risk assessment.
+**Wait What's In This?** aims to simplify this process by automatically
+extracting ingredient information, identifying potential allergens, and
+providing a personalized risk assessment.
 
 ------------------------------------------------------------------------
 
-## How It Works
+## Objectives
+
+-   Extract ingredient information from food labels using OCR
+-   Identify potential allergens from ingredient information
+-   Normalize ingredient and allergen information
+-   Personalize allergen detection according to the user's selected
+    allergies
+-   Distinguish direct allergens from precautionary statements
+-   Provide a simple risk classification
+-   Explain which ingredient or allergen caused the detected risk
+
+------------------------------------------------------------------------
+
+## System Workflow
 
 ``` text
-                         FOOD LABEL
-                             │
-                             ▼
+                    FOOD LABEL IMAGE
+                           |
+                           v
                   IMAGE PREPROCESSING
-                             │
-                             ▼
-                            OCR
-                             │
-                             ▼
+                           |
+                           v
+                          OCR
+                           |
+                           v
                   INGREDIENT EXTRACTION
-                             │
-                             ▼
-                    TEXT NORMALIZATION
-                             │
-                             ▼
-                     ALLERGEN MATCHING
-                             │
-                    ┌────────┴────────┐
-                    │                 │
-                    ▼                 ▼
-              PRODUCT DATA       USER PROFILE
-                    │                 │
-                    └────────┬────────┘
-                             ▼
-                      RISK ASSESSMENT
-                             │
-                             ▼
-                 ┌───────────┼───────────┐
-                 ▼           ▼           ▼
-               SAFE       CAUTION       AVOID
-                             │
-                             ▼
-                       EXPLANATION
+                           |
+                           v
+                  TEXT NORMALIZATION
+                           |
+                           v
+                   ALLERGEN MATCHING
+                           |
+                    +------+------+
+                    |             |
+                    v             v
+              PRODUCT DATA    USER PROFILE
+                    |             |
+                    +------+------+
+                           |
+                           v
+                    RISK ASSESSMENT
+                           |
+                           v
+                 +---------+---------+
+                 |         |         |
+                 v         v         v
+               SAFE     CAUTION     AVOID
+                           |
+                           v
+                     EXPLANATION
 ```
 
 ------------------------------------------------------------------------
 
 ## Key Features
 
-### Personalized Allergen Detection
-
-The system compares detected ingredient and allergen information against
-the user's selected allergy profile instead of applying the same
-assessment to every user.
-
 ### OCR-Based Ingredient Extraction
 
-Food labels can be processed from images, reducing the need for users to
-manually type long ingredient lists.
+Extract ingredient information directly from a food label image,
+reducing the need for manual entry.
 
 ### Ingredient Analysis
 
-Extracted ingredient information is cleaned, normalized, and analyzed to
-identify potential allergen-related information.
+Clean and normalize extracted ingredient information so that different
+ingredient names and representations can be analyzed consistently.
 
-### Allergen Matching
+### Personalized Allergen Detection
 
-Detected ingredients and allergen information are compared against known
-allergen categories to identify potential risks.
+Compare detected ingredients and allergen information against the user's
+selected allergy profile.
 
-### Precautionary Allergen Detection
+### Direct and Precautionary Allergen Detection
 
-The system considers precautionary information such as:
+The system is designed to distinguish between direct allergen
+information and precautionary statements such as:
 
 ``` text
 Contains milk
@@ -144,17 +117,12 @@ May contain nuts
 Traces of soy
 ```
 
-This allows direct allergen information to be distinguished from
-potential cross-contact warnings.
+### Explainable Risk Assessment
 
-### Explainable Results
-
-The system is designed to provide a reason for a risk classification
-rather than returning only a generic result.
+Instead of only returning a risk level, the system is designed to
+identify the ingredient or allergen responsible for the result.
 
 ### Simple Risk Classification
-
-The intended output uses three straightforward categories:
 
   -----------------------------------------------------------------------
   Result                              Meaning
@@ -187,9 +155,8 @@ The intended output uses three straightforward categories:
 
 ## Dataset
 
-The project uses product information from **Open Food Facts**.
-
-The dataset contains information including:
+The project uses product information from **Open Food Facts**,
+including:
 
 -   Product name
 -   Product code
@@ -199,8 +166,8 @@ The dataset contains information including:
 -   Trace allergen information
 -   Language
 
-Product records are identified using their **product codes** to help
-prevent duplicate entries.
+Product records are identified using their product codes to help prevent
+duplicate entries.
 
 ### Current Dataset
 
@@ -208,8 +175,8 @@ The current cleaned dataset contains:
 
 **1,618 unique product records**
 
-The dataset was created by combining collected Open Food Facts product
-data and removing duplicate product codes.
+The dataset was created by combining collected Open Food Facts data and
+removing duplicate product codes.
 
 ------------------------------------------------------------------------
 
@@ -217,36 +184,36 @@ data and removing duplicate product codes.
 
 ``` text
 wait-whats-in-this/
-│
-├── data/
-│   └── products.csv
-│
-├── scripts/
-│   ├── get_openfoodfacts_data.py
-│   └── analyze_allergens.py
-│
-├── README.md
-├── requirements.txt
-└── .gitignore
+|
++-- data/
+|   +-- products.csv
+|
++-- scripts/
+|   +-- get_openfoodfacts_data.py
+|   +-- analyze_allergens.py
+|
++-- README.md
++-- requirements.txt
++-- .gitignore
 ```
 
-### `data/`
+### `data/products.csv`
 
-Contains the product dataset used for ingredient and allergen analysis.
+Contains the product information used for ingredient and allergen
+analysis.
 
 ### `scripts/get_openfoodfacts_data.py`
 
-Handles collection and preparation of product information from Open Food
-Facts.
+Collects and prepares product information from Open Food Facts.
 
 ### `scripts/analyze_allergens.py`
 
-Analyzes product ingredient, allergen, and trace information from the
-collected dataset.
+Analyzes ingredient, allergen, and trace information from the product
+dataset.
 
 ### `requirements.txt`
 
-Contains the Python dependencies required to run the project.
+Contains the Python dependencies required by the project.
 
 ------------------------------------------------------------------------
 
@@ -257,7 +224,7 @@ Contains the Python dependencies required to run the project.
 -   [x] Open Food Facts data collection
 -   [x] Product dataset preparation
 -   [x] Product code deduplication
--   [x] Ingredient information extraction
+-   [x] Ingredient information extraction from dataset
 -   [x] Allergen information extraction
 -   [x] Allergen tag analysis
 -   [x] Trace allergen analysis
@@ -278,44 +245,43 @@ Contains the Python dependencies required to run the project.
 ## Intended User Workflow
 
 ``` text
-             USER
-               │
-               ▼
-       Upload Food Label
-               │
-               ▼
-             OCR
-               │
-               ▼
-     Extract Ingredient Text
-               │
-               ▼
-      Clean & Normalize Text
-               │
-               ▼
-       Identify Allergens
-               │
-               ▼
-     Compare With User Profile
-               │
-               ▼
-       Calculate Risk Level
-               │
-       ┌───────┼───────┐
-       ▼       ▼       ▼
-     SAFE   CAUTION   AVOID
-               │
-               ▼
-        Explain the Result
+                    USER
+                     |
+                     v
+             Upload Food Label
+                     |
+                     v
+                    OCR
+                     |
+                     v
+          Extract Ingredient Text
+                     |
+                     v
+            Clean & Normalize
+                     |
+                     v
+             Identify Allergens
+                     |
+                     v
+          Compare With User Profile
+                     |
+                     v
+             Calculate Risk
+                     |
+              +------+------+
+              |      |      |
+              v      v      v
+            SAFE   CAUTION  AVOID
+                     |
+                     v
+              Explain Result
 ```
 
 ------------------------------------------------------------------------
 
 ## Example
 
-A user with a **milk allergy** scans a product label.
-
-The system may identify:
+For a user with a **milk allergy**, a scanned label may contain:
 
 ``` text
 Ingredients:
@@ -323,14 +289,14 @@ wheat flour, sugar, milk powder,
 vegetable oil, salt
 ```
 
-The allergen analysis identifies:
+The system can identify:
 
 ``` text
 Detected allergen:
 Milk
 ```
 
-The system can then provide:
+and return:
 
 ``` text
 AVOID
@@ -340,7 +306,7 @@ Milk was detected in the ingredient information
 and matches the user's selected allergy profile.
 ```
 
-For precautionary information, the system can distinguish:
+For a precautionary statement:
 
 ``` text
 CAUTION
@@ -356,19 +322,15 @@ indicating possible traces of nuts.
 
 The goal is not simply to answer:
 
-> "Does this product contain an allergen?"
+> **"Does this product contain an allergen?"**
 
 The more useful question is:
 
 > **"Is this product potentially safe for me?"**
 
-Different users may have different allergies. Therefore, allergen
-detection should be connected to an individual's allergy profile rather
-than producing a single generic result.
-
-By combining food-label understanding with personalized risk assessment,
-**Wait What's In This?** aims to make ingredient interpretation faster,
-more accessible, and easier to understand.
+Different users may have different allergies. Connecting ingredient
+analysis with an individual allergy profile allows the system to provide
+a more personalized assessment instead of a single generic result.
 
 ------------------------------------------------------------------------
 
@@ -378,18 +340,15 @@ Product data is sourced from **Open Food Facts**, an open database
 containing information about food products, ingredients, allergens,
 nutrition, and related product information.
 
-Project data is used for educational and research purposes.
+The dataset is used for educational and research purposes.
 
 ------------------------------------------------------------------------
 
 ## Future Scope
 
-Future versions of the project may include:
-
 -   Multilingual ingredient recognition
--   Improved OCR for curved and low-quality packaging
--   Ingredient synonym detection
--   Hidden allergen identification
+-   Improved OCR for curved, damaged, or low-quality packaging
+-   Ingredient synonym and hidden-allergen detection
 -   Ingredient knowledge graphs
 -   Machine learning-based risk scoring
 -   Explainable AI recommendations
