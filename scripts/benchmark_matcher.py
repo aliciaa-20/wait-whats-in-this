@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 from sklearn.metrics import precision_recall_fscore_support
 
-from scripts.match_allergens import (
+from scripts.allergen_matcher import (
     load_dictionary,
     analyze_product,
 )

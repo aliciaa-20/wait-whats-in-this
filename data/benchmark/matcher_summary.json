@@ -3,18 +3,18 @@
   "dataset": "/Users/aliciapereira/Downloads/VS Code/ml-project/wait-whats-in-this/data/cleaned_products.csv",
   "products_evaluated": 1263,
   "allergen": {
-    "precision": 0.9296,
-    "recall": 0.8187,
-    "f1": 0.8707,
+    "precision": 0.9369,
+    "recall": 0.794,
+    "f1": 0.8595,
     "support": 1291,
-    "exact_set_agreement": 0.8163
+    "exact_set_agreement": 0.7997
   },
   "trace": {
-    "precision": 0.9152,
-    "recall": 0.3964,
-    "f1": 0.5532,
+    "precision": 0.9497,
+    "recall": 0.3839,
+    "f1": 0.5468,
     "support": 1279,
-    "exact_set_agreement": 0.6968
+    "exact_set_agreement": 0.7031
   },
   "per_allergen": {
     "egg": {
@@ -37,21 +37,21 @@
     },
     "milk": {
       "support": 386,
-      "true_positive": 329,
-      "false_positive": 44,
-      "false_negative": 57,
-      "precision": 0.882,
-      "recall": 0.8523,
-      "f1": 0.8669
+      "true_positive": 307,
+      "false_positive": 34,
+      "false_negative": 79,
+      "precision": 0.9003,
+      "recall": 0.7953,
+      "f1": 0.8446
     },
     "peanut": {
       "support": 39,
-      "true_positive": 32,
+      "true_positive": 33,
       "false_positive": 1,
-      "false_negative": 7,
-      "precision": 0.9697,
-      "recall": 0.8205,
-      "f1": 0.8889
+      "false_negative": 6,
+      "precision": 0.9706,
+      "recall": 0.8462,
+      "f1": 0.9041
     },
     "sesame": {
       "support": 31,
@@ -73,30 +73,30 @@
     },
     "soy": {
       "support": 210,
-      "true_positive": 168,
-      "false_positive": 13,
-      "false_negative": 42,
-      "precision": 0.9282,
-      "recall": 0.8,
-      "f1": 0.8593
+      "true_positive": 173,
+      "false_positive": 12,
+      "false_negative": 37,
+      "precision": 0.9351,
+      "recall": 0.8238,
+      "f1": 0.8759
     },
     "tree_nut": {
       "support": 132,
-      "true_positive": 102,
+      "true_positive": 93,
       "false_positive": 10,
-      "false_negative": 30,
-      "precision": 0.9107,
-      "recall": 0.7727,
-      "f1": 0.8361
+      "false_negative": 39,
+      "precision": 0.9029,
+      "recall": 0.7045,
+      "f1": 0.7915
     },
     "wheat_gluten": {
       "support": 385,
-      "true_positive": 322,
+      "true_positive": 315,
       "false_positive": 10,
-      "false_negative": 63,
-      "precision": 0.9699,
-      "recall": 0.8364,
-      "f1": 0.8982
+      "false_negative": 70,
+      "precision": 0.9692,
+      "recall": 0.8182,
+      "f1": 0.8873
     }
   },
   "note": "Open Food Facts allergen and trace tags are used as reference metadata and should not be treated as absolute ground truth. A manually verified held-out test set is required for final paper claims."
