@@ -1,9 +1,23 @@
-certifi==2026.7.22
-charset-normalizer==3.5.1
-idna==3.19
-numpy==2.5.2
-pandas==3.0.5
-python-dateutil==2.9.0.post0
-requests==2.34.2
-six==1.17.0
-urllib3==2.7.0
+# Data processing
+pandas>=2.2,<3.0
+numpy>=2.0,<3.0
+
+# Computer vision and image processing
+opencv-python>=4.10,<5.0
+Pillow>=10.0,<13.0
+
+# OCR
+easyocr>=1.7,<2.0
+
+# Machine learning / scientific computing
+scikit-learn>=1.5,<2.0
+
+# Backend
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+
+# HTTP / API requests
+requests>=2.32,<3.0
+
+# Testing
+pytest>=8.0,<9.0

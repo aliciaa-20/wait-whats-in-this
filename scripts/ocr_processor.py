@@ -62,9 +62,17 @@ def normalize_for_matching(text):
     text = text.replace("-", " ")
     text = text.replace("_", " ")
 
-    text = re.sub(r"[^a-zA-ZÀ-ÿ\s]", " ", text)
+    text = re.sub(
+        r"[^a-zA-ZÀ-ÿ\s]",
+        " ",
+        text,
+    )
 
-    text = re.sub(r"\s+", " ", text)
+    text = re.sub(
+        r"\s+",
+        " ",
+        text,
+    )
 
     return text.strip()
 
@@ -77,12 +85,6 @@ def looks_like_ingredient_heading(text):
     """
     Determines whether an OCR line is probably an
     Ingredients heading, even if OCR made mistakes.
-
-    Example:
-        Ingredients
-        Ingrediants
-        Inseedius
-        Ingrediens
     """
 
     normalized = normalize_for_matching(text)
@@ -107,7 +109,7 @@ def looks_like_ingredient_heading(text):
         similarity = SequenceMatcher(
             None,
             word,
-            "ingredients"
+            "ingredients",
         ).ratio()
 
         if similarity >= 0.60:
@@ -146,7 +148,7 @@ def preprocess_image(image):
 
     gray = cv2.cvtColor(
         image,
-        cv2.COLOR_BGR2GRAY
+        cv2.COLOR_BGR2GRAY,
     )
 
     # Upscale
@@ -155,13 +157,13 @@ def preprocess_image(image):
     gray = cv2.resize(
         gray,
         (width * 2, height * 2),
-        interpolation=cv2.INTER_CUBIC
+        interpolation=cv2.INTER_CUBIC,
     )
 
     # Improve contrast
     clahe = cv2.createCLAHE(
         clipLimit=2.0,
-        tileGridSize=(8, 8)
+        tileGridSize=(8, 8),
     )
 
     enhanced = clahe.apply(gray)
@@ -172,7 +174,7 @@ def preprocess_image(image):
         None,
         10,
         7,
-        21
+        21,
     )
 
     # Threshold
@@ -182,32 +184,79 @@ def preprocess_image(image):
         cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
         cv2.THRESH_BINARY,
         31,
-        11
+        11,
     )
 
     return {
         "enhanced": enhanced,
-        "threshold": threshold
+        "threshold": threshold,
     }
+
+
+# =========================================================
+# OCR LANGUAGE SUPPORT
+# =========================================================
+
+EASYOCR_LANGUAGE_MAP = {
+    "en": ["en"],
+    "fr": ["fr"],
+    "de": ["de"],
+    "es": ["es"],
+    "nl": ["nl"],
+    "it": ["it"],
+    "pt": ["pt"],
+}
+
+_READER_CACHE = {}
+
+
+def get_ocr_reader(language="en"):
+    """
+    Return a cached EasyOCR reader for the requested language.
+
+    Unsupported languages fall back to English.
+    """
+
+    language = str(
+        language or "en"
+    ).strip().lower()
+
+    languages = EASYOCR_LANGUAGE_MAP.get(
+        language,
+        ["en"],
+    )
+
+    cache_key = tuple(languages)
+
+    if cache_key not in _READER_CACHE:
+
+        print(
+            f"\nLoading EasyOCR "
+            f"for language: {language}"
+        )
+
+        _READER_CACHE[cache_key] = easyocr.Reader(
+            languages,
+            gpu=False,
+        )
+
+    return _READER_CACHE[cache_key]
 
 
 # =========================================================
 # OCR
 # =========================================================
 
-def run_ocr(image_path):
+def run_ocr(
+    image_path,
+    language="en",
+):
 
     image = load_image(image_path)
 
     processed = preprocess_image(image)
 
-    print("\nLoading EasyOCR...")
-    print("The first run may take a little longer.")
-
-    reader = easyocr.Reader(
-        ["en"],
-        gpu=False
-    )
+    reader = get_ocr_reader(language)
 
     all_passes = []
 
@@ -220,7 +269,7 @@ def run_ocr(image_path):
     results_1 = reader.readtext(
         processed["enhanced"],
         detail=1,
-        paragraph=False
+        paragraph=False,
     )
 
     pass_1 = []
@@ -251,7 +300,7 @@ def run_ocr(image_path):
     results_2 = reader.readtext(
         processed["threshold"],
         detail=1,
-        paragraph=False
+        paragraph=False,
     )
 
     pass_2 = []
@@ -278,7 +327,8 @@ def run_ocr(image_path):
     # -----------------------------------------------------
 
     valid_passes = [
-        p for p in all_passes
+        p
+        for p in all_passes
         if p
     ]
 
@@ -288,11 +338,17 @@ def run_ocr(image_path):
     best_pass = max(
         valid_passes,
         key=lambda p: (
-            sum(conf for _, conf in p) / len(p)
-        )
+            sum(
+                conf
+                for _, conf in p
+            ) / len(p)
+        ),
     )
 
-    # Remove duplicate lines within selected pass
+    # -----------------------------------------------------
+    # Remove duplicate lines
+    # -----------------------------------------------------
+
     unique_results = []
 
     seen = set()
@@ -311,7 +367,8 @@ def run_ocr(image_path):
         )
 
     raw_text = "\n".join(
-        text for text, _ in unique_results
+        text
+        for text, _ in unique_results
     )
 
     if unique_results:
@@ -337,18 +394,21 @@ def run_ocr(image_path):
 
 def clean_ocr_text(text):
 
-    text = text.replace("\r", "\n")
+    text = text.replace(
+        "\r",
+        "\n",
+    )
 
     text = re.sub(
         r"[ \t]+",
         " ",
-        text
+        text,
     )
 
     text = re.sub(
         r"\n+",
         "\n",
-        text
+        text,
     )
 
     return text.strip()
@@ -358,124 +418,151 @@ def clean_ocr_text(text):
 # INGREDIENT EXTRACTION
 # =========================================================
 
-def extract_ingredient_section(text):
+def extract_ingredient_section(
+    ocr_text: str,
+) -> tuple[str, bool]:
+    """
+    Extract the ingredient section from OCR text.
 
-    text = clean_ocr_text(text)
+    Returns:
+        ingredient_text, extraction_found
 
-    if not text:
-        return ""
+    extraction_found is True only when an ingredient heading
+    is actually detected.
+    """
 
-    lines = text.splitlines()
+    if not ocr_text or not ocr_text.strip():
+        return "", False
+
+    lines = [
+        line.strip()
+        for line in ocr_text.splitlines()
+        if line.strip()
+    ]
+
+    if not lines:
+        return "", False
 
     ingredient_start = None
 
-    # -----------------------------------------------------
-    # Find Ingredients heading
-    # -----------------------------------------------------
+    # Multilingual ingredient headings.
+    heading_patterns = [
+        r"\bingredients?\b",
+        r"\bingredienti\b",
+        r"\bingrédients?\b",
+        r"\bingredientes?\b",
+        r"\bzutaten\b",
+        r"\bingredienser\b",
+        r"\bingredienserna\b",
+        r"\bsastojci\b",
+    ]
 
-    for i, line in enumerate(lines):
+    heading_regex = re.compile(
+        "|".join(heading_patterns),
+        re.IGNORECASE,
+    )
 
-        if looks_like_ingredient_heading(line):
+    # Find the first line containing an ingredient heading.
+    for index, line in enumerate(lines):
 
-            ingredient_start = i
-
-            print(
-                f"\nIngredient heading detected: {line}"
-            )
-
+        if heading_regex.search(line):
+            ingredient_start = index
             break
 
-    # -----------------------------------------------------
-    # If heading wasn't found
-    # -----------------------------------------------------
+        # OCR may distort the heading.
+        normalized = normalize_for_matching(line)
+
+        if (
+            "ingredien" in normalized
+            or "ingredienh" in normalized
+            or "ingicaienti" in normalized
+        ):
+            ingredient_start = index
+            break
 
     if ingredient_start is None:
+        return "", False
 
-        print(
-            "\nWarning: Could not confidently identify "
-            "the Ingredients heading."
-        )
+    # Start with the heading line.
+    collected = []
 
-        print(
-            "Using OCR text as fallback."
-        )
+    first_line = lines[ingredient_start]
 
-        return text
-
-    # -----------------------------------------------------
-    # Extract following lines
-    # -----------------------------------------------------
-
-    extracted_lines = []
-
-    # Sometimes the ingredients begin on the same line
-    heading_line = lines[ingredient_start]
-
-    normalized_heading = normalize_for_matching(
-        heading_line
+    # Remove the heading itself where possible.
+    cleaned_first = heading_regex.sub(
+        "",
+        first_line,
+        count=1,
+    ).strip(
+        " :-.;,"
     )
 
-    # Remove the heading itself
-    remaining = re.sub(
-        r"(?i)ingredients?|ingrédients?|zutaten|ingredientes?|ingrediënten",
-        "",
-        heading_line
-    ).strip()
+    if cleaned_first:
+        collected.append(cleaned_first)
 
-    remaining = re.sub(
-        r"^[\s:\-]+",
-        "",
-        remaining
+    # Stop markers indicating that the ingredient section ended.
+    stop_patterns = [
+        r"\bnutrition\b",
+        r"\bnutritional\b",
+        r"\bvaleurs? nutrition",
+        r"\bvaleurs? nutrit",
+        r"\bnutritionnelles?\b",
+        r"\bserving size\b",
+        r"\bportion\b",
+        r"\bstorage\b",
+        r"\bconservation\b",
+        r"\bbest before\b",
+        r"\bexpiry\b",
+        r"\bdate\b",
+        r"\benergy\b",
+        r"\benergi\b",
+        r"\bcalories\b",
+        r"\bcalories?\b",
+        r"\bbarcode\b",
+    ]
+
+    stop_regex = re.compile(
+        "|".join(stop_patterns),
+        re.IGNORECASE,
     )
 
-    if remaining:
-        extracted_lines.append(remaining)
-
-    # Continue after heading
+    # Continue after the heading.
     for line in lines[ingredient_start + 1:]:
 
-        clean_line = line.strip()
-
-        if not clean_line:
-            continue
-
-        normalized_line = normalize_for_matching(
-            clean_line
-        )
-
-        # Stop when nutrition information begins
-        should_stop = False
-
-        for marker in STOP_MARKERS:
-
-            if marker in normalized_line:
-
-                should_stop = True
-                break
-
-        if should_stop:
+        if stop_regex.search(line):
             break
 
-        extracted_lines.append(clean_line)
+        normalized = normalize_for_matching(line)
+
+        if not normalized:
+            continue
+
+        collected.append(line)
+
+        # Prevent enormous sections from swallowing the entire label.
+        if len(
+            " ".join(collected)
+        ) > 3000:
+            break
 
     ingredient_text = " ".join(
-        extracted_lines
-    )
-
-    ingredient_text = re.sub(
-        r"\s+",
-        " ",
-        ingredient_text
+        collected
     ).strip()
 
-    return ingredient_text
+    if not ingredient_text:
+        return "", False
+
+    return ingredient_text, True
 
 
 # =========================================================
 # COMPLETE PIPELINE
 # =========================================================
 
-def process_image(image_path):
+def process_image(
+    image_path,
+    language="en",
+):
 
     image_path = Path(image_path)
 
@@ -494,21 +581,26 @@ def process_image(image_path):
     )
 
     raw_text, confidence = run_ocr(
-        image_path
+        image_path,
+        language=language,
     )
 
-    ingredient_text = extract_ingredient_section(
-        raw_text
+    ingredient_text, extraction_found = (
+        extract_ingredient_section(
+            raw_text
+        )
     )
 
     return {
         "image": str(image_path),
         "raw_ocr_text": raw_text,
         "ingredient_text": ingredient_text,
+        "ingredient_section_found": extraction_found,
         "ocr_confidence": round(
             confidence,
-            4
-        )
+            4,
+        ),
+        "ocr_language": language,
     }
 
 
@@ -533,10 +625,18 @@ def main():
 
     image_path = sys.argv[1]
 
+    # Optional language argument.
+    language = (
+        sys.argv[2]
+        if len(sys.argv) >= 3
+        else "en"
+    )
+
     try:
 
         result = process_image(
-            image_path
+            image_path,
+            language=language,
         )
 
         print(
@@ -544,7 +644,15 @@ def main():
         )
 
         print(
-            "OCR CONFIDENCE:"
+            "OCR LANGUAGE:"
+        )
+
+        print(
+            result["ocr_language"]
+        )
+
+        print(
+            "\nOCR CONFIDENCE:"
         )
 
         print(

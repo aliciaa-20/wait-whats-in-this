@@ -1,0 +1,95 @@
+{
+  "dataset": {
+    "source_file": "data/cleaned_products.csv",
+    "eligible_products": 1263,
+    "unique_product_codes": 1263
+  },
+  "benchmark": {
+    "requested_candidates": 20,
+    "downloaded_images": 18,
+    "success_rate": 0.9,
+    "seed": 42
+  },
+  "sampling": {
+    "requested_targets": {
+      "milk": 25,
+      "wheat_gluten": 25,
+      "soy": 20,
+      "tree_nut": 15,
+      "egg": 10,
+      "peanut": 7,
+      "sesame": 7,
+      "fish": 5,
+      "shellfish": 4
+    },
+    "actual_targets": {
+      "milk": 25,
+      "wheat_gluten": 25,
+      "soy": 20,
+      "tree_nut": 15,
+      "egg": 10,
+      "peanut": 7,
+      "sesame": 0,
+      "fish": 5,
+      "shellfish": 4
+    },
+    "selected_by_stratum": {
+      "allergen:sesame": 0,
+      "allergen:shellfish": 4,
+      "allergen:fish": 5,
+      "allergen:peanut": 7,
+      "allergen:egg": 4,
+      "allergen:tree_nut": 0,
+      "allergen:soy": 0,
+      "allergen:wheat_gluten": 0,
+      "allergen:milk": 0,
+      "trace": 0,
+      "control": 0
+    },
+    "total_selected": 20
+  },
+  "download_status": {
+    "downloaded_jpg": 18,
+    "no_ingredient_image": 2
+  },
+  "image_languages": {
+    "fr": 11,
+    "en": 2,
+    "it": 1,
+    "bg": 1,
+    "fi": 1,
+    "es": 1,
+    "nb": 1
+  },
+  "product_languages": {
+    "fr": 12,
+    "it": 1,
+    "bg": 1,
+    "fi": 1,
+    "en": 1,
+    "es": 1,
+    "nb": 1
+  },
+  "declared_allergen_coverage": {
+    "milk": 8,
+    "egg": 6,
+    "peanut": 8,
+    "tree_nut": 4,
+    "soy": 3,
+    "wheat_gluten": 6,
+    "fish": 6,
+    "shellfish": 3,
+    "sesame": 0
+  },
+  "trace_allergen_coverage": {
+    "milk": 3,
+    "egg": 2,
+    "peanut": 2,
+    "tree_nut": 11,
+    "soy": 3,
+    "wheat_gluten": 0,
+    "fish": 2,
+    "shellfish": 2,
+    "sesame": 0
+  }
+}
