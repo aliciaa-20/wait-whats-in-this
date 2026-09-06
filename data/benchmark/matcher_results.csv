@@ -1,0 +1,1264 @@
+code,product_name,reference_allergens,predicted_allergens,reference_traces,predicted_traces,exact_allergen_match,exact_trace_match
+6111246721261,Fromage Blanc Nature,milk,milk,milk,,True,False
+6111035000430,Sidi Ali,,,,,True,True
+6111242100992,Perly,milk,milk,,,True,True
+6111035000058,Eau minérale naturelle,,,,,True,True
+6111035002175,Sidi Ali,,,,,True,True
+6111266962187,Lait de la ferme jaouda,milk,milk,,,True,True
+6111242106949,Jben,milk,milk,,,True,True
+3274080005003,isabelle,,,,,True,True
+7622210449283,Prince,egg|milk|soy|wheat_gluten,milk|soy|wheat_gluten,egg,egg|milk,False,False
+6111242101180,uht jaouda 1L,milk,milk,tree_nut,,True,False
+6111128000071,Ain Saïss,,,,,True,True
+6111252421568,اكوافينا,,,,,True,True
+6111242100985,,milk,milk,,,True,True
+6111035000027,6111035000027,,,,,True,True
+3760049790214,Pain De Mie Bio,wheat_gluten,wheat_gluten,soy,soy,True,True
+6111246721278,Cream cheese,milk,milk,,,True,True
+6111035502828,Eau minéral naturelle,,,,,True,True
+3046920029759,Excellence Noir Prodigieux 90% Cacao,,,tree_nut,,True,False
+5449000054227,Coca-Cola Original Taste,,,,,True,True
+6111032009665,,milk,milk,,,True,True
+3329770077003,Skyr nature 0%,milk,milk,,,True,True
+6111242100206,Le nature,milk,milk,milk,,True,False
+6111252421582,اكوافينا,,,,,True,True
+3760049798609,Pain de mie grandes tranches Seigle & Graines 500g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,sesame|soy|tree_nut,True,False
+3168930010265,cruesly mélange de noix,tree_nut|wheat_gluten,,milk|sesame|soy,,False,False
+6175700,Tartines craquantes au sarrasin imp,,,,,True,True
+3175680011480,Sésame,sesame|wheat_gluten,sesame|wheat_gluten,egg|milk|soy|tree_nut,egg|milk|soy|tree_nut,True,True
+3046920022651,Noir Intense,,,milk|sesame|soy|tree_nut,milk|sesame|soy|tree_nut,True,True
+3017620422003,Nutella,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+3046920022606,Excellence 85% cacao,,,milk|sesame|soy|tree_nut,milk|sesame|soy|tree_nut,True,True
+3760020507350,Pur beurre de cacahuète,peanut,peanut,sesame|tree_nut,sesame|tree_nut,True,True
+6111203006653,La Hollandaise Cheddar,milk,milk,,,True,True
+8052575090254,Rigoni di Asiago - Nocciolata bio,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,,True,False
+3017620425035,Nutella,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+6111035003035,Oulmes natural carbonated water,,,,,True,True
+6111031005064,Tonik,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+3229820100234,Fourrés Chocolat Noir,milk|soy|wheat_gluten,milk|wheat_gluten,egg|sesame|soy|tree_nut,egg|sesame|soy|tree_nut,False,True
+3228857002344,Pain de mie american sandwich complet sans sucres ajoutés 600g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+7311070032611,KRISPROLLS Complets,wheat_gluten,wheat_gluten,,,True,True
+3284230006408,Brioche Tranchée Bio 400g,egg|wheat_gluten,egg|wheat_gluten,milk|soy,milk|soy,True,True
+5449000147417,Cappy PULPY,,,wheat_gluten,,True,False
+5411188112709,Geröstete Mandel Ohne Zucker,tree_nut,,,,False,True
+3168930163480,Alvalle Gazpacho l'original,,,wheat_gluten,,True,False
+6111180000231,levure pâtisserie,,,,,True,True
+3029330022428,14 Maxi Tranches complet sans sucres ajoutés,wheat_gluten,wheat_gluten,egg|milk|sesame,,True,False
+6111259092495,Goldium crémeux,milk,milk,,,True,True
+42104964,Ciel 33cl,,,tree_nut,,True,False
+3760049794298,Pain de mie Bio grandes tranches céréales & graines 500g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy,sesame|soy|wheat_gluten,True,False
+7300400481595,AUTHENTIQUE,wheat_gluten,wheat_gluten,milk|sesame|soy,milk|sesame|soy,True,True
+6111035001659,Ain Atlas,,,,,True,True
+7300400481588,Fibres,sesame|wheat_gluten,sesame|wheat_gluten,milk|soy,milk|soy,True,True
+8052575090230,Nocciolata,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,,True,False
+6111242100817,Le Lait demi écrémé,,milk,,,False,True
+3327272107969,Menguy's Peanut 100%,peanut,peanut,soy|tree_nut|wheat_gluten,,True,False
+6111128000460,,,,,,True,True
+3229820160672,Croustillant Chocolat,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,milk|sesame|soy|tree_nut,True,True
+8076809513753,PESTO alla GENOVESE,milk|tree_nut,milk|tree_nut,tree_nut,,True,False
+6111246722107,Frommage fondu,milk,milk,,,True,True
+3155250358788,Margarine bio doux tartine & cuisson,,,,,True,True
+3175681851849,Pomme Noisette,tree_nut|wheat_gluten,tree_nut|wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+5449000061515,Ciel,,,,,True,True
+6111242100305,jaouda Cremy,milk,milk,,,True,True
+3251490332080,Figue & son,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+3155251205296,Tartine Doux,,,,,True,True
+6111032001003,Assil vanille,,,milk,,True,False
+6111128000163,Ain Saiss Eau Minerale Naturelle,,,,,True,True
+6111206000733,Jebli,milk,milk,,,True,True
+3608580065340,Pâte à tartiner noisettes et cacao,milk|tree_nut,,tree_nut,,False,False
+5449000214799,Coke Zero,,,,,True,True
+3480341000674,Carré Frais 0% - Nature,milk,milk,,,True,True
+3760049791006,tartine de campagne,wheat_gluten,wheat_gluten,egg|milk|soy,egg|milk|soy,True,True
+6111099003897,Tartine & Cuisine,,,,,True,True
+6111128000088,ain saiss 50cl,,,,,True,True
+6111266963207,كيفير,milk,milk,,,True,True
+5449000214911,Coca-Cola Original,,,,,True,True
+8410376009392,Печиво zero sugar free,soy|wheat_gluten,soy|wheat_gluten,milk,,True,False
+6111032006619,Jamila رايبي,milk,milk,,,True,True
+3412290070101,Fromage à tartiner Nature fouetté MADAME LOIK - 180g,milk,milk,fish|tree_nut,fish|milk|tree_nut,True,False
+6111035001635,Ain Atlas,,,,,True,True
+6111184001562,Sel de table iodé,,,,,True,True
+6111032008583,Gervais fromage frais nature sucré,milk,milk,,,True,True
+8076809523547,PESTO ROSSO,egg|milk|tree_nut,egg|milk|tree_nut,tree_nut,,True,False
+3268840001008,CRISTALINE Eau De Source 0.5L,,,,,True,True
+3760091727732,Beurre bio cacahuète,peanut|tree_nut,peanut,tree_nut,,False,False
+3229820019307,Flocons d'avoine,wheat_gluten,,milk|sesame|soy|tree_nut,,False,False
+3017620429484,Nutella,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+3608580124047,Be Nuts ! - Pâte à tartiner Cacahuète,peanut,peanut,tree_nut,,True,False
+8420756010320,kéfir nature,milk,milk,,,True,True
+3175681851856,Biscuit raisins,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+6111246721940,le blanc nature 900g araai,milk,milk|soy,,,False,True
+3229820129488,"Muesli Raisin, Figue, Datte, Abricot",wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+3362600011044,Henry’s,wheat_gluten,wheat_gluten,milk|soy,,True,False
+3387390123210,Chocapic,wheat_gluten,wheat_gluten,milk|tree_nut,milk|tree_nut,True,True
+8000500426494,Nutella Plant-Based,soy|tree_nut,soy|tree_nut,milk,,True,False
+20724696,Amandes décortiquées,tree_nut,tree_nut,peanut|tree_nut,,True,False
+5410041001204,Tuc Original,egg|wheat_gluten,egg|wheat_gluten,milk|soy,,True,False
+20995553,Шоколад 85% какаова маса,soy,,milk|tree_nut,,False,False
+5010477348678,Special Muesli 30% fruits & noix,tree_nut|wheat_gluten,,tree_nut|wheat_gluten,,False,False
+6111184004129,Mayonnaise recette originale,egg|soy,egg|soy,,,True,True
+8720182556738,Maille Moutarde Fine de Dijon L'Originale Bocal 360g,,,,,True,True
+3229820794525,Avoine chocolat,egg|wheat_gluten,egg|wheat_gluten,milk|peanut|sesame|soy|tree_nut,,True,False
+3229820782560,"Muesli Superfruits Raisins, cassis, cranberry, myrtille",tree_nut|wheat_gluten,tree_nut|wheat_gluten,milk|sesame|soy|tree_nut,milk|sesame|soy|tree_nut,True,True
+3302740087059,Les tranches végé lentilles,egg,egg,,,True,True
+6111035001673,Aïn Atlas 50cl,,,,,True,True
+6111032000600,Salim,,,,,True,True
+6111018903161,Nescafé Classic,,,,,True,True
+6111162000839,Confiture de fraise,,,,,True,True
+3229820787015,Amande sans sucres,tree_nut,tree_nut,tree_nut,,True,False
+5411188124689,Oat No Sugars,wheat_gluten,,,,False,True
+6111259092525,Goldium Blanc Nature,milk,milk,,,True,True
+5449000000996,Coca-Cola,,,,,True,True
+6111251420166,Eau,,,,,True,True
+3229820792132,Avoine,wheat_gluten,,tree_nut,,False,False
+6111184004730,Ketchup star,,,,,True,True
+6111035003523,,,,,,True,True
+3256540000698,Pains au lait,egg|milk|wheat_gluten,milk|wheat_gluten,peanut|soy|tree_nut,,False,False
+20267605,Anacardo/Castanha-de-caju natural,tree_nut,tree_nut,peanut|tree_nut,,True,False
+3175680015228,Levure de bière,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,True,False
+3480341000636,Carré Frais,milk,milk,,,True,True
+6111259093096,شييزلي,,milk,,,False,True
+5411188110835,"Alpro Mandeldrink, Original 1L",tree_nut,tree_nut,tree_nut,peanut,True,False
+3019081238643,Sardines Huile d'Olive Vierge Extra,fish,,,,False,True
+8445290615350,sauce tomate cuisinée,,,,,True,True
+3587220002252,La gâche tranchée,egg|milk|wheat_gluten,egg|milk|wheat_gluten,tree_nut,,True,False
+7613036669146,NESTLE CHOCAPIC BIO Céréales - Boite de 375g,wheat_gluten,wheat_gluten,milk|peanut|tree_nut,milk|tree_nut,True,False
+6111029000118,Cosumar Sucre En Lingot Pour Le Thé 1 kg,,,,,True,True
+6111037000599,Familia 200g,soy,soy,tree_nut,,True,False
+3228857000166,100% mie complet 500g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+6111246954461,,milk,milk,,,True,True
+3154230809869,Jambon à l'étouffée sans nitrite,,,,,True,True
+6111162000716,Confiture d'abricot,,,,,True,True
+3033710073467,"Chicorée & Café, RICORÉ® L'Original, Boîte de 100g",,,,,True,True
+80176800,Nutella,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+8000500310427,Biscuits NUTELLA Biscuits Noisettes et Cacao x22 - 304g,milk|soy|tree_nut|wheat_gluten,milk|soy|tree_nut|wheat_gluten,,,True,True
+20005733,Cerneaux de Noix,tree_nut,tree_nut,peanut|tree_nut,peanut|tree_nut,True,True
+20047238,Nussmix,tree_nut,tree_nut,peanut|tree_nut,,True,False
+6111035003004,Oulmes Eau Gazeuse,,,,,True,True
+5449000000439,Coca Cola Original taste,,,,,True,True
+6111246722039,fromage herbes milky food,milk,milk,,,True,True
+5010029000023,Original,wheat_gluten,,,,False,True
+3284230011884,8 Pains au lait frais Bio 280g,egg|milk|wheat_gluten,egg|milk|wheat_gluten,soy,soy|wheat_gluten,True,False
+3175681066632,Biscuits pavot citron,milk|wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,False,True
+6111031005439,Merendina,egg|milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,False,True
+3046920029780,Excellence Noir Subtil Doux 70% Cacao,soy,soy,milk|tree_nut,milk|tree_nut,True,True
+3302740087042,Les Tranches Végé Pois chiches,egg,egg,,,True,True
+8002270014901,S. Pellegrino Water,,,,,True,True
+6111246721964,Cream Cheese,,milk,,,False,True
+6111242101050,LBEN CARTON PASTEURISER,milk,milk,,,True,True
+6111184001074,Confiture de Fraise,,,,,True,True
+6111184001661,Star vinaigre de table BLANC,,,,,True,True
+3088542500285,Sirop d'érable,,,,,True,True
+3041090063206,Cracotte Céréales Complètes,milk|wheat_gluten,milk|wheat_gluten,sesame|soy,sesame|soy|wheat_gluten,True,False
+3175681851863,Biscuits Soja Figue,milk|soy|wheat_gluten,soy|wheat_gluten,egg|milk|sesame|tree_nut,,False,False
+6111252421575,Aquafina 50cl,,,,,True,True
+7300400481571,wasa,wheat_gluten,wheat_gluten,milk|sesame|soy,milk|sesame|soy,True,True
+4056489007180,pain de mie grandes tranches spécial sandwich complet,wheat_gluten,,milk|soy,,False,False
+3362600011228,Sable coco Henry s 42g,milk|wheat_gluten,,soy,,False,False
+3068320123264,Eau minéral naturelle,,,,,True,True
+3175680011534,Biscuit lait chocolat,milk|soy|wheat_gluten,milk|soy|wheat_gluten,egg|sesame|tree_nut,,True,False
+6153153,Tartines craquantes quinoa - pois chiche sans gluten,,,,,True,True
+6111032001010,DANONE ASSIL BANANE,,milk,tree_nut,milk,False,False
+4056489620938,Beurre de cacahuètes,peanut,peanut,soy,soy,True,True
+5010477348357,Country Crisp 4 noix,tree_nut|wheat_gluten,,tree_nut|wheat_gluten,,False,False
+8410076610737,NATURE VALLEY protein pind&choc.GV,milk|peanut|soy,milk|peanut|soy,tree_nut,tree_nut,True,True
+8425197712024,Chocolate con leche y almendras,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+5449000036872,Hawai Tropical,,,tree_nut,,True,False
+3229820021027,P'tit Nature Complet,wheat_gluten,wheat_gluten,egg|milk|sesame|soy,,True,False
+3272770098090,St Môret,milk,,tree_nut,,False,False
+3175681105423,Cookie cacao pépites Sans Sucre,wheat_gluten,wheat_gluten,egg|milk|peanut|sesame|tree_nut,,True,False
+3228857001231,Harrys brioche tressee nature au sucre perle sans additifs 500g,egg|wheat_gluten,egg|wheat_gluten,milk|sesame|soy|tree_nut,milk|sesame|soy|tree_nut,True,True
+3046920028363,Excellence 85% Cacao Rich Dark,,,milk|sesame|soy|tree_nut,,True,False
+20022464,Extra Dark 74% Cocoa,soy,soy,wheat_gluten,,True,False
+7613035040823,Nestlé dessert Noir,,milk,milk|tree_nut,milk|tree_nut,False,True
+3228857002245,Pain de mie seigle Sandwich Harrys sans sucres ajoutés,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3046920010047,LINDT EXCELLENCE Smooth Dark 78%,milk,,milk|soy|tree_nut,soy|tree_nut|wheat_gluten,False,False
+6111242105331,Beurre Frais Pasteurisé,,milk,,,False,True
+16256866,1848 Chocolat en poudre,,,milk|soy,milk|soy,True,True
+16256163,Poulain,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,tree_nut,True,True
+3159470000120,CORN FLAKES,wheat_gluten,wheat_gluten,,,True,True
+3229820769165,Muesli avoine chocolat bio,milk|wheat_gluten,milk|wheat_gluten,sesame|soy|tree_nut,,True,False
+6111242103702,Yaourt Grec Muesli,milk|tree_nut|wheat_gluten,milk|tree_nut|wheat_gluten,tree_nut,,True,False
+3057640257773,Eau Minérale Naturelle,,,,,True,True
+3228857001378,Brioche moins de sucre,egg|wheat_gluten,egg|wheat_gluten,milk|sesame|soy|tree_nut,milk|sesame|soy|tree_nut,True,True
+3251490307002,Goûter pépites de chocolat,milk|soy|wheat_gluten,milk|soy|wheat_gluten,sesame|tree_nut,,True,False
+5411188115366,Alpro smooth subtle creamy oat,wheat_gluten,,,,False,True
+6923818812082,Green Tea,,,,,True,True
+6111099000247,Hule D'olive,,,tree_nut,,True,False
+5000168198491,Sablés Anglais L'Original,milk|wheat_gluten,milk|wheat_gluten,milk,,True,False
+3366321052386,st hubert bio & végétal,soy|tree_nut,soy,,,False,True
+3336971805021,Chips de lentilles saveur fines herbes,,,milk|peanut|soy|wheat_gluten,,True,False
+8715700407760,Tomato Ketchup BIO,,,,,True,True
+6111099000254,Huile d'olive,,,,,True,True
+8424893600352,kéfir 500g,,milk,,,False,True
+3168930010906,Cruesli Chocolat noir,soy|wheat_gluten,soy|wheat_gluten,milk|soy|wheat_gluten,,True,False
+7622210601988,Granola L'Original,milk|soy|wheat_gluten,milk|soy|wheat_gluten,tree_nut,tree_nut,True,True
+8410076601131,Crunchy avoine et miel,tree_nut|wheat_gluten,,peanut|soy|tree_nut|wheat_gluten,,False,False
+6111259343108,KING COOKIES,,,,,True,True
+7613035676497,"Chicorée & Café, RICORÉ® L'Original, Boîte de 260g",,,,,True,True
+6111242100930,رايبي جودة,,milk,,,False,True
+59032823,nutella,milk|soy|tree_nut,,,,False,True
+3451790988677,Le Beurre Tendre,milk,milk,,,True,True
+3046920028004,Excellence 70% Cocoa Intense Dark,milk|tree_nut,,milk|sesame|soy|tree_nut,,False,False
+6111184001197,,egg|soy,,,,False,True
+3088543506255,Sirop d'Agave,,,,,True,True
+3251490320001,Biscuit complet au germe de blé,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+3033710084913,Arôme MAGGI - Bouteille 250g,wheat_gluten,wheat_gluten,,,True,True
+3041090063114,Cracotte,milk|wheat_gluten,milk|wheat_gluten,,,True,True
+3083681095296,Ratatouille Cuisinée à la Provençal,wheat_gluten,wheat_gluten,,,True,True
+3760049790252,Pain de mie grandes tranches Toastiligne complet,wheat_gluten,wheat_gluten,sesame|soy,sesame|soy,True,True
+6111099000599,Huile de table,soy,soy,,,True,True
+6111266960336,Perly fromage,milk,milk,,,True,True
+7622201133337,Figolu,wheat_gluten,wheat_gluten,milk,milk,True,True
+5411188103387,ALPRO vanille,soy,soy,tree_nut,,True,False
+3229820181950,Fourrés Chocolat au Lait,milk|sesame|wheat_gluten,milk|wheat_gluten,egg|sesame|soy|tree_nut,,False,False
+6111251753912,611251753912,,,,,True,True
+6111242102002,غلال القمح,milk,milk,milk,,True,False
+3225350000501,Pulco à diluer citron,,,,,True,True
+3327272107259,Menguy's Beurre de cacahuètes creamy,milk|peanut,milk|peanut,soy|tree_nut|wheat_gluten,soy|tree_nut|wheat_gluten,True,True
+6111184000213,El Baraka Confiture D'abricots 430 G,,,,,True,True
+3228857001194,Beau & bon Céréales & graines,sesame|soy|wheat_gluten,sesame|soy|wheat_gluten,egg|milk|tree_nut,egg|milk|tree_nut,True,True
+6111032008453,danino,,,,,True,True
+5060042641000,Lightly sea salted crisps,,,milk,milk,True,True
+3067140013120,Chicorée soluble nature,,,,,True,True
+3242274030056,Manhattan Oeuf  Poulet Rôti  Fromage,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,fish|soy|tree_nut|wheat_gluten,,True,False
+3412290070071,Fromage à tartiner Nature fouetté MADAME LOIK - 320g,milk,milk,milk|tree_nut,milk|tree_nut,True,True
+3760049798869,Pain de mie Bio grandes tranches complet sans sucres ajoutés 500g,wheat_gluten,wheat_gluten,soy,soy,True,True
+3362600011006,Henry's Petit Surfin,wheat_gluten,wheat_gluten,tree_nut,,True,False
+6111180000392,سكر الفانيلين,,,,,True,True
+3168930009078,Flocons d'avoine complète,,,wheat_gluten,,True,False
+6111242102781,Tendre nature,milk,milk,milk,,True,False
+3272770097642,Le Goût Primeur format familial,milk,milk,milk,,True,False
+3760020508012,Tartines craquantes Sarrasin,,,,,True,True
+6111250470742,Lait U.H.T entier,milk,milk,,,True,True
+3228857000852,Pain de mie 100% mie nature,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+6111251753899,Olla,,,,,True,True
+20095291,Cioccolato fondente,soy,,milk|tree_nut,,False,False
+8445290133403,Nesquik,soy,soy,,,True,True
+3228857002184,American sandwich nature,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3175681209282,Goûter 4S Saveur pommes,milk|wheat_gluten,milk|wheat_gluten,,,True,True
+50184453,Yeast Extract,wheat_gluten,wheat_gluten,,,True,True
+5411188119098,Natur mit Kokosnuss,soy,,tree_nut,,False,False
+3061990143365,Goût chocolat,milk|wheat_gluten,milk|wheat_gluten,tree_nut,tree_nut,True,True
+3228857001316,Brioche Tranchée Recette Classique,egg|milk|wheat_gluten,egg|milk|wheat_gluten,sesame|soy|tree_nut,sesame|soy|tree_nut,True,True
+6111259341197,Momo black,milk|soy|wheat_gluten,soy|wheat_gluten,milk|wheat_gluten,,False,False
+6111266962446,delicemo,milk,milk,,,True,True
+20003166,FLOCONS D'AVOINE,wheat_gluten,,wheat_gluten,,False,False
+3292070005161,Houmous extra - Pois chiches français & graines de sésame,sesame,sesame,egg|fish|milk|shellfish|soy|wheat_gluten,egg|fish|milk|shellfish|soy|wheat_gluten,True,True
+4006985906203,Cacao en Poudre Non Sucré,,,milk|peanut|soy|tree_nut|wheat_gluten,milk|peanut|soy|tree_nut|wheat_gluten,True,True
+3175681257542,Cranberry saveur amande,wheat_gluten,tree_nut|wheat_gluten,,,False,True
+3251491787810,Goûter aux raisins,milk|soy|wheat_gluten,milk|soy|wheat_gluten,sesame|tree_nut,,True,False
+6111248360130,Aïn Soltane,,,,,True,True
+3045140105502,Chocolat au lait,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut|wheat_gluten,,True,False
+3760049798029,Tartines Bio quinoa & graines 450g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy,egg|milk|sesame|soy,True,True
+3228857002221,American sandwich Céréales,soy|wheat_gluten,soy|wheat_gluten,egg|milk|sesame|tree_nut,egg|milk|sesame|tree_nut,True,True
+3178530410105,Petites Madeleines,egg|milk|wheat_gluten,egg|milk|wheat_gluten,soy|tree_nut,soy|tree_nut|wheat_gluten,True,False
+4056489346357,"Boisson à l'amande, sans sucres",tree_nut,tree_nut,tree_nut,,True,False
+3760049796384,Tartines céréales & graines 450g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy,sesame|soy,True,False
+5449000206770,Eau de table,,,tree_nut,,True,False
+6111126003821,Lait Frais 15 jours,milk,milk,,,True,True
+3046920028721,Dark absolute 99% cacao,milk,,milk|sesame|soy|tree_nut,milk|soy|tree_nut,False,False
+6111003031107,,fish,fish,,,True,True
+3175681257535,"Biscuits 3 graines Kasha, Sésame, Pavot",sesame|wheat_gluten,sesame|wheat_gluten,milk|soy|tree_nut,,True,False
+6111018501480,Nescafé classic,,,,,True,True
+6111032002925,Danone nature,,milk,tree_nut|wheat_gluten,,False,False
+5449000133328,Cocacola zero sugar,,,,,True,True
+3154230810131,HERTA LE BON PARIS Jambon sel réduit sans nitrite x4-140g,,,,,True,True
+3330720237361,Pâte à tartiner aux noisettes francaises et cacao,milk|tree_nut,milk|tree_nut,sesame|tree_nut,sesame,True,False
+40896243,Buo Cioccolato Fondente 70%,soy,,milk|tree_nut,,False,False
+3760049795479,Pain de mie grandes tranches Toastiligne céréales & graines 500g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3240931548111,Gnocchi à poêler,wheat_gluten,wheat_gluten,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,True,True
+7311070032598,Krisprolls complets sans sucres ajoutés,wheat_gluten,wheat_gluten,,,True,True
+6111242103528,Croissance réduit en sucre,milk,milk,,,True,True
+6111242102767,Yaourt tendre,milk,milk,,,True,True
+3021769505602,POM'POTES Compotes Gourdes Pomme Nature 1x90g,,,,,True,True
+3228857002351,Pain de mie american sandwich complet sans sucres ajoutés maxi 900g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+6111184007618,Sauce algérienne,egg,egg,,,True,True
+3608580124108,Be Nuts! Pâte à tartiner Cacahuète,peanut,peanut,sesame|tree_nut,sesame|tree_nut,True,True
+6111271800054,العين,,,,,True,True
+6111184000619,Mayonnaise,,,,,True,True
+8052575090292,Nocciolata - Pâte à tartiner au cacao et noisettes,soy|tree_nut,soy|tree_nut,tree_nut,,True,False
+8410076601148,Crunchy Avoine & Chocolat Noir x 5 x 2 barres de 21 g,soy|wheat_gluten,soy,peanut|tree_nut|wheat_gluten,,False,False
+5053990156009,Pringles Original,wheat_gluten,wheat_gluten,soy,,True,False
+7622210476296,Thé - Biscuits,milk|soy|wheat_gluten,,egg|sesame,,False,False
+3302740047404,Le Supérieur -25% de Sel - Conservation sans Nitrite,,,,,True,True
+6111035502941,Eau minérale naturelle gazeuse,,,,,True,True
+3700214611548,Noir equitable 85% Pérou,,,milk|soy|tree_nut|wheat_gluten,milk|soy|tree_nut,True,False
+6111214004747,Pipas,wheat_gluten,wheat_gluten,,,True,True
+80052760,Kinder bueno,milk|soy|tree_nut|wheat_gluten,milk|tree_nut|wheat_gluten,milk|soy|tree_nut|wheat_gluten,,False,False
+7622210995087,chocolat noir noisettes entieres,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,,True,False
+6111032000631,Salim,,milk,,,False,True
+8000500179864,Nutella,milk|soy|tree_nut,milk|soy|tree_nut,soy,,True,False
+3175681037854,Tartines craquantes sarrasin,wheat_gluten,,soy|wheat_gluten,,False,False
+3229820019192,Pain complet 3 céréales,sesame|wheat_gluten,sesame|wheat_gluten,soy|tree_nut,soy|tree_nut,True,True
+3095757697105,Blanc de Poulet  - 25% de Sel*,,,,,True,True
+6111266962651,lait,milk,milk,,,True,True
+3033710065783,Le Choco,soy,soy,,,True,True
+3760049798845,Pain de mie grandes tranches Avoine & Graines 500g,wheat_gluten,wheat_gluten,sesame|soy,sesame|soy,True,True
+3017760542890,pain grillé pelletier,wheat_gluten,wheat_gluten,milk|soy,milk|soy,True,True
+3046920027885,Excellence Noir à la Pointe de Fleur de Sel,milk|soy,,sesame|tree_nut|wheat_gluten,,False,False
+6111246950845,,,milk,milk|tree_nut,,False,False
+5010477348630,Muesli 36% fruits noix & graines,tree_nut|wheat_gluten,tree_nut|wheat_gluten,tree_nut|wheat_gluten,,True,False
+87157215,Tomato Ketchup,,,,,True,True
+8715035110106,Sojasaus,soy|wheat_gluten,,,,False,True
+6111035003509,"Bahia, Eau De Table",,,,,True,True
+3182180001477,Grilletine au froment sans sucres ajoutés,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,True,False
+8720182460721,Amora Moutarde Forte Verre 430g,,,,,True,True
+5449000131805,Coca-Cola Zero Azúcar,,,tree_nut,,True,False
+3038354199603,Panzani sauce pesto basilic 200g,egg|milk|tree_nut,egg|milk|tree_nut,peanut,peanut,True,True
+3760049798890,Pain au lait bio x12 420g,egg|milk|wheat_gluten,egg|milk|wheat_gluten,soy,soy,True,True
+3175680011442,Biscuit soja orange,soy|wheat_gluten,soy|wheat_gluten,milk|sesame|tree_nut,,True,False
+3168930009795,Muesli Croustillant Noix de pécan & noix du Brésil,tree_nut|wheat_gluten,tree_nut|wheat_gluten,milk,milk,True,True
+6111024001516,"Huile de table équilibrée riche en vitamines A,E,D3",soy,soy,,,True,True
+3392460480827,Biscottes 6 Céréales,sesame|wheat_gluten,sesame|wheat_gluten,milk|soy,,True,False
+8719200012608,Tartine sans huile de palme,milk,,milk,milk,False,True
+6111250012416,Le bon lait,milk,milk,,,True,True
+7613035449626,NESTLE CHOCAPIC Céréales 645g,wheat_gluten,wheat_gluten,milk|tree_nut,milk|tree_nut,True,True
+8076809513722,Basilico,,,,,True,True
+3760091722508,Chocolat noir 85% Madagascar,,,milk|sesame|tree_nut|wheat_gluten,,True,False
+3229820794532,Avoine complète,egg|wheat_gluten,egg|wheat_gluten,milk|peanut|sesame|soy|tree_nut,milk|sesame|soy|tree_nut,True,False
+3175681257566,Gerble Buscuit Citron Gingembre,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,True,False
+4056489039518,Petit Pains Grillés Blé complet,wheat_gluten,wheat_gluten,egg|milk|sesame|soy,,True,False
+6111032002208,Activia Céréales,milk|wheat_gluten,milk|tree_nut|wheat_gluten,,,False,True
+8410076470812,Blé Complet Wraps,wheat_gluten,wheat_gluten,,,True,True
+6111251754247,Olla Crème de Cuisson Onctueuse,,,,,True,True
+3229820787008,Lait d'amande,tree_nut,tree_nut,tree_nut,,True,False
+7622210713780,Belvita Petit Déjeuner Chocolat,milk|soy|wheat_gluten,milk|soy|wheat_gluten,egg|sesame|tree_nut,,True,False
+3336971805038,Chips de lentilles saveur tomate mozza,milk,milk,peanut|soy|wheat_gluten,,True,False
+8052575090346,Nocciolata la bianca,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,,True,False
+3083680973939,Ratatouille Cuisinée à la Provençal,wheat_gluten,wheat_gluten,,,True,True
+3478820023184,Pâte à tartiner Chocolat Noisette,milk|soy|tree_nut,milk|soy|tree_nut,soy|tree_nut,tree_nut,True,False
+5010477348395,Country Crisp - Chocolat noir 70% cacao,milk|soy|tree_nut|wheat_gluten,soy|wheat_gluten,milk|tree_nut|wheat_gluten,milk|tree_nut|wheat_gluten,False,True
+3175681028111,Les Galettes Boulgour & Quinoa - Tomate & Paprika,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,True,False
+3664346306027,1848,,,milk|soy,milk|soy,True,True
+3182180001996,Biscottes Sans sucres ajoutés Blé complet,wheat_gluten,wheat_gluten,egg|milk|sesame|tree_nut,,True,False
+20713713,Chocolat noir Equateur Bio,,,milk|tree_nut|wheat_gluten,,True,False
+3380380047749,Tartines craquantes au sarrasin,,,,,True,True
+7622210713889,Belvita Original Petit-Déjeuner miel et pépites de chocolat,milk|soy|wheat_gluten,soy|wheat_gluten,egg|sesame|tree_nut,egg|milk|sesame|soy|tree_nut,False,False
+7622201809638,Napolitain l'Original,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,tree_nut,,True,False
+6111203007513,margarine,,milk|soy,,,False,True
+8410076801180,Crunchy oats&honey,,,peanut|soy|tree_nut|wheat_gluten,,True,False
+7622400006753,Noir 70% Intense,milk|soy,,tree_nut,,False,False
+3083681148619,Carottes rapees citron dnp 320g,egg|fish|milk|shellfish|wheat_gluten,wheat_gluten,egg|fish|milk|shellfish|soy|tree_nut,egg|fish|milk|soy|tree_nut,False,False
+5000157024671,Beanz in a rich tomato sauce,,,,,True,True
+5025125000006,White Ciabattin,wheat_gluten,wheat_gluten,,,True,True
+4056489235798,Pain de mie grandes tranches 7 cereales,wheat_gluten,wheat_gluten,milk|soy,milk|soy,True,True
+3257971309114,Mont Roucous,,,,,True,True
+3229820004334,Le cookie Chocolat Noisette,egg|milk|soy|tree_nut|wheat_gluten,egg|milk|tree_nut|wheat_gluten,peanut|sesame|tree_nut,sesame|soy|tree_nut,False,False
+6111246721735,Fromage blanc nature,milk,milk,,,True,True
+3329757002998,Poudre stevia,,,,,True,True
+3178530402728,La Madeleine Pur beurre,egg|milk|soy|tree_nut|wheat_gluten,egg|milk|tree_nut|wheat_gluten,soy|tree_nut,soy|tree_nut,False,True
+3251491787803,Goûter aux écorces confites,egg|milk|sesame|soy|tree_nut|wheat_gluten,milk|soy|wheat_gluten,tree_nut,,False,False
+6111024004746,Huile d'olive vierge de Maroc,,,,,True,True
+6111242102187,Ghani,,milk,,,False,True
+3229820794648,GALETTES EXTRA-FINES MAΪS,,,sesame,,True,False
+3608580142966,Pâte à tartiner cacahuètes et cacao,peanut,milk|peanut,sesame|tree_nut,,False,False
+5411188116592,Coconut,,,tree_nut,,True,False
+6111180003102,Mayfine,,,,,True,True
+5053990155354,Sour Cream & Onion,milk|wheat_gluten,milk|wheat_gluten,soy,,True,False
+3168930159896,Ice Tea Pêche,,,,,True,True
+3175681028098,Galettes boulghour & épeautre,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+6111162000181,Joly Thon Entier,fish,fish,,,True,True
+6111260232095,El Mejor Chef,,milk|tree_nut,,,False,True
+3366321051983,Oméga 3® Doux,soy,soy,milk|peanut,peanut,True,False
+7311070032604,Krisprolls complets,wheat_gluten,wheat_gluten,,,True,True
+8712100338694,Maizena Fleur de Maïs Sans Gluten 400g,,,,,True,True
+3248340054063,Lait demi-écrémé UHT,milk,milk,,,True,True
+6111184003276,Assaisonnement aromatisé au citron,,,,,True,True
+54491472,Cola 500 Ml,,,,,True,True
+6111184000657,Star Mayonnaise,egg|soy,,tree_nut,,False,False
+6111259342828,Petit beurre,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,tree_nut,,True,False
+6111259343344,King cookies choco,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+6111099005396,Lilia Tartine & Cuisine,milk|soy,milk,,,False,True
+3608580065371,Pâte à tartiner noisettes et cacao,milk|tree_nut,milk|tree_nut,tree_nut,tree_nut,True,True
+3046920021043,Noir intense dessert 70%,soy,soy,milk|tree_nut,milk|tree_nut,True,True
+3228857000883,Extra moelleux nature,wheat_gluten,wheat_gluten,egg|milk|sesame|soy,egg|milk|sesame|soy,True,True
+6111259347861,Pauz,milk|soy|wheat_gluten,milk|soy|wheat_gluten,peanut|tree_nut,peanut,True,False
+3329770073265,Skyr,milk,milk,,,True,True
+6111259340992,Eyoo cover,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+6111242105638,Lait sans lactose,milk,milk,,,True,True
+7622210476104,Véritable Petit Beurre,milk|wheat_gluten,milk|wheat_gluten,egg|sesame,,True,False
+5010477348517,Country Crisp 4 Baies,wheat_gluten,wheat_gluten,tree_nut|wheat_gluten,,True,False
+8886303210238,Lait de coco,,,,,True,True
+6111028000980,Kiri carré 8p,milk,milk,,,True,True
+3017760000062,Véritable Petit Beurre Pocket,milk|wheat_gluten,milk|wheat_gluten,egg|sesame,,True,False
+7613035937420,HERTA Knacki Veggie Saucisses végétales x6 -210g,egg|wheat_gluten,egg|wheat_gluten,milk|soy,milk|soy,True,True
+3168930002987,Cuites au four nature,,,,,True,True
+3760049794373,PAIN MIE SANDWICH BIO* COMPLET Sans sucres ajoutés 500G,wheat_gluten,wheat_gluten,egg|milk|soy,egg|milk|soy,True,True
+5449000131836,Coca-Cola Zero 500ml,,,,,True,True
+6111266962910,press up jaouda petit orange,,,,,True,True
+3329770051072,petit yoplait,milk,milk,,,True,True
+20171841,Roggen Vollkorn-Knäckebr,wheat_gluten,,milk|sesame|wheat_gluten,,False,False
+6111242104198,برس اب الخوخ جودة 1لتر,,,,,True,True
+8410111211202,Atun,fish,,,,False,True
+6111162000723,Délicia - Confiture d'abricot,,,,,True,True
+3182180002115,Grilletine Blé Complet,milk|wheat_gluten,milk|wheat_gluten,egg|peanut|sesame|soy|tree_nut,,True,False
+8410076472953,Wraps,wheat_gluten,,,,False,True
+6111242104556,Leben,milk,milk,,,True,True
+7613032655495,"Chicorée & Café, RICORÉ® L'Original, Boîte de 260g",,,,,True,True
+6111259093140,Goldium Premium Sauce Tacos au Fromage,,milk,,,False,True
+3240931548135,Lustucru gnocchi a poêler format xxl 720g,wheat_gluten,wheat_gluten,egg|milk|soy,egg|milk|soy|wheat_gluten,True,False
+6111180007650,Cacao,,,tree_nut,,True,False
+8198701234564,Pâte d'arachide,peanut,peanut,tree_nut,,True,False
+3760049799408,Complet & Graines,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3068320120256,Eau minérale naturelle,,,,,True,True
+8076809573252,Baiocchi nocciola 260g,egg|milk|tree_nut|wheat_gluten,egg|milk|tree_nut|wheat_gluten,peanut|sesame|soy|tree_nut,soy|tree_nut,True,False
+6111246250013,Levure rafiaa,,,,,True,True
+3760324300015,2 Steaks végétaux et gourmands,wheat_gluten,wheat_gluten,sesame|soy|wheat_gluten,,True,False
+3664346305990,Grand Arôme 32% de Cacao,,,milk,,True,False
+5411188125808,Mango Ohne Zuckerzusatz,soy,soy,tree_nut,,True,False
+3229820798110,Granola Chocolat,wheat_gluten,,milk|sesame|soy|tree_nut|wheat_gluten,,False,False
+3278693504076,Emprésuré au chocolat,milk,milk,,,True,True
+8436547770137,Kéfir natural sabor suave,milk,milk,,,True,True
+3083680613576,Lentilles préparées 1/2,soy|wheat_gluten,,soy|wheat_gluten,soy|wheat_gluten,False,True
+3229820797861,Croustillant 3 noix,tree_nut|wheat_gluten,tree_nut|wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+5060088707685,Barres de fruits secs & noix Myrtilles,tree_nut,,peanut|soy|tree_nut,,False,False
+3302740047367,Le Supérieur - à l'Etouffée - Conservation sans Nitrite,,,,,True,True
+3362600001106,Sablé Coco,milk|wheat_gluten,milk|wheat_gluten,milk|soy|wheat_gluten,,True,False
+6111242102019,flan caram jao dan,,,tree_nut,,True,False
+4008713713411,Copos de Avena extra suaves,wheat_gluten,,wheat_gluten,,False,False
+6111017007013,Caobel,,,,,True,True
+6132500711040,El Mordjene Crème De Noisettes Grillées,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+3661344288690,CREME DESSERT BIO AU CHOCOLAT,milk,milk,,,True,True
+6111175000741,قهوة الطبيب,,,,,True,True
+6111126001988,Leben BELDI,milk,milk,,,True,True
+6111260230619,Tranches Au Goût Cheddar,,,,,True,True
+3770016162043,Merguez Végétale,wheat_gluten,,sesame|soy|tree_nut|wheat_gluten,,False,False
+6111028001222,la vache qui rit,,milk,,,False,True
+6111246953679,,milk,milk,,,True,True
+7613287431943,Nesquik Cocoa,soy,soy,,,True,True
+7613035530799,NESQUIK Moins de Sucres,soy,soy,,,True,True
+7311070362664,Krisprolls,wheat_gluten,wheat_gluten,,,True,True
+8076809545396,Pesto Basilico con Rucula,milk|tree_nut,milk,tree_nut,,False,False
+37600106009,Creamy Peanut Butter,peanut,peanut,,,True,True
+3175681261372,Cacao céréales,milk|sesame|soy|tree_nut|wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,milk|sesame|soy|tree_nut|wheat_gluten,False,False
+3178530410143,Petites madeleines St Michel Pépites chocolat - 400g,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,tree_nut,,True,False
+3046920029681,Excellence Noir Délicat Doux 85% Cacao,soy|tree_nut,soy|tree_nut,milk|sesame|soy|tree_nut,,True,False
+3073781131925,Kiri® Crème 12 portions,milk,milk,,,True,True
+6111031005651,Golden,soy|wheat_gluten,soy|wheat_gluten,,,True,True
+3017760756198,Cookies Granola LU,milk|soy|wheat_gluten,soy|wheat_gluten,egg|tree_nut,egg|milk|tree_nut,False,False
+4014400400007,Toffifee 15er,milk|peanut|soy|tree_nut,milk|soy|tree_nut,peanut|tree_nut,peanut|tree_nut,False,True
+3124480186560,33CL CAN SLIM TROPICAL,,,,,True,True
+3770016162036,Nuggets Végétaux et Gourmands,milk|wheat_gluten,wheat_gluten,milk|sesame|soy|wheat_gluten,milk|soy,False,False
+5059319023762,Miel Pops,wheat_gluten,wheat_gluten,,,True,True
+3664346312936,Pâte à tartiner aux noisettes et au cacao,milk|soy|tree_nut,milk|soy|tree_nut,egg|soy|tree_nut|wheat_gluten,,True,False
+4056489471264,Edelbitter Mild 90%,soy,soy,milk|tree_nut,milk,True,False
+3017620421006,Pâte à tartiner Nutella noisettes et cacao - 750g,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+6111184001203,Moutarde de Dijon,soy,soy,,,True,True
+3412290070385,Fromage à tartiner Nature sel réduit -25% MADAME LOIK - 150g,milk,milk,fish|milk|tree_nut,fish|milk|tree_nut,True,True
+3046920016377,100% Cacao,soy,,milk|soy|tree_nut,milk|soy|tree_nut,False,True
+5010029229110,Crispy Minis Choco,soy|wheat_gluten,soy|wheat_gluten,,,True,True
+4056489028109,Shot de gingembre bio,,,,,True,True
+8076800195057,Spaghetti Nº5,wheat_gluten,wheat_gluten,egg|soy,soy,True,False
+3017760363990,Heudebert Fibre +,wheat_gluten,wheat_gluten,milk|sesame|soy,milk|sesame|soy,True,True
+5025125000037,Sourdough Grains & Seeds,wheat_gluten,wheat_gluten,,,True,True
+3175681170872,"Lentilles cuisinées, riz & soja",soy|wheat_gluten,,egg|milk|sesame|tree_nut,,False,False
+3700214614259,Chocolat noir 75% Pérou,,,milk|soy|tree_nut,milk|soy|tree_nut,True,True
+7622210103314,Queso cremoso,milk,milk,,,True,True
+5411188118961,Nature aux Amandes - Végétal soja & amande,soy|tree_nut,milk|soy|tree_nut,tree_nut,soy|tree_nut,False,False
+7622210995063,180G LT NOISETTE COTE D OR,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,,True,False
+3229820784939,Lait de coco fluide,,,,,True,True
+3421557501722,Muesli croustillant tradition,wheat_gluten,wheat_gluten,milk|peanut|sesame|soy|tree_nut,,True,False
+8410076610621,"Sweet & Salty Nut chocolat noir et mélange de noix, 5 barres de 30 g",milk|peanut|soy|tree_nut|wheat_gluten,milk|peanut|soy|tree_nut|wheat_gluten,tree_nut,,True,False
+3175681077324,Biscuit chocolat saveur amande,milk|soy|tree_nut|wheat_gluten,milk|soy|tree_nut|wheat_gluten,egg|sesame|soy|tree_nut,,True,False
+3421557501975,Muesli croustillant duo pépites,milk|sesame|tree_nut|wheat_gluten,milk|sesame|tree_nut|wheat_gluten,peanut|soy|tree_nut,,True,False
+3302740087103,Les Tranches Végé Haricots Blancs,egg,egg,,,True,True
+3175681116832,Sablé saveur COCO,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,True,False
+7622300689124,Granola L'original Gros éclats de chocolat,egg|milk|soy|wheat_gluten,soy|wheat_gluten,egg|tree_nut,egg|milk|tree_nut,False,False
+8715700423913,Tomato ketchup,,,,,True,True
+6111203007520,tartine la Prairie classique 450g,,milk|soy,,,False,True
+3088542506508,Sirop d'Agave BIO,,,,,True,True
+8002470023727,Huile d'olive vierge extra Bio Classico,,,,,True,True
+8710522922019,Ketchup 5 Ingrédients,,,,,True,True
+3175681290440,Petit Déj' Fruits Rouges à l'Épeautre,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+3229820786605,Crousti' Avoine Chocolat,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+3033491451652,"Le petit suisse gervais nature 9,5 % 60 g x 12",milk,milk,,,True,True
+7622210421968,Véritable Petit Écolier Chocolat au Lait,milk|soy|wheat_gluten,milk|wheat_gluten,tree_nut,soy|tree_nut,False,False
+3041090061615,Cracotte Chocolat,milk|soy|wheat_gluten,milk|soy|wheat_gluten,tree_nut,tree_nut,True,True
+3760091726667,Chocolat noir 80% Équateur intense et floral,,,milk|sesame|tree_nut|wheat_gluten,,True,False
+6111250474191,vinaigre de table blanc,,,,,True,True
+3175681134935,Sablés sans sucres saveur citron yuzu,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,True,False
+3083681093926,Aubergines cuisinées à la Provençal,,,,,True,True
+3770016162098,Chipos végétales aux herbes de Provence,,,sesame|soy|tree_nut|wheat_gluten,sesame|soy|tree_nut|wheat_gluten,True,True
+6111031005033,Tagger,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+6111162001218,Filets de maquereau,fish,fish,,,True,True
+6111206000696,Coeur de lait,milk,milk,,,True,True
+3240931548128,Lustucru gnocchi a poêler 520g,wheat_gluten,wheat_gluten,egg|milk|soy,,True,False
+8480000168832,Crema de cacahuetes 100%,peanut,peanut,,,True,True
+3073781131888,verse smeltkaas,milk,milk,,,True,True
+8000500082379,Nutella,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+3760049798876,10 Pains au lait frais sans sucres ajoutés 350g,egg|milk|wheat_gluten,egg|milk|wheat_gluten,,,True,True
+5060088700112,Protein Bars Cocoa Hazelnut,peanut|tree_nut,peanut|tree_nut,soy|tree_nut,,True,False
+6111246721957,Le berger From blanc Nat,,milk|soy,,,False,True
+3175681308190,Sésame,milk|sesame|wheat_gluten,milk|sesame|wheat_gluten,egg|soy|tree_nut,egg|soy|tree_nut,True,True
+3175681026766,Crousti Miel Sésame,egg|milk|sesame|soy|tree_nut|wheat_gluten,milk|sesame|wheat_gluten,,,False,True
+3155250364772,Primevère Tartine & Cuisson,,,,,True,True
+3168930003632,Quaker Oats,wheat_gluten,,wheat_gluten,,False,False
+3272770095334,St Moret ligne et plaisir,milk,milk,milk|wheat_gluten,milk,True,False
+20815394,Mix di frutta secca,peanut|tree_nut,,peanut|tree_nut,,False,False
+3029330022411,Maxi Tranches Sans sucre ajouté Nature,wheat_gluten,wheat_gluten,egg|milk|sesame|soy,,True,False
+3660140948258,Savane,egg|soy|wheat_gluten,egg|wheat_gluten,milk|peanut|tree_nut,,False,False
+5060088706022,NAKD Cacahuètes - 140g (4x1p),peanut,peanut,peanut|soy|tree_nut,,True,False
+6111252860077,Trios,,,,,True,True
+6111035001024,Oulmès eau minerale naturellement gazeuse,,,,,True,True
+3229820116716,Muesli aux fruits,tree_nut|wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,False,False
+8008698007389,MAESTRO CEREALE - Pain aux céréales tranché,soy,soy,sesame,,True,False
+3229820796857,Flocons d'avoine,wheat_gluten,,milk|sesame|soy|tree_nut,,False,False
+3229820801087,Avoine sans sucres,,,,,True,True
+6111126005894,Kéfir Nature,,milk,,,False,True
+3270190127765,Chocolate negro,,,milk|tree_nut,,True,False
+7613287514325,Fitness Nature Céréales complètes,wheat_gluten,wheat_gluten,milk|tree_nut,milk|tree_nut,True,True
+6111242101203,Linea,,milk,,,False,True
+3608580157885,Be Nuts ! 100 % Cacahuète,peanut,peanut,tree_nut,,True,False
+7622210476241,Petit brun extra,egg|wheat_gluten,,egg|milk|sesame,egg|milk|sesame,False,True
+3272770094412,L'original tartare ail & fines herbes,milk,milk,milk|tree_nut,,True,False
+7622210204424,Príncipe crema de chocolate,milk|soy|wheat_gluten,,egg,,False,False
+3175681280502,Le petit Gerblé nature,wheat_gluten,wheat_gluten,,,True,True
+8410109121551,Cacao puro desgrasado en polvo,,,,,True,True
+6111162001201,Delicia double concentre de tomates,,,,,True,True
+3161711001971,Fromage de France,milk,milk,,,True,True
+3011360030498,Mayonnaise Classique à l'huile de colza,egg,egg,,,True,True
+6111028001246,vach,milk,milk,,,True,True
+3155251205302,Tartine doux,,,,,True,True
+3229820791081,Gaufres Miel,egg|wheat_gluten,egg|wheat_gluten,milk|tree_nut,milk|tree_nut,True,True
+3229820794624,Galettes riz complet Bio,,,sesame,,True,False
+7613032779566,chocapic,wheat_gluten,wheat_gluten,milk|tree_nut,milk|tree_nut,True,True
+3154230600183,HERTA TARTE EN OR Pâte Feuilletée 230g,wheat_gluten,wheat_gluten,milk|soy,milk|soy,True,True
+3523230028431,La bûche Sainte-Maure (Poitou-Charentes,milk,milk,,,True,True
+3168930010890,Quaker Cruesli Chocolat au lait,milk|sesame|soy|wheat_gluten,milk|soy|wheat_gluten,sesame|tree_nut,,False,False
+3175681290297,Cookie Chocolat saveur noisette Sans sucres,tree_nut|wheat_gluten,tree_nut|wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+5410041010800,Petit écolier chocolat noir pur beurre de cacao,milk|soy|wheat_gluten,milk|wheat_gluten,tree_nut,soy|tree_nut,False,False
+3273220541012,Fromage blanc au lait de brebis,milk,milk,,,True,True
+42105220,Coca Cola,,,,,True,True
+3412290071801,Fromage à tartiner Ail et fines herbes fouetté MADAME LOIK - 150g,milk,milk,fish|tree_nut,,True,False
+6111242107366,Press Up moyen,,,,,True,True
+3187570015447,Café moulu pur arabica des petits producteurs,,,,,True,True
+3272770096942,Le goût primeur - Ligne & plaisir,milk,milk,milk|tree_nut,,True,False
+8712100724572,Levure Chimique Alsacienne,,,,,True,True
+20047559,Yogurt Greek Style,milk,milk,,,True,True
+90382383,Cappy pulpy,,,,,True,True
+6111262821150,Pindakaas,peanut,peanut,,,True,True
+5449000000286,Coca Cola,,,,,True,True
+7622210713926,Belvita Brut & 5 céréales complètes,milk|soy|wheat_gluten,wheat_gluten,egg|tree_nut,egg|milk|soy|tree_nut,False,False
+3155251205500,Beurre doux gastronomique,milk,milk,,,True,True
+5411188115472,Soyamilch,soy,soy,,,True,True
+8076809529433,Whole Wheat Penne Rigate,wheat_gluten,,soy,,False,False
+8410376009415,Zero sin azúcares Chip Choco,soy|wheat_gluten,soy|wheat_gluten,milk|soy|tree_nut,milk,True,False
+3083681148640,Celeri fromage blanc dnp 320g,egg|fish|milk|shellfish|wheat_gluten,egg|milk,fish|shellfish|soy|tree_nut,fish|soy|tree_nut|wheat_gluten,False,False
+8410076610744,,milk|peanut|soy|tree_nut,milk,,,False,True
+6111024002186,Wilor,,,tree_nut,,True,False
+6111032010135,double zéro Cerise,milk|wheat_gluten,milk|tree_nut|wheat_gluten,tree_nut|wheat_gluten,,False,False
+6111203005779,الهاندس,,milk,,,False,True
+5010477365316,Oh my crisp ! - Noix,tree_nut,tree_nut,,,True,True
+7622300441937,Philadelphia Original,milk,milk,,,True,True
+3664346315371,Grand Arôme moins de sucres,,,milk,,True,False
+3421557502446,T&C Muesli croustillant avoine amandes sans gluten,tree_nut,tree_nut,milk|peanut|sesame|soy|tree_nut,,True,False
+3661344688339,Les 2 Vaches Vanille Bio de Madagascar 4 x 115 g,milk,milk,tree_nut|wheat_gluten,milk|tree_nut|wheat_gluten,True,False
+20150907,Cranberries,,,peanut|tree_nut,,True,False
+3155251204343,Tartine & cuisson doux à tartiner et à cuire,,,,,True,True
+3770008009653,La pâte à tartiner cacao noisette,tree_nut,tree_nut,peanut|tree_nut,peanut|tree_nut,True,True
+5013665115571,BEURRE DE CACAHUETES 99% CACAHUETES,peanut,peanut,milk|soy|tree_nut,,True,False
+90338243,Coca-Cola original taste,,,,,True,True
+5449000135544,Ciel 50cl,,,,,True,True
+3480341000704,Carré Frais 0% Ail & Fines Herbes,milk,milk,,,True,True
+3278690085646,Emprésuré chocolat intense,milk,milk,milk,,True,False
+8000500435731,Eat natural Protéines,milk|peanut|tree_nut,milk|peanut|soy|tree_nut,tree_nut,,False,False
+3165440008935,Céréales Méditerranéennes,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+3497917000907,Chips saveur fromage du Jura,milk,milk,,,True,True
+7622400013935,Noir 86% Extra intense,milk|soy,,tree_nut,,False,False
+22314010025,Crème de marrons de l'Ardèche,tree_nut,,,,False,True
+6111021090049,Concentré de tomates Aicha,,,tree_nut,,True,False
+8480000038524,Guacamole,,,,,True,True
+3175681132467,Les galettes orge et boulgour au chèvre miel,milk|wheat_gluten,milk|wheat_gluten,sesame|soy|tree_nut,,True,False
+3229820794556,"Muesli Proteines Soja, Dattes, Fruits Rouges",soy|wheat_gluten,soy|wheat_gluten,milk|sesame|tree_nut,milk|sesame|tree_nut,True,True
+3029330004240,Fines Tartines farine de Seigle,wheat_gluten,wheat_gluten,soy|tree_nut,,True,False
+6111126001711,Jnane nature sans sucre,milk,milk,,,True,True
+3229820783338,Épeautre noisette,tree_nut|wheat_gluten,tree_nut|wheat_gluten,tree_nut,,True,False
+3154230600121,HERTA TARTE EN OR Pâte Brisée 230g,wheat_gluten,wheat_gluten,milk|soy,milk|soy,True,True
+6175634,Tartines craquantes à la châtaigne,,,,,True,True
+5411188110842,Rich and indulgent Hazelnut,tree_nut,tree_nut,tree_nut,,True,False
+5013665115557,Beurre de cacahuètes crunchy,peanut,peanut,tree_nut,tree_nut,True,True
+6111203007377,Classique Douceur de lait,milk,milk,,,True,True
+3023470001015,Galettes St Michel au beurre 4X5 - 130g,egg|milk|wheat_gluten,egg|milk|wheat_gluten,sesame|soy|tree_nut,,True,False
+3387390326574,Céréales Cookie Crisp,peanut|wheat_gluten,wheat_gluten,milk|peanut|tree_nut,milk|tree_nut,False,False
+5025125000112,Proper Sourdough,wheat_gluten,wheat_gluten,,,True,True
+3560071232719,Pain de mie complet,milk|wheat_gluten,wheat_gluten,egg|milk|sesame,egg|milk|sesame,False,True
+3033490004521,Danone le nature 125 g x 4,milk,milk,,,True,True
+3034470003107,Benco Original,,,,,True,True
+3265474000018,Huile Isio 4,,,,,True,True
+3272770096850,Le  goût primeur,milk,milk,milk|wheat_gluten,,True,False
+3329770076471,Calin Extra,milk,milk,,,True,True
+5000112611861,PET 1.75L COCA,,,,,True,True
+7622210449313,Prince Multicéréales Goût Chocolat Au Blé Complet,egg|milk|soy|wheat_gluten,milk|soy|wheat_gluten,egg,egg|milk,False,False
+7610313390076,Herbamare original,,,,,True,True
+7622210869616,Chocolat Bio noir 85%,,,milk|tree_nut,milk|tree_nut,True,True
+3083680901024,Ratatouille Cuisinée à la Provençal,wheat_gluten,wheat_gluten,,,True,True
+3760020508388,Tartined Craquantes Châtaigne,,,,,True,True
+3023260030928,Salakis 100% Brebis,milk,milk,,,True,True
+6111032006718,Danette,milk,milk,tree_nut,,True,False
+6111252422008,AQUAFINA,,,,,True,True
+5900951311505,SNICKERS,egg|milk|peanut|soy|tree_nut,egg|milk|peanut|soy|tree_nut,tree_nut,,True,False
+5449000267412,Coca-Cola goût original,,,,,True,True
+3175681135895,Moelleux chocolat noix,milk|soy|tree_nut|wheat_gluten,milk|soy|tree_nut|wheat_gluten,egg|tree_nut,,True,False
+8410376037784,Sandwich Zero Sin Azúcares,milk|soy|wheat_gluten,,,,False,True
+4056489997511,Bio Hafer,,,,,True,True
+6111273590021,Acyl,,,,,True,True
+3281780893915,Mon Taboulé Oriental,wheat_gluten,wheat_gluten,egg|fish|milk|peanut|sesame|shellfish|soy|tree_nut|wheat_gluten,,True,False
+3021690201123,Lentilles Cuisinées à l'Auvergnate,wheat_gluten,wheat_gluten,egg|milk,egg|milk,True,True
+7613035694989,Boulettes aux Légumes,egg|soy|wheat_gluten,soy|wheat_gluten,egg|sesame,egg,False,False
+6111251420272,Aïn Ifran Eau minérale naturelle,,,,,True,True
+3254380008430,"CRISTALINE Eau De Source Pétillante 1,5L",,,,,True,True
+3229820797946,Muesli sans sucres ajoutés raisin figue datte abricot,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+3168930170549,Ice tea,,,,,True,True
+6111266963283,,milk,milk,,,True,True
+3228857001101,Beau & bon à la farine complète de blé,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3175681134904,Sablé Nature sans sucres,wheat_gluten,wheat_gluten,egg|milk|soy|tree_nut,,True,False
+7622300685782,Philadelphia nature 300g,milk,milk,,,True,True
+3263670162219,Plain Sardines,fish,fish,,,True,True
+7613035859098,NESTLÉ DESSERT 70% Absolu 170g,milk,milk,tree_nut,tree_nut,True,True
+6111250472708,Jben AKNAZ,milk,milk,,,True,True
+6111246722084,cream-cheese,milk,milk,,,True,True
+3175681116863,Sablé sésame saveur vanille,sesame|wheat_gluten,sesame|wheat_gluten,egg|milk|soy|tree_nut,,True,False
+5053990101597,Sour Cream & Onion,milk|wheat_gluten,milk|wheat_gluten,,,True,True
+7622210416629,La Biscotte 96% de céréales,wheat_gluten,wheat_gluten,egg|milk|sesame,,True,False
+6111035001710,Ain Atlas,,,,,True,True
+8402001010873,Muesli Crunchy,milk|wheat_gluten,wheat_gluten,milk|peanut|sesame|soy|tree_nut|wheat_gluten,milk|peanut|sesame|soy,False,False
+3760278866964,Beurre bio cacahuètes crunchy,peanut,peanut,tree_nut,,True,False
+8712100731822,Amora Spécialité à la Moutarde de Dijon aux Épices Savora Bocal 385g,wheat_gluten,tree_nut|wheat_gluten,,,False,True
+8715700421353,Tomato ketchup,,,,,True,True
+6111032000624,Lait naturel,milk,milk,,,True,True
+7622210770714,Moelleux goût choco-noisette,milk|soy|wheat_gluten,milk|wheat_gluten,milk,,False,False
+6111032004455,Dan up,milk,milk,milk|tree_nut|wheat_gluten,,True,False
+6111259347434,Biscotti,soy|wheat_gluten,soy|wheat_gluten,egg|milk|peanut|tree_nut,egg|milk|peanut,True,False
+6111126005221,JBEN CHERGUI,milk,milk,,,True,True
+3770018078144,La Vie Jambon Végétal,soy,soy,egg|milk|tree_nut,,True,False
+8410376026962,Digestive Avena Choco,soy|wheat_gluten,,milk,,False,False
+3259011799893,Galettes Boulgour & Sarrasin à l'Emmental,milk|wheat_gluten,wheat_gluten,egg|peanut|sesame|soy|tree_nut,,False,False
+6111242101272,Muscly la force pour grandir,milk,milk,,,True,True
+6111021090056,Aicha Tomato Paste,,,,,True,True
+3033710065967,NESQUIK Cacao,soy,soy,,,True,True
+3273220012123,petit billy,milk,milk,,,True,True
+6111032010128,Danone (zéro sucre ajouté zéro matière grasse),,,,,True,True
+5053990161669,Paprika Chips,milk|wheat_gluten,milk|wheat_gluten,soy,soy,True,True
+6111162001164,Delicia,,,,,True,True
+6111260680452,Marhaba,milk|soy|tree_nut,milk|soy|tree_nut,milk|peanut|tree_nut,,True,False
+3168930173311,Doritos goût nature,wheat_gluten,,soy|wheat_gluten,soy|wheat_gluten,False,True
+5060042641406,Sea salt & cider vinegar,wheat_gluten,,milk,,False,False
+6111250470209,VIP Gold café instantané,,,,,True,True
+6111243860376,Ice Passion,,,,,True,True
+6111245370064,Levure,,,,,True,True
+8000500435670,Protéines Cacahuètes & Chocolat Noir,peanut|soy,peanut|soy,milk|tree_nut,milk|tree_nut,True,True
+6111273780040,,,,,,True,True
+3068320114453,Badoit 1 L PET,,,,,True,True
+8076809513388,Arrabbiata,,,,,True,True
+3182189999805,Biscottes sans sel et sans sucre ajoutés,wheat_gluten,wheat_gluten,,,True,True
+3175681297104,Matin Chocolat,soy|wheat_gluten,soy|wheat_gluten,egg|milk|sesame|tree_nut,egg|milk|sesame|tree_nut,True,True
+3175681302679,Amande,tree_nut|wheat_gluten,tree_nut|wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3608580823445,Confiture de fraise Intense,,,,,True,True
+3033710074525,special filtre,,,,,True,True
+5010477356277,Granola Amandes Noisettes & Graines,tree_nut|wheat_gluten,tree_nut|wheat_gluten,tree_nut|wheat_gluten,,True,False
+8410111000707,Atún con tomate,fish,fish|soy,,,False,True
+6111242107441,lait sans lactose,milk,milk,,,True,True
+8008698005576,MAESTRO CLASSIC - Pain de mie tranché nature,soy,soy,,milk|wheat_gluten,True,False
+3182180002542,Grilletine Sans sucres ajoutés Blé complet,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,True,False
+9002515601018,Pago Ace - Orange - Carotte - Citron,,,,,True,True
+3608580758686,Confiture extra de Fraises,,,,,True,True
+3700278400881,Banania Original - Cacao Céréales Touche De Banane & Miel,wheat_gluten,wheat_gluten,milk|soy,,True,False
+6111266962644,لذيذ,milk,milk,,,True,True
+3228021170039,PRESIDENT CAMEMBERT 250g,milk,milk,,,True,True
+3165950211726,Filet de maquereaux au naturel,fish,fish,,,True,True
+3073781192186,La vache qui rit,milk,milk,,,True,True
+6111242100022,Leben JAOUDA,milk,milk,,,True,True
+3154230802280,HERTA Lardons fumés conservation sans nitrite - 2x75g,,,,,True,True
+5010477354051,Muesli Bio Superfruits,wheat_gluten,wheat_gluten,tree_nut|wheat_gluten,,True,False
+3229820181424,Boisson Noisette,tree_nut,tree_nut,,tree_nut,True,False
+3165433724019,Cassonade pure canne,,,,,True,True
+3302740059193,Blanc de Poulet,,,,,True,True
+3168930168133,Chips recette paysanne nature,,,,,True,True
+6111242102361,Raib vani jaouda,milk,milk,,,True,True
+3276558775128,Tomates Cerises Allongées,,,,,True,True
+3760091721747,Beurre de cacahuètes du Nicaragua,peanut,peanut,tree_nut,tree_nut,True,True
+3760091724632,Chocolat noir PEROU GRAND CRU AMAZONAS 70%,,,milk|sesame|tree_nut|wheat_gluten,,True,False
+6111035001383,Eau minerale,,,,,True,True
+3272770016131,Chavroux Pur Chèvre,milk,milk,milk,,True,False
+3124480184344,Orangina et sa pulpe,,,,,True,True
+6111024001202,Huile de tournesol,,,tree_nut,,True,False
+3017620420702,Nutella pâte à tartiner aux noisettes et au cacao,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+6111021013208,Confiture De Fraises Aicha,,,tree_nut,,True,False
+3560071407650,Muesli de quinoa y chocolate,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+6111259093102,Cheeslé Blanc nature,milk,milk,,,True,True
+3272770004725,"9 Minis St Moret (17,8% MG)",milk,milk,milk|tree_nut,milk|tree_nut,True,True
+6111032006749,Danettz Chocolat,milk,milk,,,True,True
+20004132,Chopped Tomatoes,,,,,True,True
+5449000015105,Sprite,,,,,True,True
+6111203006646,la hollandaise,milk,milk,,,True,True
+6111271800030,Eau de source naturelle La Source,,,,,True,True
+3029330069898,Tartines p’tit dej,wheat_gluten,wheat_gluten,egg|milk|sesame,,True,False
+3336972109104,Chips de lentilles saveur oignons caramelisés,,,milk|peanut|soy|wheat_gluten,,True,False
+3330720244017,Confiture fraise sans sucre ajoutes,,,,,True,True
+7622202028335,Mikado Chocolat au lait,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+3664346305860,Noir Extra,milk|soy,milk|soy,milk|tree_nut|wheat_gluten,tree_nut|wheat_gluten,True,False
+3023291122005,Yaos Yaourt à la Grecque Nature,milk,milk,,,True,True
+7622210100917,Milka galette choco,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+3523230030793,beurre demi-sel,milk,milk,,,True,True
+7622300336738,OREO ORIGINAL,soy|wheat_gluten,soy|wheat_gluten,milk,milk,True,True
+8852018101024,Yum Yum Chicken Flavour,milk|wheat_gluten,wheat_gluten,,,False,True
+8410076901026,Protein Nut Bar Fruit & Chocolate,milk|peanut|soy,milk|peanut|soy,,,True,True
+3302740039362,Rôti de Poulet - 100% filet,,,,,True,True
+5449000334343,Schweppes citron 1l,,,,,True,True
+8712100751370,Amora Ketchup Flacon Souple Tête en bas 550g,,,,,True,True
+3560070910366,Huile d\'olive vierge extra,,,,,True,True
+6111242882263,,,,,,True,True
+6111265800497,Albane Lait Entier UHT 1L,milk,milk,,,True,True
+8052575090247,Nocciolata,milk|soy|tree_nut,milk|soy|tree_nut,,,True,True
+3182180060320,Tartines de Pain Blé Complet,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,True,False
+7622210988034,Véritable petit beurre,milk|wheat_gluten,,egg|sesame,,False,False
+80761761,Kinder Bueno White 39g,milk|soy|tree_nut|wheat_gluten,milk|soy|tree_nut|wheat_gluten,,,True,True
+3083681094459,Courgettes à la Provençale 1/2,wheat_gluten,,,wheat_gluten,False,False
+3088540004440,Honey,,,,,True,True
+3178530407396,Petit Cookies Pépites de chocolat,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,sesame|tree_nut,,True,False
+3248830000150,Pâte à tarte feuilletée - Pur beurre,milk|wheat_gluten,milk|wheat_gluten,,,True,True
+5000168198514,Sablés chocolat,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+8000500273296,Ferrero,milk|soy|tree_nut|wheat_gluten,milk|soy|tree_nut|wheat_gluten,,,True,True
+3302740058660,Blanc de poulet 100% filet,,,,,True,True
+6111032009870,Raibi jamila,milk,milk,,,True,True
+6111252422428,saveur fruit rouge ice tea,,,,,True,True
+3046920022705,Excellence Noir Orange Intense,milk|soy|tree_nut,soy|tree_nut,sesame|tree_nut,,False,False
+20621469,Special Flakes Original,wheat_gluten,wheat_gluten,peanut|tree_nut,,True,False
+3560070669981,80% cacao noir,tree_nut,,milk|tree_nut|wheat_gluten,milk|tree_nut|wheat_gluten,False,True
+5010477348555,Country Crisp 4 Noix,tree_nut|wheat_gluten,tree_nut|wheat_gluten,tree_nut|wheat_gluten,tree_nut|wheat_gluten,True,True
+8434165466333,Krit krititas galletas saladas,wheat_gluten,,egg|milk|sesame|soy,egg|milk|soy,False,False
+8076802085738,Barilla Penne Rigate Nº73,wheat_gluten,,egg|soy,,False,False
+3560070614202,Copos de Avena Integral,wheat_gluten,,,,False,True
+3228857001118,Pain 100% mie nature sans sucre ajouté,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3760020505936,Bouillon cube Légumes sans sel sans gluten,,milk,egg|milk|soy,egg|soy,False,False
+3175681261365,Biscuits Abricot Pistache,tree_nut|wheat_gluten,tree_nut|wheat_gluten,milk|sesame|soy|tree_nut,,True,False
+6111180007339,,,,,,True,True
+5449000132277,fanta tops lemon 1.5l,,,,,True,True
+6111252422411,Lipton Ice Tea Saveur Pêche,,,,,True,True
+3155251205524,Beurre tendre doux,milk,milk,,,True,True
+5449000232311,FuzeTea Thé noir glacé saveur pêche,,,,,True,True
+3302740050268,Jambon Simplement Bio - Conservation sans nitrite,,,,,True,True
+7394376616709,Avena Barista Edition,,,,,True,True
+6111242660373,Beurre Badaouia,milk,milk,,,True,True
+5449000036889,refresco de naranja,,,,,True,True
+3760020500658,Pâte à tartiner chocolat Noisette,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,,True,False
+3229820019604,Soja nature sans sucre ajouté bio,soy,soy,,,True,True
+3322680010290,crêpes de Landerneau,egg|milk|wheat_gluten,egg|milk|wheat_gluten,soy|tree_nut,soy|tree_nut,True,True
+3033710003228,RICORÉ® aux céréales et à la chicorée solubles Boîte 250g,wheat_gluten,wheat_gluten,,,True,True
+3229820762692,TOFU NATURE,soy,soy,,,True,True
+6111251420135,Aïn Ifrane,,,,,True,True
+3154230809890,jambon,,,,,True,True
+3029330801924,pain Burger complet,sesame|wheat_gluten,sesame|wheat_gluten,egg|milk,,True,False
+6111250473453,VIP crema gold café instantané,,,,,True,True
+6111032002888,Velouté Fraise,,milk,,,False,True
+6111242102552,Dessert gourmand choco,milk,milk,,,True,True
+3033491454080,SKYR,milk,milk,,,True,True
+3281780893892,Taboulé oriental à l'huile d'olive vierge extra,wheat_gluten,wheat_gluten,egg|fish|milk|peanut|sesame|shellfish|soy|tree_nut|wheat_gluten,,True,False
+6191585701858,كريميو,milk,milk,,,True,True
+3175681110106,germe de blé,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3174660084513,Cassonade,,,,,True,True
+3421557910203,Flocons d'avoine complets,wheat_gluten,,milk|peanut|sesame|soy|tree_nut|wheat_gluten,,False,False
+5053990127726,Pringles Original,wheat_gluten,,milk|soy,,False,False
+5053827199568,Müsli-Tresor-Choco Nut,milk|tree_nut|wheat_gluten,,soy|tree_nut,tree_nut|wheat_gluten,False,False
+5053990107339,Pringles Original,milk|soy|wheat_gluten,wheat_gluten,,,False,True
+6111184000701,Star moutarde 200 g,sesame,sesame,,,True,True
+6111028001017,kiri 36p,milk,milk,,,True,True
+5410041005707,Pim's Sinaasappel,egg|milk|soy|wheat_gluten,,sesame,,False,False
+7613035694958,Carré gourmand Tomates et mozzarella,egg|milk|wheat_gluten,egg|milk|wheat_gluten,sesame|soy,soy,True,False
+3168930010869,Cruesli Chocolat noir maxi format,milk|soy|wheat_gluten,soy|wheat_gluten,milk|tree_nut,,False,False
+3067140037898,Chicoree soluble nature bio 100g,wheat_gluten,,,,False,True
+3560071010058,Le pain aux Céréales,wheat_gluten,wheat_gluten,sesame|soy,sesame|soy,True,True
+3245413451804,Avoine,wheat_gluten,,,,False,True
+20002183,Fiocchi di latte,milk,milk,,,True,True
+6111246721995,fromage blanc nature,milk,milk,,,True,True
+8076800376999,Lasagne all'uovo,egg|wheat_gluten,,soy,,False,False
+5060042641420,Chips sel de mer et poivre noir,,,milk,,True,False
+6111248360116,Eau,,,,,True,True
+6111245470023,Afia,soy,soy,,,True,True
+6111035503115,vitalya,,,,,True,True
+3366321053307,Oméga 3,soy,soy,peanut,,True,False
+3366321053284,Margarine omega 3 doux,soy,soy,peanut,peanut,True,True
+4056489546092,Bio crackers graines de chia et flocons d’avoine,sesame|wheat_gluten,sesame|wheat_gluten,milk|wheat_gluten,,True,False
+6111032009924,SALIM LBEN 440G,milk,milk,,,True,True
+3228021170053,La bûche fondante,milk,milk,,,True,True
+3061990143594,"BN - Casse Croute Biscuits, 375g",wheat_gluten,wheat_gluten,milk|tree_nut,,True,False
+3560070879762,Le pain au Seigle,wheat_gluten,wheat_gluten,sesame|soy,sesame|soy,True,True
+3560071507480,Pâte à tartiner,milk|tree_nut,,soy|tree_nut,soy|tree_nut,False,True
+5410093179616,Vegetal,milk,milk|tree_nut,,,False,True
+8711200548002,Amora Mayonnaise de Dijon Flacon Souple 415g,egg,egg,,,True,True
+3178050000749,Huile d’olive vierge extra,,,,,True,True
+3033710077274,"NESCAFÉ NES, Café Soluble, Boîte de 200g",,,,,True,True
+3700214614266,Chocolat 90% Pérou,,,milk|soy|tree_nut|wheat_gluten,milk|soy|tree_nut,True,False
+3497917002451,La Chips de Sarrasin au Sel de Guérande,,,egg|milk|wheat_gluten,,True,False
+7613035040793,NESTLÉ DESSERT Noir 2x205g,,milk,milk|tree_nut,milk|tree_nut,False,True
+6111246722169,Fromage fondu Tartine & Cuisson,milk,milk,,,True,True
+7613035898646,NESTLÉ DESSERT Corsé 200g,,milk,milk|tree_nut,milk|tree_nut,False,True
+8718114734484,Maille Mayonnaise,egg,egg,,,True,True
+6111017045329,Napolitain Noir,soy,soy,tree_nut,,True,False
+3175681037885,Tartines Craquantes Multi-Céréales,milk|soy|wheat_gluten,,egg|milk|sesame|soy|tree_nut|wheat_gluten,,False,False
+5410126806069,LOTUS BISCOFF Original - 250g (2x125g),soy|wheat_gluten,soy|wheat_gluten,,,True,True
+3178530405736,"Bonne Maman - Quatre Quarts, 500g (17.6oz)",egg|milk|wheat_gluten,egg|milk|wheat_gluten,soy|tree_nut,soy|tree_nut,True,True
+3571492210019,la Brandade à la Morue,fish|milk|sesame,fish|milk,egg|peanut|sesame|shellfish|soy|tree_nut|wheat_gluten,egg|peanut|sesame|shellfish|soy|tree_nut|wheat_gluten,False,True
+8410510012196,Chocolat Noir 92% cacao,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,,True,False
+6111032002970,عصري بناشي,milk,milk,,,True,True
+3770018078038,Rostlinná slanina,soy,,egg|fish|milk|shellfish|wheat_gluten,,False,False
+3770008009882,Les Fourrées  -  Beurre de Cacahuète & Cacao,milk|peanut,milk|peanut,milk|tree_nut,,True,False
+6111126005085,Douceur fromage frais,milk,milk,,,True,True
+6111246721339,Ftoury Fromage Blanc,milk,milk,,,True,True
+3228857002191,Pain de mie american sandwich nature sans sucres ajoutés maxi 825g,wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,egg|milk|sesame|soy|tree_nut,True,True
+3451790988813,le beurre tendre,milk,milk,,,True,True
+3021690201116,Lentilles cuisinées à l'Auvergnate,wheat_gluten,wheat_gluten,egg|milk,,True,False
+8076809517706,Baiocchi Classici,egg|milk|tree_nut|wheat_gluten,egg|milk|tree_nut|wheat_gluten,soy|tree_nut,soy|tree_nut,True,True
+3564706604360,Muesli Chocolat-Noisette,milk|tree_nut|wheat_gluten,tree_nut|wheat_gluten,soy|tree_nut,soy|tree_nut,False,True
+8410510012202,,milk|soy|tree_nut,milk|soy|tree_nut,tree_nut,,True,False
+6923818881323,Petits fours financiers,,,,,True,True
+8585002484093,NESTLE MAGGI KUB Bouillon Bio Légumes 80g - 8 tablettes,milk|wheat_gluten,milk,egg|fish|milk|soy|wheat_gluten,egg|fish|milk|soy|wheat_gluten,False,True
+6111101001361,Asta,,,,,True,True
+6111024004753,Huille,,,,,True,True
+7613036249928,Vittel,,,,,True,True
+8722700197508,Vinaigre Balsamique de Modène 25 cl,,,,,True,True
+8480000093691,Pan de molde 100% integral,sesame|wheat_gluten,sesame|wheat_gluten,soy,soy|wheat_gluten,True,False
+8886303210207,Natural Coconut Cream,tree_nut,milk,,,False,True
+6111128001115,Ghaut,,,,,True,True
+5449000232250,fuzetea saveur pêche 1l25,,,,,True,True
+3254550006013,Crème sous pression à la vanille 250g,milk,milk,,,True,True
+8710445020878,FIBRA & SÉSAMO,egg|milk|sesame|soy|wheat_gluten,sesame|wheat_gluten,egg|milk|soy|tree_nut|wheat_gluten,egg|milk|soy|wheat_gluten,False,False
+3608580789758,Compote Pomme Nature,,,,,True,True
+3366321052003,St Hubert Omega 3 Sans Huile de Palme 500g Doux,soy,soy,milk|peanut,peanut,True,False
+8410076472946,8 Tortillas - Blé nature,wheat_gluten,,,,False,True
+6410500090014,Knäckebrot mit Roggensauerteig,wheat_gluten,,sesame,sesame,False,True
+3029330071280,Pain complet,wheat_gluten,wheat_gluten,egg|milk|sesame,,True,False
+7311070032581,Krisprolls,wheat_gluten,wheat_gluten,,,True,True
+8715035110304,Sauce Soja,soy|wheat_gluten,soy|wheat_gluten,,,True,True
+4056489361855,Miel crémeux français & responsable,,,,,True,True
+3272770015516,Tartare végétal ail & fines herbes,milk|tree_nut,tree_nut,tree_nut,tree_nut,False,True
+6111271800023,La Source العين,,,,,True,True
+6111246720783,Petit Frais Nature,milk,milk,,,True,True
+7622202023958,Monaco Emmental,egg|milk|soy|wheat_gluten,milk|wheat_gluten,egg|sesame,egg|sesame|soy,False,False
+3088545004001,Miel de Fleurs Liquide Doseur 500g,,,,,True,True
+3608580890898,Gourmand & Végétal Brassé Nature,,,soy|tree_nut,,True,False
+3175681039599,Biscuit fondant choco noir sans sucres ajoutés,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,sesame|tree_nut,,True,False
+7622210584724,Dark chocolate,,,milk|tree_nut,,True,False
+3661344221772,Yaourt saveur myrtille sauvage,milk,milk,tree_nut|wheat_gluten,milk|tree_nut|wheat_gluten,True,False
+3302740057502,Filet de poulet 🐔 rôti,,,,,True,True
+3664346306003,Grand Arôme 32% de Cacao,,,milk|soy,milk|soy,True,True
+3229820794112,Tofu fumé,soy,soy,,,True,True
+6111250472241,Bol Bol Ketchup,,,,,True,True
+3019081241582,Filet de maquereaux grillés nature,fish,fish,,,True,True
+8715700112596,"Ketchup zéro sel ajouré, 70% moins de sucres",,,,,True,True
+3228021170046,Emmental râpé,milk,milk,,,True,True
+20072803,Miel de fleurs,,,,,True,True
+8480000512031,Queso crema suave,milk,milk,,,True,True
+3154230800965,HERTA Blanc Poulet Nature conservation sans nitrite x4 -140g,,,,,True,True
+7622210444141,Moelleux chocolat,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+3229820783673,Fourrés chocolat lait noisettes,milk|tree_nut|wheat_gluten,milk|tree_nut|wheat_gluten,egg|sesame|soy|tree_nut,,True,False
+3175681170841,"Ravioli au tofu, tomates, basilic",soy|wheat_gluten,soy|wheat_gluten,egg|milk|sesame|tree_nut,,True,False
+8720182557315,Maille Moutarde Fins Gourmets Bocal 320g,,,,,True,True
+6111126005580,Chergui Lait,milk,milk,,,True,True
+87157635,Tomato Ketchup,,,,,True,True
+3124480185266,Orange citron,,,,,True,True
+5053990101573,Pringles Sare,soy|wheat_gluten,,,,False,True
+8410076801197,Crunchy Oats & Dark Chocolate,soy,soy,peanut|tree_nut|wheat_gluten,,True,False
+6111263000202,filets de maquereaux à l'huile végétale,fish|soy,fish|soy,,,True,True
+3302740100796,Les tranches végé haricots rouges,egg,egg,,,True,True
+7622210416681,Biscottes,wheat_gluten,,egg|milk|sesame,,False,False
+7622210724519,Chocolat noir Bio 70%,,,milk|tree_nut,,True,False
+8480000142139,Digestive Avena,wheat_gluten,wheat_gluten,milk|soy,,True,False
+3046920010283,Excellence Lait Extra Fondant,milk|soy|wheat_gluten,milk|soy|wheat_gluten,sesame|tree_nut|wheat_gluten,sesame|tree_nut,True,False
+7613036021265,nuggets soja,soy|wheat_gluten,soy|wheat_gluten,egg|sesame,egg|sesame,True,True
+6111021026000,Double concentré de tomates,,,,,True,True
+4056489491217,Skyr,milk,milk,,,True,True
+3229820019208,Pain complet seigle,wheat_gluten,wheat_gluten,milk|sesame|soy|tree_nut,milk|sesame|soy|tree_nut,True,True
+7622210578464,Organic 70% Dark Chocolate Bar,,,milk|tree_nut,milk|tree_nut,True,True
+3229820789149,Biscuits nappés de chocolat noir,egg|milk|soy|tree_nut|wheat_gluten,egg|milk|soy|wheat_gluten,peanut|sesame|tree_nut,sesame|tree_nut|wheat_gluten,False,False
+3272770015523,FETA AOP GRECQUE,milk,milk,,,True,True
+6111035002052,Bul'tropicale,,,,,True,True
+20615420,Paahdettu maapähkinä,peanut,,tree_nut,,False,False
+7613035648463,HERTA Pâte à Pizza Fine et Rectangulaire 390g,wheat_gluten,wheat_gluten,milk|soy,milk|soy,True,True
+3456300014556,Fourrés Chocolat🍫,milk|wheat_gluten,milk|wheat_gluten,egg|soy|tree_nut,egg|soy|tree_nut,True,True
+6111037000506,Margarine patissière,soy,soy,,,True,True
+3760336830357,Pâte à tartiner praliné,tree_nut,tree_nut,,,True,True
+3155251205319,Tartine & Cuisson 100% végétal,,,,,True,True
+3017760030106,Palmito L'original,egg|wheat_gluten,wheat_gluten,egg|milk|tree_nut,egg|milk|tree_nut,False,True
+3760049790818,4 Baguettes viennoises 340g,egg|milk|wheat_gluten,egg|milk|wheat_gluten,,,True,True
+3270190025337,Lait demi-écrémé Stérilisé UHT,milk,,,,False,True
+3387390019995,NESTLE LION Céréales 400g,wheat_gluten,wheat_gluten,milk|tree_nut,milk|tree_nut,True,True
+7311070032574,"Golden Wheat Swedish Krisprolls, 7.9oz (225g)",wheat_gluten,wheat_gluten,,,True,True
+5410126716016,Biscoff,soy|wheat_gluten,soy|wheat_gluten,,,True,True
+6111032007661,قلوتي,milk,,tree_nut|wheat_gluten,,False,False
+6111032004448,Danup fraise,milk,milk|tree_nut,tree_nut|wheat_gluten,,False,False
+8445291061132,HEPAR,,,,,True,True
+8076802085981,Fusilli 2x,wheat_gluten,wheat_gluten,soy,,True,False
+6111203001467,margarine la prairie 225g,soy,soy,,,True,True
+3019081241216,Filets de maquereaux vin blanc & aromates,fish,fish,egg|milk|soy,,True,False
+8720182557452,Moutarde à l’ancienne,,,,,True,True
+3760324300145,Suprêmes panés végétaux et gourmands,wheat_gluten,wheat_gluten,milk|sesame|soy|wheat_gluten,milk|sesame|soy|wheat_gluten,True,True
+8722700113348,Amora,,,,,True,True
+20022471,Čokoláda na vaření,,,milk|peanut|soy|tree_nut|wheat_gluten,,True,False
+6111252421971,Aquafina,,,,,True,True
+3502110009449,Orangensaft,,,,,True,True
+3124480191182,PET 2L OASIS TROPICAL,,,,,True,True
+3176571983008,Viva lait 1/2 écrémé,milk,milk,,,True,True
+3161711000622,Caprice des Dieux,milk,milk,milk,,True,False
+3184670001080,faisselle,milk,,,,False,True
+3600900021050,Tipiak Graine Parfumé,wheat_gluten,wheat_gluten,egg|fish|milk|peanut|sesame|shellfish|soy|tree_nut,,True,False
+3451790439506,Elle & vire creme fraiche epaisse legere 12%mg poche 328g,milk,milk,,,True,True
+3497911105127,Saveur Sel & Vinaigre,milk|wheat_gluten,wheat_gluten,milk,,False,False
+6111259347021,,milk|soy,milk|soy,,,True,True
+6111128000026,Sidi Harazem,,,,,True,True
+6111032002918,Yawmi velouté pistache,tree_nut|wheat_gluten,milk|tree_nut,tree_nut|wheat_gluten,,False,False
+6111032007128,Jibi,,,,,True,True
+3029330801900,Pain Burger Géant,milk|sesame|wheat_gluten,sesame|wheat_gluten,,,False,True
+8480000095367,"Muesli con quinoa, chía y chocolate negro",tree_nut|wheat_gluten,wheat_gluten,milk|peanut|sesame|soy|tree_nut,milk|peanut|sesame|soy|tree_nut|wheat_gluten,False,False
+3229820787985,Crème de coco légère,,,soy|tree_nut|wheat_gluten,,True,False
+3664346305983,Poulain,,,milk|soy,,True,False
+3380380046940,Tartines Craquantes Sarrasin,,,,,True,True
+20283360,Fiocchi di avena integrali,wheat_gluten,,wheat_gluten,,False,False
+6111099000582,Lio huile de table,,soy,soy,,False,False
+8434165437418,Cuetara Digesta Light 200G Marie Cookies,milk|wheat_gluten,milk|wheat_gluten,egg|soy,egg|milk|soy|wheat_gluten,True,False
+3023470020016,Roudor,egg|milk|wheat_gluten,egg|milk|wheat_gluten,sesame|soy|tree_nut,,True,False
+7614500010013,Milk Chocolate Almond Nougat,egg|milk|soy|tree_nut,egg|milk|soy|tree_nut,,,True,True
+3033491485756,Yaourt à boire fraise framboise,milk,,wheat_gluten,,False,False
+4056489367260,Mon p'tit plaisir,milk,milk,,,True,True
+3033492056603,SKYR,milk,milk,,,True,True
+8715700017006,Tomato Ketchup,,,,,True,True
+3228857000913,Pain de mie nature,milk|sesame|wheat_gluten,wheat_gluten,egg|milk|sesame|soy|tree_nut,,False,False
+7613039490266,Nesquik,soy,soy,,,True,True
+3236240070405,Fromage à tartiner Echalote et Ciboulette fouetté MADAME LOIK - 150g,milk,milk,fish|tree_nut,fish|milk|tree_nut,True,False
+5050083296079,Cereales special K original,wheat_gluten,wheat_gluten,milk,,True,False
+5449000036957,Poms 2,,,,,True,True
+8001665726580,Ricotta & Épinards,egg|milk|wheat_gluten,egg|milk|wheat_gluten,,,True,True
+3175681216273,Galettes boulghour parmesan & tomates confites,milk|wheat_gluten,milk|wheat_gluten,egg|sesame|soy|tree_nut,,True,False
+3073781131963,Kiri® Crème 24 portions,milk,milk,,,True,True
+6111021090100,Double concentre de tomate,,,,,True,True
+3154230802259,HERTA Lardons nature conservation sans nitrite - 2x75g,,,,,True,True
+3240931547213,Gnocchi aux pommes de terre,wheat_gluten,wheat_gluten,egg|milk|soy,,True,False
+6191509900671,EXTRA VIRGIN OLIVE OIL,,,,,True,True
+7622210444127,Melloeux Fruit Rouges,milk|soy|wheat_gluten,soy|wheat_gluten,milk,,False,False
+3560070308316,Biscottes Complètes bio,wheat_gluten,wheat_gluten,egg|milk|sesame|tree_nut,egg|milk|sesame|tree_nut,True,True
+3600900011037,Quinoa Gourmand,wheat_gluten,wheat_gluten,egg|milk|soy,,True,False
+5410221305085,Schweppes Agrum',,,,,True,True
+3023290030547,Skyr framboise,milk,milk,tree_nut|wheat_gluten,,True,False
+8008698011065,MAESTRO VITAL - Pain aux graines tranché,,,soy,,True,False
+3608580823490,Myrtille Intense,,,,,True,True
+6111184004716,Star moutarde,soy,soy,tree_nut,,True,False
+6111246910023,Pain de mie complet,milk|wheat_gluten,wheat_gluten,milk|sesame|wheat_gluten,milk|sesame,False,False
+6111249960964,Capri choco,milk|soy|tree_nut|wheat_gluten,soy|tree_nut|wheat_gluten,,egg|peanut,False,False
+6111031005095,Tango,soy|wheat_gluten,soy|wheat_gluten,,,True,True
+3760381260819,Mousline Nature,,,milk,milk,True,True
+4056489682677,Pecan Nuts,tree_nut,tree_nut,peanut|tree_nut,,True,False
+6111035503153,Vitalya,,,,,True,True
+8711200584383,Vinaigrette Légère Huile de Sésame & Sauce Soja Graines de Sésame Torréfiées 36 cl,sesame|soy|wheat_gluten,sesame|soy|wheat_gluten,,,True,True
+3292070001576,Houmous sésame,sesame,sesame,egg|fish|milk|shellfish|soy|wheat_gluten,egg|fish|milk|shellfish|soy|wheat_gluten,True,True
+3307130803004,Ratatouille à la provençale,,,,,True,True
+3019081241193,Filets maquereaux moutarde à l'ancienne,fish,fish,egg|milk,egg|milk,True,True
+6111242104617,crème cuisson,,milk,,,False,True
+3154230812616,HERTA Trésor de Grand Mère pâte feuilletée pur beurre 280g,milk|wheat_gluten,milk|wheat_gluten,soy,soy,True,True
+4008400260921,Kinder Country,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+3392460511200,"LU - Grany Chocolate 5 Cereals Bar x6, 125g (4.5oz)",soy|tree_nut|wheat_gluten,soy|tree_nut|wheat_gluten,milk|tree_nut,,True,False
+3760091726650,Haïti Grand cru Cap haïtien 72% cacaoté et fruité,,,milk|sesame|tree_nut|wheat_gluten,,True,False
+3095758049019,Le Torchon - Cuit à l'Etouffée  - 25% de sel*,,,,,True,True
+6191509900855,Organic Extra Virgin Olive Oil,,,,,True,True
+8721800402055,Leerdammer original 8 tranches 200g,milk,milk,,,True,True
+6221007032540,Cerelac,,milk|wheat_gluten,,,False,True
+6111032002963,asiri fraise,,milk,,,False,True
+3428273980046,Lait 100 % français Matin Léger® Demi-Écrémé,milk,milk,,,True,True
+3229820791074,Biscuits fourrés aux framboises,egg|wheat_gluten,egg|wheat_gluten,milk|tree_nut,,True,False
+8710482532303,Trigo Espelta Crackers,wheat_gluten,wheat_gluten,sesame|wheat_gluten,,True,False
+7622210713803,Petit Déjeuner Chocolat,milk|soy|wheat_gluten,milk|soy|wheat_gluten,sesame|tree_nut,,True,False
+8410076481597,Tortilla Nachos Original,,,milk|sesame|soy,,True,False
+8480000609632,Queso fresco cottage,milk,milk,,,True,True
+6111099000605,Lio produit,,soy,,,False,True
+4056489141877,Huile d'olive vierge extra,,,,,True,True
+3155250349793,La crème des chefs ferme et onctueuse gastronomique,milk,milk,,,True,True
+7622300694678,Cracotte fibres,milk|wheat_gluten,milk|wheat_gluten,,,True,True
+37600106412,Beurre de Cacahuètes Extra-Crunchy,peanut,peanut,,,True,True
+8005110517006,Mutti Pastasaus met basilicum,,,,,True,True
+3174061039105,Confiture de fraises allégée en sucres,,,,,True,True
+6111266962774,Leben,milk,milk,,,True,True
+3159470005071,Céréales Extra Pépites Chocolat Noisettes,milk|soy|tree_nut|wheat_gluten,milk|soy|tree_nut|wheat_gluten,tree_nut,,True,False
+8076809529419,Pâtes spaghetti au blé complet integral 500g,wheat_gluten,wheat_gluten,soy,soy,True,True
+4056489424918,Beurre de cacahuètes crunchy,peanut,milk|peanut,soy,,False,False
+6111018903185,Nescafe classic,,,,,True,True
+6111024001530,Huile Lesieur 3 Graines,soy,soy,tree_nut,,True,False
+3256228686558,Céréales Muesli croustillant au chocolat noir 500G,wheat_gluten,wheat_gluten,milk|soy|tree_nut,milk|soy|tree_nut|wheat_gluten,True,False
+8480000057105,Pechuga de Pavo Cocida 92%,,,,,True,True
+4005514170498,Pâté mexicana,,,,,True,True
+5050083706622,Trésor goût Chocolat Noisettes,milk|tree_nut|wheat_gluten,milk|tree_nut|wheat_gluten,tree_nut,,True,False
+3270160503070,Oignons rouges émincés surgelés,,,,,True,True
+8436019091142,Bebida de Soja UHT,soy,,tree_nut,,False,False
+71464240608,Green goodness,,wheat_gluten,,,False,True
+20169329,Nut Clusters Wheat flakes with mixed nut clusters,tree_nut|wheat_gluten,tree_nut|wheat_gluten,milk|peanut|tree_nut,,True,False
+5050665024519,Oven Roasted Garlic & Onion Pasta Sauce,,,egg|fish|milk|peanut|sesame|shellfish|soy|tree_nut,,True,False
+8722700472575,Amora Sauce Salade & Sandwich Ceasar 1L,egg|fish|milk,egg|fish|milk,sesame,sesame,True,True
+5601009974337,Iogurte Morango Banana,milk,milk,,,True,True
+3256220513173,Sirop de thé pêche bidon de 75cl,,,,,True,True
+52833225082,"Joseph farms, mild cheddar cheese",,milk,,,False,True
+78742054797,"Great value, premium pork sausage, hot",,,,,True,True
+78742102047,Mild Cheddar,milk,milk,,,True,True
+78742121048,Buttermilk Jumbo Biscuits,milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+78742431994,Vermicelli,wheat_gluten,wheat_gluten,,,True,True
+84253232401,Rice Drink,,,,,True,True
+606541920380,Multi-Grain Bread,milk|sesame|soy|wheat_gluten,milk|sesame|soy|wheat_gluten,,,True,True
+781486100025,Whole Wheat Pocket Pita Bread,wheat_gluten,wheat_gluten,,,True,True
+782758712021,Sunflower beverage,,,,,True,True
+854262003008,Organic Worlds Best Veggie Burger,,,,,True,True
+41498187415,Fudge Pops,milk,milk,,,True,True
+41498199036,Traditional Steel Cut Oats,,,,,True,True
+41498239541,"Brown Rice Crackers, Wasabi",sesame,sesame,,,True,True
+41498284916,Kids Fruit Snacks,,,,,True,True
+41498293284,Gelato,milk|tree_nut,milk|tree_nut,,,True,True
+7804659650035,NotMayo Original,,,,,True,True
+5425021580426,Sauce Tartare,,,,,True,True
+27096765,Lait crème,milk|soy,milk|soy,peanut|tree_nut,,True,False
+8001665704182,Grand ravioli cepes fromage et champignons,egg|milk|wheat_gluten,egg|fish|milk|shellfish|tree_nut|wheat_gluten,fish|shellfish|tree_nut,,False,False
+206024059561,Magret de canard,,,,,True,True
+3760030140295,Ravioli à la viande,egg,egg|wheat_gluten,,,False,True
+187251,CHOCOLATEY CATS COOKIES For People,soy|wheat_gluten,soy|wheat_gluten,peanut|tree_nut,peanut|tree_nut,True,True
+5410358464778,Haribo Chamallows Hearts,,,milk|soy,,True,False
+5411788047494,Tamari Hot Chili Et Lemon,soy,soy,,,True,True
+5450068095961,Andalouse de Luxembourg piquante,egg|soy,egg|soy,,,True,True
+3250392332105,Thon à la catalane - 2 x 135g,fish,fish,egg|milk|wheat_gluten,,True,False
+3466090030308,Tapenade noire facon des bergers Varois,fish,fish|milk,,,False,True
+34000214655,Dipped pretzels,milk,milk|peanut|soy|wheat_gluten,,,False,True
+3256226408657,Gambas crevettes tropicales,shellfish,shellfish,,,True,True
+25000044984,Simply Lemonade,,,,,True,True
+8717677865758,Seaweed salad,sesame|soy,sesame|soy,,,True,True
+9002355004345,Tiroler Früchteküche Albicocca,,,,,True,True
+20889463,Granulated Sugar,,,,,True,True
+5900020023025,Cini Minis Riegel,milk|wheat_gluten,,tree_nut,,False,False
+5000169107829,English extra mature grated cheddar,milk,milk,,,True,True
+4083637,Lait concentré non sucré entier,milk,milk,,,True,True
+2625078016210,Parmentier de saumon et choux fleurs,fish|milk,,,,False,True
+3259330020135,Tofu en flan,,soy,,,False,True
+8411945200226,Filetes de caballa del sur,fish,fish,,,True,True
+4006894518207,12 Köstlichkeiten Premium,egg|milk|peanut|soy|tree_nut|wheat_gluten,milk|peanut|soy|tree_nut|wheat_gluten,sesame|tree_nut,,False,False
+5708636225266,Ginger beetroot shot,,,,,True,True
+8480024736321,navajas,,,,,True,True
+9313820016504,Pepsi Max 1.25,,,,,True,True
+8480024819697,Bombon blanco,milk|soy,milk|soy,egg|peanut|tree_nut|wheat_gluten,egg|peanut|wheat_gluten,True,False
+8437015740331,Suc de pera,,,,,True,True
+8431876158243,Hojaldradas mini,peanut|sesame|tree_nut|wheat_gluten,wheat_gluten,peanut|sesame|tree_nut,,False,False
+64144040902,Pam grilling oil spray,,,,,True,True
+8421691506190,Vinagre de vino al aroma de Finas HIERBAS,,,,,True,True
+855538004040,Frozen cream dessert,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,,,True,True
+855673004028,Salami,milk,milk,,,True,True
+855732004006,Almonds,tree_nut,tree_nut,,,True,True
+857302003037,Pure energy drink,,,,,True,True
+832112003132,Mustang island macadamia sunrise,peanut|tree_nut,peanut|tree_nut,,,True,True
+24732282961,Black tiger shrimp,shellfish,shellfish,,,True,True
+866150000334,Cauliflower pizza crust,egg|milk,egg|milk,,,True,True
+811240000152,Pie crust,wheat_gluten,wheat_gluten,,,True,True
+23200000311,Light brown sugar,,,,,True,True
+744473474219,"Coconut milk non-dairy frozen dessert, coconut milk",,milk,,,False,True
+43832551036,7 Sprouted Whole Grains Garden Wraps Vibrant Beet,wheat_gluten,wheat_gluten,,,True,True
+792338818296,"Extra meaty baby back pork ribs with sweet & smoky kansas city style bbq sauce, sweet & smoky kansas city style bbq",,,,,True,True
+72058947033,Polish dill pickles,,,,,True,True
+4337185452536,Cremeseife,,,,,True,True
+7622210994356,Zombie edition,milk,milk,,,True,True
+3585810079028,Infusion Rooibos Vanille,,,,,True,True
+7613033629303,owoce jabłka z truskawkami i jagodami,,,,,True,True
+623682103182,naan,milk,milk|soy|wheat_gluten,,sesame|soy,False,False
+704982301055,Bug Juice: Berry Raspberry,,,,,True,True
+265324,Edamame Beans,soy,soy,,,True,True
+3661344653573,Yaourt Crémeuh Café,milk,milk,,,True,True
+9419177000002,russian jack,,milk,,,False,True
+5060719923057,montezumas,,,milk|peanut|tree_nut,milk|peanut|tree_nut,True,True
+5900552071563,Frugo niebieskie,,,,,True,True
+5903111826260,Pierogi,egg|milk|wheat_gluten,,,,False,True
+8595564517665,Musli forest fruit crunchy,wheat_gluten,wheat_gluten,milk|peanut|sesame|soy|tree_nut,,True,False
+41570144107,Honey Roasted Almonds,tree_nut,tree_nut,,,True,True
+2486777044085,SARCIVE DE POULET,soy,soy,egg|milk|peanut|tree_nut|wheat_gluten,egg|milk|peanut|wheat_gluten,True,False
+5080068776654,Maple and Pecan,egg|milk|tree_nut|wheat_gluten,egg|milk|tree_nut|wheat_gluten,,,True,True
+29161690,100% Almond Butter,tree_nut,tree_nut,,,True,True
+20303013,,,,,,True,True
+5017849001322,Iced diamonds,egg|milk|soy|wheat_gluten,egg|milk|soy|wheat_gluten,,,True,True
+8480017245670,Cóctel de encurtidos,,,milk|shellfish,fish|milk|shellfish,True,False
+6413467524905,Runebergin torttu,egg|tree_nut|wheat_gluten,egg|wheat_gluten,sesame|tree_nut,,False,False
+5060195908975,Brioche buns,egg,egg,,,True,True
+75196001094,Whole Milk,milk,milk,,,True,True
+5057753933685,mackeral zesty sea salt and pepper,fish,fish,,,True,True
+3800230300720,,peanut|wheat_gluten,,tree_nut,,False,False
+8886467100109,pringles saucy bbq 134g,,,,,True,True
+2600432011025,Papaye déshydratée,,,,,True,True
+5055159503082,Mango chutney,peanut|sesame,peanut|sesame|tree_nut,,,False,True
+8480017244338,Chocoaros chocolate de leite,,milk|soy|wheat_gluten,,,False,True
+5201037508858,Delta amygdalo,,milk|tree_nut,,,False,True
+4056489647744,Crumpets,wheat_gluten,wheat_gluten,,,True,True
+4750007790355,Vaflių ritinėliai su kokosų įdaru,egg|milk|wheat_gluten,egg|milk|wheat_gluten,soy|tree_nut,peanut|soy|tree_nut,True,False
+5000295157873,Utterly Butterly,milk,milk,,,True,True
+4063500001669,Schwarzwaldin kinkku,,,,,True,True
+5000169040850,Onions pickled in balsamic vine INGREDIENTS: onion,,,,,True,True
+3256229523999,"Biscuits Sablés bio aux céréales nappés de chocolat noir , paquet de 200g",milk|wheat_gluten,wheat_gluten,egg|sesame|soy|tree_nut|wheat_gluten,egg|sesame|soy|tree_nut|wheat_gluten,False,True
+4063367376993,,,,,,True,True
+749826000008,POPPED CRISPS Sour Cream & Onion,milk,milk,,,True,True
+8594038911138,perník s ovocnou náplní,,wheat_gluten,,,False,True
+4103550021214,Dt. Kaviar,,,,,True,True
+923523001432,SOURDOUGH,milk|soy|wheat_gluten,wheat_gluten,,,False,True
+7680522540432,,,,,,True,True
+850044957002,Instant Lentils,,,,,True,True
+8855044052285,Basil Seed Drink with Pomegranate Flavour,,,,,True,True
+3277250019022,Brandade de morue,fish|milk,fish|milk,,,True,True
+4779028645758,Estrela grietinės ir svogūnų  180,milk,,,,False,True
+8720174121128,Walnoten gepeld,tree_nut,tree_nut,,,True,True
+7023539702873,Helsprø Mexicana Sticks,fish|milk,fish|milk,,soy,True,False
+13800810168,Tex-Mex Rice & Black Beans,milk,milk,,,True,True
+850026029062,,soy,milk|soy,,,False,True
+7040514506561,Sjalottløk,,,,,True,True
+99999999,Fischdose - Kleinzeug ohne Etikett,,wheat_gluten,,soy,False,False
+7044610874937,"Ringnes Vørterøl 0,33l boks",,,,,True,True
+7315120022485,Kafferep,egg|wheat_gluten,egg|milk|wheat_gluten,milk|tree_nut,milk|tree_nut,False,True
+8906112995413,5 Super Foods Bread,peanut|sesame|soy|wheat_gluten,peanut|sesame|soy|wheat_gluten,,,True,True
+7441002448910,salsa de Tomate Richly,,,,,True,True
+331657650545092442526,"Ruby Tuesday, Classic BBQ Triple Play",,,,,True,True
+57000012861,Tomato Ketchup,,,,,True,True
+811588030200,Red Maca Root Powder,,,,,True,True
+25317385534,ROTISSERIE SEASONED TURKEY BREAST,,,,,True,True
+42800473554,"Totino'S, Buffalo Ranch Ranch Blasted Buffalo Style Chicken Rolls",milk|soy|wheat_gluten,milk|soy|wheat_gluten,,,True,True
+8718452777242,Fijngesneden IJsbergsla,,,,,True,True
+3017800510872,Poivrons jaunes,,,,,True,True
+5412514938253,,wheat_gluten,wheat_gluten,,,True,True
+10510377,Kräuterbutter,milk,milk,,,True,True
+22200940207,حق ازغان,,,,,True,True
+7340191173491,Choco Drink,,,milk,milk,True,True
+8719587145548,AH Omega 3 visolie softgels 1000mg,fish,,,,False,True
+3560071523541,Sirop de Violette de Provence,,,,,True,True
+850082111220,Sparkling Protein Drink,milk,milk,,,True,True
+3256220207935,Bière GUESTY saveur pêche 0° 6x27.5cl,wheat_gluten,wheat_gluten,,,True,True
+8697435860235,,egg,,,,False,True
+20019907,Succo di limone,,,,,True,True
+6111250470254,Classic,,,,,True,True
+5061013962506,predator,,,,,True,True
+4002359006715,Lait de coco,,,,,True,True
+3092718637064,Grenadine,,,,,True,True
+6111242106277,Jutos cocktail,,,,,True,True
+5449000280206,Schweppes tonic 1l,,,,,True,True
+3068320080000,Eau Evian - 1L,,,,,True,True
+8410261643014,Simon life,,,,,True,True
+7613035833272,Perrier,,,,,True,True
+8024884500403,COURMAYEUR,,,,,True,True
+3033491993138,Kéfir Doux Nature,milk,milk,sesame|wheat_gluten,,True,False
+3456300002508,jus de citron,,,,,True,True
+6111242109544,,wheat_gluten,milk|wheat_gluten,,,False,True
+5411188128311,Coco Sans Sucres,,milk,tree_nut,,False,False
+9002490100070,Red Bull,,,,,True,True
+3468570116601,ROZANA,,,,,True,True
+6130234001147,Lala kheddidja,,,,,True,True
+6111242106666,Jutos,,,,,True,True
+3229820797922,Coco sans sucres,,,,,True,True
+8480000239266,Bebida de almendra 0% azúcares,tree_nut,,soy|tree_nut,,False,False
+3229820129112,Amande intense,tree_nut,tree_nut,tree_nut,tree_nut,True,True
+3560071014094,Amande Sans sucres,tree_nut,,,,False,True
+8024884600301,MONT BLANC Eau Minérale Naturelle 1.50 L,,,,,True,True
+5411188115496,Soja Milch,soy,soy,,,True,True
+5449000008046,Coca-Cola slim 25cl,,,tree_nut,,True,False
+6111128000477,Eau minérale,,,,,True,True
+8997212610412,Organic Coconut Milk,,,,,True,True
+7613035866386,CONTREX eau minérale naturelle,,,,,True,True
+20920210,Chicorée Café,,,,,True,True
+5000112611762,"coca cola zero 1,25L",,,,,True,True
+6111032009443,Activia ananas fraise,milk,milk,,,True,True
+3155253020644,Kéfir,milk,milk,,,True,True
+8902080000227,Sting Energy,,,,,True,True
+8019428000105,Boisson avoine naturel,wheat_gluten,,soy,,False,False
+5000112611878,coca cola zero,,,,,True,True
+3564707117203,Lait Amande calcium,tree_nut,tree_nut,,,True,True
+8858135002879,Lait de coco,,,,,True,True
+90162602,Red Bull Energy Drink,,,,,True,True
+6111243860383,ice POMME 1.5l,,,,,True,True
+54022263,cola,,,,,True,True
+8402001014581,Bebida de avena 0% azúcar,wheat_gluten,wheat_gluten,soy|tree_nut|wheat_gluten,,True,False
+3124480200433,Orangina 1.5L,,,,,True,True
+3270190128717,SOJA Sans sucres ajoutés,soy,,,,False,True
+3229820789002,Amande vanille,tree_nut,tree_nut,tree_nut,tree_nut,True,True
+3664320011510,L\'originale,,,,,True,True
+9002490205973,25 cl Red Bull - Energy Drink,,,,,True,True
+6111032009146,Actimel,milk,milk,,,True,True
+8002270116544,San Pellegrino,,,,,True,True
+8435185101112,Orangina et sa Pulpe !,,,,,True,True
+8445290157348,Nesquik,soy,,,,False,True
+6111128000217,Ain Saiss,,,,,True,True
+3168930171058,Pêche Ice Tea,,,,,True,True
+3092718637927,Sirop Grenadine Zéro,,,,,True,True
+3033710071005,"Chicorée & Café, RICORÉ® Au Lait, Boîte de 400g",milk,milk,milk,,True,False
+3057640508813,Infusion touche d'Hibiscus,,,,,True,True
+8720608632633,lipton yellow label tea x25,,,,,True,True
+7394376616228,The original oat-ly barista edition oat drink,wheat_gluten,,,,False,True
+5449000318947,Schweppes citron 45cl,,,,,True,True
+3564707105675,Boisson avoine,wheat_gluten,,,,False,True
+3250392243517,Boisson avoine BIO 1l,wheat_gluten,,,,False,True
+3270190113508,Eau de source de montagne d'auvergne,,,,,True,True
+3502110009357,Pepsi Max,,,,,True,True
+3124480167170,Citronnade,,,,,True,True
+8480000156624,Kéfir natural,milk,milk,,,True,True
+1200101017825,PET 1L OCEAN SPRAY CLASS,,,,,True,True
+6130758000022,Guedila,,,,,True,True
+90375323,Coca cola zero,,,,,True,True
+3256223377406,Boisson avoine - 1L,wheat_gluten,,,,False,True
+6111242926035,frut,,,,,True,True
+4025500287955,Kalinka Kefir Fettarm Mild Pur,milk,milk,,,True,True
+7613034579102,PERRIER eau minérale naturelle gazeuse,,,,,True,True
+5411188127697,Barista Hafer,wheat_gluten,,,,False,True
+5449000025272,Haway tropical,,,,,True,True
+7394376616501,Haver barista edition,wheat_gluten,,,,False,True
+50112784,Lemon,,,,,True,True
+6111032009153,Actimel,milk,milk,,,True,True
+4056489406679,High Protein Drink Cacao,milk,milk,,,True,True
+5449000036919,HAWAI ANANAS,,,,,True,True
+7394376615979,Lait d'Avoine,,,,,True,True
+3502110006790,"Tropicana 100% oranges pressées sans pulpe format familial 1,5 L",,,,,True,True
+5449000133335,Coca-Cola Zero,,,,,True,True
+5411188130055,"Alpro Sojadrink, Schokoladen-Geschmack, Protein 1L",soy,soy|wheat_gluten,,,False,True
+5411188115533,soya Vanille,soy,soy|wheat_gluten,,,False,True
+3124480186850,INDIAN TONIC,,,,,True,True
+6111242106673,Jutos,,,,,True,True
+3664346306126,Super Poulain,soy,soy,milk,milk,True,True
+3664346326872,Poulain Grand Arôme intense 70% de cacao,,,milk|soy,milk|soy,True,True
+6111032006985,Danao Pèche-Abricot,milk,milk,,,True,True
+6111252422169,Sting - Berry Blast,,,,,True,True
+6111035002113,Oulmes virgin mojito,,,,,True,True
+6111248360291,Eau de table purifiée,,,,,True,True
+8423352861402,Bebida de Avena,,,soy|tree_nut,,True,False
+3033710074518,,,,,,True,True
+3448781100002,Wattwiller,,,,,True,True
+8715035110809,Soy Sauce,milk|soy|wheat_gluten,soy|wheat_gluten,,,False,True
+3229820793764,Boisson Amande,tree_nut,tree_nut,tree_nut,tree_nut,True,True
+3229820784946,Amande chocolat,tree_nut,tree_nut,tree_nut,,True,False
+6111126005696,Proteines Mangue,milk,milk,,,True,True
+3564700371107,Eau de source de montagne Laqueuille,,,,,True,True
+7613034227775,"Chicorée & Café, RICORÉ® L'Original, Recharge de 180g",,,,,True,True
+6111126001605,fawakih mangue 900ml,milk,milk,,,True,True
+7613034916891,Nesquik Original,soy,soy,,,True,True
+3760021251184,SAINT ANTONIN Eau Minérale Naturelle Naturelle 1 L,,,,,True,True
+1200101017955,Jus de cranberry,,,,,True,True
+6111179003847,Nectar Orange,,,tree_nut,,True,False
+5411188122661,"Alpro Mandeldrink Weiß Ungesüßt, Ungeröstet 1 LT",tree_nut,tree_nut,tree_nut,peanut,True,False
+3273220080108,soja nature sans sucre,soy,soy,,,True,True
+3564707095723,Boisson au soja nature bio,soy,soy,,,True,True
+6111248360376,Eau mineral 33cl aman,,,,,True,True
+3225355490925,BLE 70CL DELICES AGRUMES PULCO,,,,,True,True
+3100881040809,ST YORRE Eau Minérale Naturelle Naturellement Gazeuse 1.15 L,,,,,True,True
+5449000203823,Pulpy pècne,,,,,True,True
+3229820804118,Noisette sans sucres,tree_nut,tree_nut,,,True,True
+4000177158319,Multivitamin Capri-Sun,,,,,True,True
+3229820793689,Soja vanille,soy,soy,tree_nut|wheat_gluten,,True,False
+3033491485763,Hipro saveur vanille-cookie,milk,milk,wheat_gluten,,True,False
+6111032009412,Danone max red fruit,milk,milk|soy,,,False,True
+6111126005702,Chergui protéine vanille,milk,milk,,,True,True
+6111242926806,FRUT MAX,,,,,True,True
+5038862130929,INFATIGABLEU,,,,,True,True
+20656935,Pétillante saveur citron,,,,,True,True
+6111126001582,Lait fermenté,milk,milk,,,True,True
+6111126000424,Raib banan sghir,milk,milk,milk|tree_nut,,True,False
+7613036012249,NESQUIK Poudre Cacaotée boîte 500g,soy,soy,,,True,True
+3760020500559,Coconut milk,,,,,True,True
+6111252420059,Pepsi 2L,,,,,True,True
+3080216043807,Tourtel Twist,wheat_gluten,wheat_gluten,,,True,True
+5449000052926,Fanta orange 1.5l,,,,,True,True
+3168930170570,Ice tea,,,,,True,True
+4056489346364,Coconut And Rice Milk,,milk,tree_nut,,False,False
+5060108450386,FEVER-TREE Ginger Beer,,,,,True,True
+5449000311856,,,,,,True,True
+3329770075313,Yop fraise,milk,milk,,,True,True
