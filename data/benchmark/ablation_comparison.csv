@@ -1,0 +1,6 @@
+method,precision,recall,f1,exact_set_agreement
+Exact keyword,0.6679,0.8242,0.7379,0.6611
+Normalized keyword,0.6665,0.8358,0.7416,0.6635
+Normalized + negation,0.6673,0.8358,0.7421,0.6651
+Normalized + context,0.6826,0.8296,0.749,0.6904
+Full proposed matcher,0.9369,0.794,0.8595,0.7997
