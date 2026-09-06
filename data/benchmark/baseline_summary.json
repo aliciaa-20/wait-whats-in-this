@@ -1,0 +1,194 @@
+{
+  "benchmark": "Allergen matching baseline comparison",
+  "dataset": "/Users/aliciapereira/Downloads/VS Code/ml-project/wait-whats-in-this/data/cleaned_products.csv",
+  "products_evaluated": 1263,
+  "methods": {
+    "Exact keyword": {
+      "precision": 0.6953,
+      "recall": 0.6948,
+      "f1": 0.6951,
+      "exact_set_agreement": 0.6152,
+      "per_allergen": {
+        "egg": {
+          "support": 80,
+          "precision": 0.5323,
+          "recall": 0.4125,
+          "f1": 0.4648
+        },
+        "fish": {
+          "support": 24,
+          "precision": 0.7143,
+          "recall": 0.8333,
+          "f1": 0.7692
+        },
+        "milk": {
+          "support": 386,
+          "precision": 0.6757,
+          "recall": 0.842,
+          "f1": 0.7497
+        },
+        "peanut": {
+          "support": 39,
+          "precision": 0.561,
+          "recall": 0.5897,
+          "f1": 0.575
+        },
+        "sesame": {
+          "support": 31,
+          "precision": 0.3846,
+          "recall": 0.1613,
+          "f1": 0.2273
+        },
+        "shellfish": {
+          "support": 4,
+          "precision": 0.3333,
+          "recall": 0.5,
+          "f1": 0.4
+        },
+        "soy": {
+          "support": 210,
+          "precision": 0.613,
+          "recall": 0.8524,
+          "f1": 0.7131
+        },
+        "tree_nut": {
+          "support": 132,
+          "precision": 0.7438,
+          "recall": 0.6818,
+          "f1": 0.7115
+        },
+        "wheat_gluten": {
+          "support": 385,
+          "precision": 0.8943,
+          "recall": 0.5714,
+          "f1": 0.6973
+        }
+      }
+    },
+    "Normalized keyword": {
+      "precision": 0.6665,
+      "recall": 0.8358,
+      "f1": 0.7416,
+      "exact_set_agreement": 0.6635,
+      "per_allergen": {
+        "egg": {
+          "support": 80,
+          "precision": 0.5965,
+          "recall": 0.85,
+          "f1": 0.701
+        },
+        "fish": {
+          "support": 24,
+          "precision": 0.7143,
+          "recall": 0.8333,
+          "f1": 0.7692
+        },
+        "milk": {
+          "support": 386,
+          "precision": 0.6776,
+          "recall": 0.8549,
+          "f1": 0.756
+        },
+        "peanut": {
+          "support": 39,
+          "precision": 0.6111,
+          "recall": 0.8462,
+          "f1": 0.7097
+        },
+        "sesame": {
+          "support": 31,
+          "precision": 0.2989,
+          "recall": 0.8387,
+          "f1": 0.4407
+        },
+        "shellfish": {
+          "support": 4,
+          "precision": 0.3333,
+          "recall": 0.5,
+          "f1": 0.4
+        },
+        "soy": {
+          "support": 210,
+          "precision": 0.613,
+          "recall": 0.8524,
+          "f1": 0.7131
+        },
+        "tree_nut": {
+          "support": 132,
+          "precision": 0.5,
+          "recall": 0.7652,
+          "f1": 0.6048
+        },
+        "wheat_gluten": {
+          "support": 385,
+          "precision": 0.9169,
+          "recall": 0.8312,
+          "f1": 0.8719
+        }
+      }
+    },
+    "Proposed matcher": {
+      "precision": 0.9369,
+      "recall": 0.794,
+      "f1": 0.8595,
+      "exact_set_agreement": 0.7997,
+      "per_allergen": {
+        "egg": {
+          "support": 80,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571
+        },
+        "fish": {
+          "support": 24,
+          "precision": 0.9474,
+          "recall": 0.75,
+          "f1": 0.8372
+        },
+        "milk": {
+          "support": 386,
+          "precision": 0.9003,
+          "recall": 0.7953,
+          "f1": 0.8446
+        },
+        "peanut": {
+          "support": 39,
+          "precision": 0.9706,
+          "recall": 0.8462,
+          "f1": 0.9041
+        },
+        "sesame": {
+          "support": 31,
+          "precision": 1.0,
+          "recall": 0.7742,
+          "f1": 0.8727
+        },
+        "shellfish": {
+          "support": 4,
+          "precision": 0.6667,
+          "recall": 0.5,
+          "f1": 0.5714
+        },
+        "soy": {
+          "support": 210,
+          "precision": 0.9351,
+          "recall": 0.8238,
+          "f1": 0.8759
+        },
+        "tree_nut": {
+          "support": 132,
+          "precision": 0.9029,
+          "recall": 0.7045,
+          "f1": 0.7915
+        },
+        "wheat_gluten": {
+          "support": 385,
+          "precision": 0.9692,
+          "recall": 0.8182,
+          "f1": 0.8873
+        }
+      }
+    }
+  },
+  "note": "Open Food Facts allergen tags are used as reference metadata and should not be treated as absolute ground truth. Final paper evaluation should use a manually verified held-out test set."
+}
