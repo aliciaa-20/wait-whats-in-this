@@ -1,0 +1,40 @@
+{
+  "benchmark": "Text-only allergen matcher error analysis",
+  "source": "/Users/aliciapereira/Downloads/VS Code/ml-project/wait-whats-in-this/data/benchmark/matcher_results.csv",
+  "products_evaluated": 1263,
+  "error_type_counts": {
+    "exact_match": 1010,
+    "false_negative": 126,
+    "partial_match": 94,
+    "false_positive": 31,
+    "mismatch": 2
+  },
+  "error_type_percentages": {
+    "exact_match": 79.97,
+    "false_negative": 9.98,
+    "partial_match": 7.44,
+    "false_positive": 2.45,
+    "mismatch": 0.16
+  },
+  "missed_allergens": {
+    "milk": 79,
+    "wheat_gluten": 70,
+    "tree_nut": 39,
+    "soy": 37,
+    "egg": 20,
+    "sesame": 7,
+    "fish": 6,
+    "peanut": 6,
+    "shellfish": 2
+  },
+  "extra_allergens": {
+    "milk": 34,
+    "soy": 12,
+    "tree_nut": 10,
+    "wheat_gluten": 10,
+    "fish": 1,
+    "peanut": 1,
+    "shellfish": 1
+  },
+  "note": "Differences from Open Food Facts metadata are not necessarily matcher errors because the metadata may be incomplete or incorrect. Manual verification is required before assigning definitive error causes."
+}
