@@ -265,6 +265,7 @@ def get_supported_allergens():
 async def analyze_food_label(
     file: UploadFile = File(...),
     allergies: str = Form("[]"),
+    language: str = Form("en"),
 ):
 
     # --------------------------------------------------------
@@ -365,7 +366,8 @@ async def analyze_food_label(
 
         result = analyze_label(
             temporary_path,
-            DICTIONARY,
+            language=language,
+            dictionary=DICTIONARY,
         )
 
 

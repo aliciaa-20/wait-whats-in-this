@@ -27,11 +27,17 @@ from scripts.allergen_matcher import (
 )
 
 
-def analyze_label(image_path, dictionary=None):
+def analyze_label(image_path, language="en", dictionary=None):
     """
     Run the complete OCR -> allergen analysis pipeline.
 
-    Returns a JSON-serializable dictionary.
+    Parameters:
+        image_path: Path to the food-label image.
+        language: OCR language code, e.g. en, fr, de, es, nl.
+        dictionary: Optional allergen dictionary.
+
+    Returns:
+        JSON-serializable dictionary.
     """
     image_path = Path(image_path)
 
@@ -43,16 +49,23 @@ def analyze_label(image_path, dictionary=None):
     if dictionary is None:
         dictionary = load_dictionary()
 
-    ocr_result = process_image(image_path)
+    ocr_result = process_image(
+        image_path,
+        language=language,
+    )
 
     ingredient_text = ocr_result.get(
         "ingredient_text",
         "",
     )
 
-        # Do not treat an OCR/extraction failure as a safe result.
+    # Do not treat an OCR/extraction failure as a safe result.
     # SAFE is only valid when ingredient text was successfully extracted.
-    extraction_status = "FOUND" if ingredient_text.strip() else "NOT_FOUND"
+    extraction_status = (
+        "FOUND"
+        if ingredient_text.strip()
+        else "NOT_FOUND"
+    )
 
     if extraction_status == "NOT_FOUND":
         allergen_result = {
@@ -75,6 +88,10 @@ def analyze_label(image_path, dictionary=None):
     return {
         "image": str(image_path),
         "ocr": {
+            "language": ocr_result.get(
+                "ocr_language",
+                language,
+            ),
             "raw_text": ocr_result.get(
                 "raw_ocr_text",
                 "",
@@ -100,6 +117,21 @@ def main():
     )
 
     parser.add_argument(
+        "--language",
+        default="en",
+        choices=[
+            "en",
+            "fr",
+            "de",
+            "es",
+            "nl",
+            "it",
+            "pt",
+        ],
+        help="OCR language code (default: en)",
+    )
+
+    parser.add_argument(
         "--json",
         action="store_true",
         help="Print the complete result as JSON",
@@ -108,7 +140,10 @@ def main():
     args = parser.parse_args()
 
     try:
-        result = analyze_label(args.image)
+        result = analyze_label(
+            args.image,
+            language=args.language,
+        )
 
         if args.json:
             print(
@@ -126,6 +161,7 @@ def main():
         print("=" * 70)
 
         print(f"\nImage: {result['image']}")
+        print(f"OCR language: {result['ocr']['language']}")
 
         print(
             f"\nOCR confidence: "
