@@ -1,0 +1,223 @@
+{
+  "evaluation_type": "held-out evaluation against Open Food Facts reference annotations",
+  "dataset": {
+    "products_evaluated": 300,
+    "input_file": "data/research/ground_truth.csv",
+    "language_distribution": {
+      "fr": 197,
+      "en": 60,
+      "ar": 11,
+      "de": 10,
+      "es": 8,
+      "nl": 6,
+      "it": 2,
+      "pt": 2,
+      "ca": 1,
+      "cs": 1,
+      "ro": 1,
+      "nb": 1
+    }
+  },
+  "declared_allergens": {
+    "precision": 0.9257425742574258,
+    "recall": 0.8201754385964912,
+    "f1": 0.8697674418604651,
+    "exact_match": 0.83,
+    "true_positive": 187,
+    "false_positive": 15,
+    "false_negative": 41
+  },
+  "trace_allergens": {
+    "precision": 0.9625,
+    "recall": 0.31048387096774194,
+    "f1": 0.4695121951219512,
+    "exact_match": 0.72,
+    "true_positive": 77,
+    "false_positive": 3,
+    "false_negative": 171
+  },
+  "overall": {
+    "exact_match": 0.5966666666666667,
+    "exact_match_count": 179,
+    "risk_accuracy": 0.7166666666666667,
+    "risk_correct_count": 215
+  },
+  "declared_per_allergen": {
+    "milk": {
+      "precision": 0.925531914893617,
+      "recall": 0.8529411764705882,
+      "f1": 0.8877551020408163,
+      "support": 102,
+      "true_positive": 87,
+      "false_positive": 7,
+      "false_negative": 15
+    },
+    "egg": {
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1": 0.9333333333333333,
+      "support": 8,
+      "true_positive": 7,
+      "false_positive": 0,
+      "false_negative": 1
+    },
+    "peanut": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "support": 3,
+      "true_positive": 3,
+      "false_positive": 1,
+      "false_negative": 0
+    },
+    "tree_nut": {
+      "precision": 0.9375,
+      "recall": 0.7142857142857143,
+      "f1": 0.8108108108108109,
+      "support": 21,
+      "true_positive": 15,
+      "false_positive": 1,
+      "false_negative": 6
+    },
+    "soy": {
+      "precision": 0.8928571428571429,
+      "recall": 0.8620689655172413,
+      "f1": 0.8771929824561403,
+      "support": 29,
+      "true_positive": 25,
+      "false_positive": 3,
+      "false_negative": 4
+    },
+    "wheat_gluten": {
+      "precision": 0.9318181818181818,
+      "recall": 0.7454545454545455,
+      "f1": 0.8282828282828283,
+      "support": 55,
+      "true_positive": 41,
+      "false_positive": 3,
+      "false_negative": 14
+    },
+    "fish": {
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.888888888888889,
+      "support": 5,
+      "true_positive": 4,
+      "false_positive": 0,
+      "false_negative": 1
+    },
+    "shellfish": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "sesame": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5,
+      "true_positive": 5,
+      "false_positive": 0,
+      "false_negative": 0
+    }
+  },
+  "trace_per_allergen": {
+    "milk": {
+      "precision": 0.95,
+      "recall": 0.3584905660377358,
+      "f1": 0.5205479452054794,
+      "support": 53,
+      "true_positive": 19,
+      "false_positive": 1,
+      "false_negative": 34
+    },
+    "egg": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "support": 16,
+      "true_positive": 8,
+      "false_positive": 0,
+      "false_negative": 8
+    },
+    "peanut": {
+      "precision": 1.0,
+      "recall": 0.2727272727272727,
+      "f1": 0.42857142857142855,
+      "support": 11,
+      "true_positive": 3,
+      "false_positive": 0,
+      "false_negative": 8
+    },
+    "tree_nut": {
+      "precision": 1.0,
+      "recall": 0.2463768115942029,
+      "f1": 0.39534883720930236,
+      "support": 69,
+      "true_positive": 17,
+      "false_positive": 0,
+      "false_negative": 52
+    },
+    "soy": {
+      "precision": 0.9411764705882353,
+      "recall": 0.4,
+      "f1": 0.5614035087719298,
+      "support": 40,
+      "true_positive": 16,
+      "false_positive": 1,
+      "false_negative": 24
+    },
+    "wheat_gluten": {
+      "precision": 1.0,
+      "recall": 0.09090909090909091,
+      "f1": 0.16666666666666669,
+      "support": 22,
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 20
+    },
+    "fish": {
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333333333333333,
+      "support": 4,
+      "true_positive": 1,
+      "false_positive": 1,
+      "false_negative": 3
+    },
+    "shellfish": {
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1": 0.33333333333333337,
+      "support": 5,
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 4
+    },
+    "sesame": {
+      "precision": 1.0,
+      "recall": 0.35714285714285715,
+      "f1": 0.5263157894736842,
+      "support": 28,
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 18
+    }
+  },
+  "status_distribution": {
+    "exact_match": 179,
+    "false_negative": 106,
+    "false_positive": 8,
+    "mismatch": 7
+  },
+  "methodology_notes": [
+    "Products were sampled as a held-out set and excluded from the previous 18-image OCR benchmark.",
+    "Reference annotations are Open Food Facts metadata and are not treated as manually verified ground truth.",
+    "The proposed matcher was evaluated without changing its rules based on this held-out set.",
+    "Results should be interpreted in light of the crowdsourced nature of Open Food Facts annotations."
+  ]
+}

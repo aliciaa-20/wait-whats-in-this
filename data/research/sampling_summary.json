@@ -1,0 +1,37 @@
+{
+  "random_seed": 42,
+  "total_cleaned_products": 1612,
+  "products_with_ingredient_text": 1263,
+  "benchmark_products_excluded": 18,
+  "eligible_after_exclusion": 1245,
+  "research_set_size": 300,
+  "target_size": 300,
+  "targets": {
+    "no_allergen": 50,
+    "declared_allergen": 150,
+    "trace_allergen": 50,
+    "multi_allergen": 25,
+    "difficult_context": 25
+  },
+  "languages": {
+    "fr": 197,
+    "en": 60,
+    "ar": 11,
+    "de": 10,
+    "es": 8,
+    "nl": 6,
+    "it": 2,
+    "pt": 2,
+    "ca": 1,
+    "cs": 1,
+    "ro": 1,
+    "nb": 1
+  },
+  "notes": [
+    "This is a held-out research set.",
+    "Products from the existing OCR benchmark were excluded.",
+    "OFF allergen tags are retained as reference metadata.",
+    "Declared and trace allergen fields must be manually verified.",
+    "Matcher predictions must not be consulted during annotation."
+  ]
+}
