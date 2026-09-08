@@ -1,0 +1,42 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @apply bg-stone-50 text-stone-800 font-sans antialiased min-h-screen selection:bg-amber-100 selection:text-amber-900;
+  }
+}
+
+/* Custom Status Badge Utilities */
+.badge-safe {
+  @apply bg-emerald-100 text-emerald-800 border-emerald-300 shadow-sm;
+}
+
+.badge-caution {
+  @apply bg-amber-100 text-amber-900 border-amber-300 shadow-sm;
+}
+
+.badge-avoid {
+  @apply bg-rose-100 text-rose-800 border-rose-300 shadow-sm;
+}
+
+.badge-unknown {
+  @apply bg-stone-200 text-stone-700 border-stone-300 shadow-sm;
+}
+
+/* Shimmer Scanning Line Animation */
+@keyframes scan-line {
+  0% { top: 0%; opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { top: 100%; opacity: 0.8; }
+}
+
+.scanner-beam {
+  position: absolute;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #3b82f6, #60a5fa, #3b82f6, transparent);
+  box-shadow: 0 0 12px #3b82f6;
+  animation: scan-line 2s ease-in-out infinite alternate;
+}
