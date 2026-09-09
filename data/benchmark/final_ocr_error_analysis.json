@@ -1,0 +1,254 @@
+{
+  "samples_analyzed": 39,
+  "extraction_failures": {
+    "count": 10,
+    "codes": [
+      3046920016377,
+      3165433724019,
+      3155251205500,
+      3228857000913,
+      3240931547213,
+      6111035000027,
+      6111035003035,
+      6111251420135,
+      8076809523547,
+      20022471
+    ]
+  },
+  "worst_cer_examples": [
+    {
+      "code": 5411188127697,
+      "target_language": "it",
+      "cer": 1.83125,
+      "wer": 3.7142857142857144,
+      "extraction_found": true
+    },
+    {
+      "code": 6175700,
+      "target_language": "fr",
+      "cer": 1.7894736842105263,
+      "wer": 2.0,
+      "extraction_found": true
+    },
+    {
+      "code": 3336971805038,
+      "target_language": "fr",
+      "cer": 1.0555555555555556,
+      "wer": 1.25,
+      "extraction_found": true
+    },
+    {
+      "code": 6111035000027,
+      "target_language": "fr",
+      "cer": 1.0,
+      "wer": 1.0,
+      "extraction_found": false
+    },
+    {
+      "code": 6111251420135,
+      "target_language": "fr",
+      "cer": 1.0,
+      "wer": 1.0,
+      "extraction_found": false
+    },
+    {
+      "code": 20022471,
+      "target_language": "pt",
+      "cer": 1.0,
+      "wer": 1.0,
+      "extraction_found": false
+    },
+    {
+      "code": 3046920016377,
+      "target_language": "de",
+      "cer": 1.0,
+      "wer": 1.0,
+      "extraction_found": false
+    },
+    {
+      "code": 3228857000913,
+      "target_language": "fr",
+      "cer": 1.0,
+      "wer": 1.0,
+      "extraction_found": false
+    },
+    {
+      "code": 3165433724019,
+      "target_language": "en",
+      "cer": 1.0,
+      "wer": 1.0,
+      "extraction_found": false
+    },
+    {
+      "code": 8076809523547,
+      "target_language": "it",
+      "cer": 1.0,
+      "wer": 1.0,
+      "extraction_found": false
+    }
+  ],
+  "declared_allergens_per_allergen": {
+    "milk": {
+      "tp": 6,
+      "fp": 3,
+      "fn": 6,
+      "support": 12
+    },
+    "egg": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 1,
+      "support": 2
+    },
+    "peanut": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "support": 0
+    },
+    "tree_nut": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 4,
+      "support": 6
+    },
+    "soy": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 2,
+      "support": 8
+    },
+    "wheat_gluten": {
+      "tp": 8,
+      "fp": 1,
+      "fn": 9,
+      "support": 17
+    },
+    "fish": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "support": 0
+    },
+    "shellfish": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "support": 0
+    },
+    "sesame": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "support": 0
+    }
+  },
+  "trace_allergens_per_allergen": {
+    "milk": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 8,
+      "support": 8
+    },
+    "egg": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 3,
+      "support": 4
+    },
+    "peanut": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "support": 3
+    },
+    "tree_nut": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 11,
+      "support": 13
+    },
+    "soy": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "support": 8
+    },
+    "wheat_gluten": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 2,
+      "support": 4
+    },
+    "fish": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "support": 0
+    },
+    "shellfish": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "support": 0
+    },
+    "sesame": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "support": 0
+    }
+  },
+  "ocr_induced_vs_matcher_only": {
+    "declared_fn_caused_by_ocr": 9,
+    "declared_fn_present_on_clean_text": 13,
+    "declared_fp_caused_by_ocr": 3,
+    "trace_fn_caused_by_ocr": 6,
+    "trace_fn_present_on_clean_text": 28,
+    "trace_fp_caused_by_ocr": 2
+  },
+  "per_target_language": {
+    "de": {
+      "samples": 4,
+      "mean_cer": 0.5472,
+      "mean_wer": 0.7753,
+      "extraction_rate": 0.75
+    },
+    "en": {
+      "samples": 5,
+      "mean_cer": 0.5908,
+      "mean_wer": 0.8483,
+      "extraction_rate": 0.8
+    },
+    "es": {
+      "samples": 5,
+      "mean_cer": 0.266,
+      "mean_wer": 0.5505,
+      "extraction_rate": 1.0
+    },
+    "fr": {
+      "samples": 15,
+      "mean_cer": 0.7927,
+      "mean_wer": 1.0081,
+      "extraction_rate": 0.6
+    },
+    "it": {
+      "samples": 3,
+      "mean_cer": 1.2549,
+      "mean_wer": 2.0,
+      "extraction_rate": 0.6667
+    },
+    "nl": {
+      "samples": 4,
+      "mean_cer": 0.4932,
+      "mean_wer": 0.8226,
+      "extraction_rate": 1.0
+    },
+    "pt": {
+      "samples": 3,
+      "mean_cer": 0.5053,
+      "mean_wer": 0.6762,
+      "extraction_rate": 0.6667
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "n_samples": 39,
+  "note": "Analysis of the existing frozen 39-image OCR benchmark. Read-only - no OCR re-run, no benchmark file modified.",
+  "pearson": {
+    "r": -0.2267,
+    "p": 0.1652
+  },
+  "spearman": {
+    "r": -0.3457,
+    "p": 0.0311
+  },
+  "confidence_by_extraction_outcome": {
+    "mean_confidence_extraction_succeeded": 0.5774,
+    "mean_confidence_extraction_failed": 0.4825,
+    "mannwhitney_p": 0.0674
+  },
+  "threshold_analysis": [
+    {
+      "threshold": 0.3,
+      "n_below": 6,
+      "mean_cer_below": 0.726,
+      "n_above": 33,
+      "mean_cer_above": 0.6443
+    },
+    {
+      "threshold": 0.4,
+      "n_below": 10,
+      "mean_cer_below": 0.7052,
+      "n_above": 29,
+      "mean_cer_above": 0.6402
+    },
+    {
+      "threshold": 0.5,
+      "n_below": 12,
+      "mean_cer_below": 0.7357,
+      "n_above": 27,
+      "mean_cer_above": 0.6218
+    },
+    {
+      "threshold": 0.6,
+      "n_below": 17,
+      "mean_cer_below": 0.8201,
+      "n_above": 22,
+      "mean_cer_above": 0.5307
+    },
+    {
+      "threshold": 0.7,
+      "n_below": 31,
+      "mean_cer_below": 0.7164,
+      "n_above": 8,
+      "mean_cer_above": 0.4261
+    }
+  ],
+  "decision": {
+    "wire_up_ocr_confidence_flagging": false,
+    "correlation_supports": false,
+    "separation_supports": false
+  },
+  "confirmatory_vs_exploratory": {
+    "confirmatory_preregistered_test": "Pearson correlation (r, p) - decision gate criterion set BEFORE running the analysis",
+    "confirmatory_result": "NOT significant (r=-0.2267, p=0.1652) - decision: do NOT wire up OCR-confidence flagging",
+    "exploratory_only_not_used_for_decision": {
+      "spearman": {
+        "r": -0.3457,
+        "p": 0.0311
+      },
+      "note_spearman": "Rank-based, more robust to CER outlier skew than Pearson - significant (p=0.0311), but NOT used as the go/no-go criterion since it was not the pre-registered test. Reported for transparency and future work only.",
+      "extraction_confidence_gap_mannwhitney_p": 0.0674,
+      "note_mannwhitney": "Just misses p<0.05 (p=0.0674) - suggestive but not confirmatory.",
+      "threshold_trend": "Monotonic in the expected direction across all 5 thresholds tested, largest gap at threshold=0.7 (CER 0.43 above vs 0.72 below), but n=8 above that threshold - too few samples to treat as confirmatory."
+    },
+    "limitations": "n=39 is a small sample for correlation testing; CER is outlier-skewed (values >1.0 occur on over-extraction), which violates Pearson assumptions and reduces its statistical power. Revisit with a larger OCR benchmark before treating this as settled either way.",
+    "decision_final": "Confidence-aware OCR flagging NOT wired into the live pipeline. Pre-registered criterion honored; no post-hoc test-shopping."
+  }
+}

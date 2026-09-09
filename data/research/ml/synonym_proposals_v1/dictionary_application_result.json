@@ -1,0 +1,101 @@
+{
+  "applied_at": "2026-09-09",
+  "evaluation_set": "963-product leak-free dev set (same as ml_trace_classifier.py / ml_embedding_candidates.py)",
+  "held_out_300_touched": false,
+  "backup_file": "data/research/ml/synonym_proposals_v1/backup/allergen_dictionary.pre_synonym_v1.json",
+  "dictionary_diff": {
+    "milk": [
+      "بروتينات الحليب",
+      "lactossoro em pó",
+      "مركزات بروتينات الحليب",
+      "حليب كامل الدسم"
+    ],
+    "tree_nut": [
+      "fruit à coques",
+      "frutos de cáscara",
+      "fruits coque"
+    ],
+    "wheat_gluten": [
+      "пшенично брашно",
+      "farine de froment"
+    ]
+  },
+  "total_terms_added": 9,
+  "unchanged_flagged_entries": [
+    "mantelrouge (tree_nut)",
+    "sei (fish)",
+    "crabe (shellfish)"
+  ],
+  "before": {
+    "declared": {
+      "precision": 0.9395,
+      "recall": 0.7883,
+      "f1": 0.8573,
+      "exact_match": 0.7902
+    },
+    "trace": {
+      "precision": 0.9474,
+      "recall": 0.4016,
+      "f1": 0.564,
+      "exact_match": 0.6978
+    }
+  },
+  "after": {
+    "declared": {
+      "precision": 0.9381,
+      "recall": 0.7977,
+      "f1": 0.8622,
+      "exact_match": 0.7975
+    },
+    "trace": {
+      "precision": 0.948,
+      "recall": 0.4064,
+      "f1": 0.5689,
+      "exact_match": 0.6999
+    }
+  },
+  "deltas": {
+    "declared_f1": 0.0049,
+    "declared_precision": -0.0014,
+    "trace_f1": 0.0049,
+    "trace_precision": 0.0006
+  },
+  "regression_detected": true,
+  "product_level_diff_investigation": {
+    "note": "Manual investigation of every product whose prediction changed after the dictionary edit (11 total).",
+    "true_positives_confirmed": 9,
+    "true_positive_examples": [
+      {
+        "code": "6111203006653",
+        "change": "+milk (correct, matches reference)"
+      },
+      {
+        "code": "3362600011044",
+        "change": "+wheat_gluten via Farine de froment (correct, matches reference)"
+      },
+      {
+        "code": "3800230300720",
+        "change": "+wheat_gluten via пшенично брашно (correct, matches reference)"
+      }
+    ],
+    "flagged_as_new_false_positives_by_strict_check": 2,
+    "false_positive_investigation": [
+      {
+        "code": "6111032000631",
+        "product_name": "Salim",
+        "declared_text": "حليب كامل الدسم (whole milk)",
+        "reference_declared_allergens": [],
+        "assessment": "The ENTIRE ingredient text is literally the Arabic word for whole milk, yet Open Food Facts allergens_tags is empty for this product. This reads as an Open Food Facts reference-labeling gap, not a matcher error - the new term is very likely correct and the reference is very likely wrong."
+      },
+      {
+        "code": "6111203005779",
+        "product_name": "الهاندس",
+        "declared_text": "حليب خالي من الدسم مشكل، مادة دهنية حليبية، أجبان، بروتينات الحليب... (skimmed milk, dairy fat, cheeses, milk proteins)",
+        "reference_declared_allergens": [],
+        "assessment": "Same pattern - the ingredient text is unambiguously a dairy product, OFF reference tags are empty. Same likely explanation: OFF reference gap, not a matcher error."
+      }
+    ],
+    "conclusion": "The measured -0.0014 declared-precision dip is fully attributable to these 2 products, and both are plausibly Open Food Facts reference-labeling gaps rather than genuine false positives from the added terms - consistent with this project's own standing caveat that OFF metadata is reference annotation, not unquestionable ground truth. Reported transparently rather than dismissed; final judgment on whether this counts as a real regression is the user's call."
+  },
+  "note_on_file_formatting": "An intermediate rewrite pass accidentally corrupted the JSON formatting (stripped blank lines via a mis-escaped regex) and briefly left the file with invalid JSON. Caught immediately, never left uncommitted/silent - rebuilt cleanly from the pristine backup + the same 9 approved additions, re-validated as valid JSON, and re-confirmed byte-for-byte identical benchmark results. Final file diff is exactly the 9 additions plus one trailing-newline convention fix."
+}

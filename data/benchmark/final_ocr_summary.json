@@ -1,0 +1,110 @@
+{
+  "evaluation_type": "Final controlled OCR benchmark - image-to-risk pipeline evaluated against manually verified ground truth",
+  "samples_total_candidates": 50,
+  "samples_evaluated": 39,
+  "samples_excluded_incomplete": 11,
+  "excluded_note": "Excluded rows are images marked incomplete during manual annotation (blurry, cropped, or otherwise not legitimately transcribable) - they were never treated as ground truth.",
+  "ocr_text_quality": {
+    "mean_ocr_confidence": 0.5530589743589743,
+    "mean_cer": 0.6568419273729312,
+    "mean_wer": 0.9368050546262554,
+    "ingredient_section_extraction_rate": 0.7435897435897436
+  },
+  "declared_allergens": {
+    "ocr_pipeline": {
+      "precision": 0.8214285714285714,
+      "recall": 0.5111111111111111,
+      "f1": 0.6301369863013698,
+      "exact_set_agreement": 0.46153846153846156,
+      "true_positive": 23,
+      "false_positive": 5,
+      "false_negative": 22
+    },
+    "clean_text_upper_bound": {
+      "precision": 0.8857142857142857,
+      "recall": 0.6888888888888889,
+      "f1": 0.775,
+      "exact_set_agreement": 0.6666666666666666,
+      "true_positive": 31,
+      "false_positive": 4,
+      "false_negative": 14
+    }
+  },
+  "trace_allergens": {
+    "ocr_pipeline": {
+      "precision": 0.6666666666666666,
+      "recall": 0.15,
+      "f1": 0.24489795918367346,
+      "exact_set_agreement": 0.5128205128205128,
+      "true_positive": 6,
+      "false_positive": 3,
+      "false_negative": 34
+    },
+    "clean_text_upper_bound": {
+      "precision": 0.8181818181818182,
+      "recall": 0.225,
+      "f1": 0.35294117647058826,
+      "exact_set_agreement": 0.5641025641025641,
+      "true_positive": 9,
+      "false_positive": 2,
+      "false_negative": 31
+    }
+  },
+  "risk_classification": {
+    "ocr_pipeline_accuracy": {
+      "accuracy": 0.5128205128205128,
+      "correct": 20,
+      "total": 39
+    },
+    "clean_text_upper_bound_accuracy": {
+      "accuracy": 0.8205128205128205,
+      "correct": 32,
+      "total": 39
+    }
+  },
+  "per_target_language": {
+    "de": {
+      "samples": 4,
+      "mean_cer": 0.5472246565052737,
+      "mean_wer": 0.7753267973856209,
+      "extraction_rate": 0.75
+    },
+    "en": {
+      "samples": 5,
+      "mean_cer": 0.5908397877190447,
+      "mean_wer": 0.8482748538011696,
+      "extraction_rate": 0.8
+    },
+    "es": {
+      "samples": 5,
+      "mean_cer": 0.26600015684990436,
+      "mean_wer": 0.5504741135925544,
+      "extraction_rate": 1.0
+    },
+    "fr": {
+      "samples": 15,
+      "mean_cer": 0.7926968491065784,
+      "mean_wer": 1.0081044825809902,
+      "extraction_rate": 0.6
+    },
+    "it": {
+      "samples": 3,
+      "mean_cer": 1.2548611111111112,
+      "mean_wer": 2.0,
+      "extraction_rate": 0.6666666666666666
+    },
+    "nl": {
+      "samples": 4,
+      "mean_cer": 0.4931982050894301,
+      "mean_wer": 0.8225806451612903,
+      "extraction_rate": 1.0
+    },
+    "pt": {
+      "samples": 3,
+      "mean_cer": 0.5053026427962489,
+      "mean_wer": 0.6761517615176151,
+      "extraction_rate": 0.6666666666666666
+    }
+  },
+  "reference_note": "declared_allergens/trace_allergens reference labels are Open Food Facts metadata carried over during benchmark selection - reference metadata, not clinical ground truth. manual_transcription IS the OCR ground truth (human-verified against the actual image)."
+}

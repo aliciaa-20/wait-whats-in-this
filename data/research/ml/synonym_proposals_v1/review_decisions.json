@@ -1,0 +1,87 @@
+{
+  "note": "Running record of the user's explicit accept/reject decisions on the Phase 3 synonym shortlist. Dictionary NOT yet modified - pending_approved terms are added only once the user gives final sign-off across all 9 allergen groups.",
+  "status": "ALL 9 ALLERGEN GROUPS EXPLICITLY CONFIRMED BY USER. Dictionary NOT yet modified - awaiting explicit final go-ahead to apply.",
+  "pending_approved": [
+    {
+      "allergen": "tree_nut",
+      "term": "fruit à coques",
+      "matched_dictionary_term": "fruits a coque",
+      "similarity": 0.9757
+    },
+    {
+      "allergen": "tree_nut",
+      "term": "frutos de cáscara",
+      "matched_dictionary_term": "frutos de casca rija",
+      "similarity": 0.9736
+    },
+    {
+      "allergen": "tree_nut",
+      "term": "_fruits coque_",
+      "matched_dictionary_term": "fruits a coque",
+      "similarity": 0.8819
+    },
+    {
+      "allergen": "wheat_gluten",
+      "term": "пшенично брашно",
+      "matched_dictionary_term": "wheat flour",
+      "similarity": 0.9530
+    },
+    {
+      "allergen": "wheat_gluten",
+      "term": "Farine de froment",
+      "matched_dictionary_term": "farine complete de ble",
+      "similarity": 0.9131
+    },
+    {
+      "allergen": "milk",
+      "term": "بروتينات الحليب",
+      "matched_dictionary_term": "proteine del latte",
+      "similarity": 0.9717
+    },
+    {
+      "allergen": "milk",
+      "term": "lactossoro em pó",
+      "matched_dictionary_term": "lactoserum",
+      "similarity": 0.9672
+    },
+    {
+      "allergen": "milk",
+      "term": "مركزات بروتينات الحليب",
+      "matched_dictionary_term": "proteine di latte",
+      "similarity": 0.9537
+    },
+    {
+      "allergen": "milk",
+      "term": "حليب كامل الدسم",
+      "matched_dictionary_term": "lait entier",
+      "similarity": 0.9529
+    }
+  ],
+  "rejected": {
+    "milk": ["ferment lactique", "manteiga de cacau", "Tournesol. Colza)", "مواد دهنية مصدرها الحليب", "açúcar de cana", "Sirop d'anis", "malté torréfié*", "tamines (E", "faina de grâu", "حمض الستريك", "lte de cevada"],
+    "egg": [". &quot", "nic n", "Sirop d'anis", "gomme gellane", "(tournesol oléique&quot", "tamines (E", "أصفر البيض، خردل*، ملح"],
+    "peanut": ["açúcar de cana", "baies de genièvre", "citrato sódico)", "malté torréfié*", "حمض الستريك", "Tournesol. Colza)"],
+    "tree_nut": ["açúcar de cana", "malté torréfié*", "lte de cevada", "Tournesol. Colza)", "Puede contener trazas de frutos de cáscara", "حمض الستريك", "Sirop d'anis", "Pectine de fruits", "provitamine A", "préparations de fruits", "de tournesol", "gomme gellane"],
+    "soy": ["provitamine A", ". &quot", "gomme gellane", "(tournesol oléique&quot", "F (Annatto).", "Sirop d'anis", "tamines (E", "Farine de froment", "graham flour", "farine d'avoine*", "lte de cevada", "maïs doux*", "(azúcar de caña&quot", "amidon de maïs", "açúcar de cana"],
+    "wheat_gluten": ["fibres d'agrumes", "fibre de pois", "حمض الستريك", "fibres (agrumes", "farine d'avoine*", "skrobia kukurydziana", "fibres de chicorée", "Sirop d'anis", "amidon de maïs", "fibres d'avoine", "provitamine A", "fibre de chicorée", "lte de cevada"],
+    "fish": [". &quot", "F (Annatto).", "Sirop d'anis", "gomme gellane", "tamines (E", "provitamine A", "(tournesol oléique&quot", "(azúcar de caña&quot", "lte de cevada", "sel de mer", "son d'avoine", "açúcar de cana", "du lupin", "sel. *ingr", "malté torréfié*"],
+    "shellfish": ["حمض الستريك", "Sirop d'anis", "malté torréfié*", "Tournesol. Colza)", "gomme gellane", "açúcar de cana", "sel de mer", "faina de grâu", "sel. *ingr", ". &quot", "αρωματική μες ύλη", "lte de cevada", "levure sel", "F (Annatto).", "tamines (E"],
+    "sesame": ["semillas de mostaza", "Basil seed", "Graines de tournesol*", ". &quot", "gomme gellane", "F (Annatto).", "Sirop d'anis", "provitamine A", "de graines de tournesol", "tamines (E", "(azúcar de caña&quot", "(tournesol oléique&quot", "(semillas de girasol", "poppy seeds", "Graines de courge*."]
+  },
+  "data_pipeline_followups": [
+    "Arabic comma (،) is not handled by split_ingredient_phrases() - causes unsplit compound phrases (e.g. egg candidate #1). Fix and re-run synonym discovery.",
+    "wheat_gluten candidate 'lte de cevada' (likely truncated 'leite de cevada' / barley milk) rejected as malformed - user wants the correctly-spelled form considered separately if barley coverage is desired."
+  ],
+  "existing_dictionary_audit_flagged": [
+    "mantelrouge (tree_nut) - generic embedding attractor for 9+ unrelated candidates",
+    "sei (fish) - generic embedding attractor for 14/15 unrelated candidates",
+    "crabe (shellfish) - generic embedding attractor for 15/15 unrelated candidates"
+  ],
+  "existing_dictionary_audit_note": "None of these three existing entries have been modified or removed. Flagged for a separate manual audit only - an embedding collision does not by itself prove the existing term is wrong, only that it's worth a human look.",
+  "final_approved_count": 9,
+  "final_approved_by_allergen": {
+    "milk": 4,
+    "tree_nut": 3,
+    "wheat_gluten": 2
+  }
+}

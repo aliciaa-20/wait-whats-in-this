@@ -1,0 +1,1493 @@
+{
+  "note": "Human-review shortlist. NOTHING here has been added to data/allergen_dictionary.json. Set 'approved': true/false per entry and provide this back for terms to actually be added - see ML_EXTENSION_PLAN.md Phase 3.",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "similarity_threshold": 0.82,
+  "dev_set_size": 963,
+  "held_out_300_touched": false,
+  "proposals_by_allergen": {
+    "milk": [
+      {
+        "candidate_term": "بروتينات الحليب",
+        "normalized": "بروتينات الحليب",
+        "matched_dictionary_term": "proteine del latte",
+        "similarity": 0.9717,
+        "example_product_codes": [
+          "6111028001246"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "lactossoro em pó",
+        "normalized": "lactossoro em po",
+        "matched_dictionary_term": "lactoserum",
+        "similarity": 0.9672,
+        "example_product_codes": [
+          "8480017244338"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "مركزات بروتينات الحليب",
+        "normalized": "مركزات بروتينات الحليب",
+        "matched_dictionary_term": "proteine di latte",
+        "similarity": 0.9537,
+        "example_product_codes": [
+          "6111028001246"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "حليب كامل الدسم",
+        "normalized": "حليب كامل الدسم",
+        "matched_dictionary_term": "lait entier",
+        "similarity": 0.9529,
+        "example_product_codes": [
+          "6111032000631"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "ferment lactique",
+        "normalized": "ferment lactique",
+        "matched_dictionary_term": "ferments lactiques",
+        "similarity": 0.9344,
+        "example_product_codes": [
+          "6111259092525"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "manteiga de cacau",
+        "normalized": "manteiga de cacau",
+        "matched_dictionary_term": "beurre",
+        "similarity": 0.9205,
+        "example_product_codes": [
+          "8480017244338"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Tournesol. Colza)",
+        "normalized": "tournesol colza",
+        "matched_dictionary_term": "koemelk",
+        "similarity": 0.9187,
+        "example_product_codes": [
+          "6111024001530"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "مواد دهنية مصدرها الحليب",
+        "normalized": "مواد دهنية مصدرها الحليب",
+        "matched_dictionary_term": "lait ecreme en poudre",
+        "similarity": 0.9151,
+        "example_product_codes": [
+          "6111028001246"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "açúcar de cana",
+        "normalized": "acucar de cana",
+        "matched_dictionary_term": "koemelk",
+        "similarity": 0.9145,
+        "example_product_codes": [
+          "4056489424918"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Sirop d'anis",
+        "normalized": "sirop d anis",
+        "matched_dictionary_term": "koemelk",
+        "similarity": 0.9133,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "malté torréfié*",
+        "normalized": "malte torrefie",
+        "matched_dictionary_term": "koemelk",
+        "similarity": 0.9119,
+        "example_product_codes": [
+          "3760049798029"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "tamines (E",
+        "normalized": "tamines e",
+        "matched_dictionary_term": "nata",
+        "similarity": 0.9093,
+        "example_product_codes": [
+          "3175681308190"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "faina de grâu",
+        "normalized": "faina de grau",
+        "matched_dictionary_term": "koemelk",
+        "similarity": 0.9062,
+        "example_product_codes": [
+          "5053990101573"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "حمض الستريك",
+        "normalized": "حمض الستريك",
+        "matched_dictionary_term": "koemelk",
+        "similarity": 0.9057,
+        "example_product_codes": [
+          "5449000132277"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "lte de cevada",
+        "normalized": "lte de cevada",
+        "matched_dictionary_term": "koemelk",
+        "similarity": 0.8963,
+        "example_product_codes": [
+          "8480000095367"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ],
+    "soy": [
+      {
+        "candidate_term": "provitamine A",
+        "normalized": "provitamine a",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8956,
+        "example_product_codes": [
+          "9002515601018"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": ". &quot",
+        "normalized": "quot",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8906,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "gomme gellane",
+        "normalized": "gomme gellane",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8898,
+        "example_product_codes": [
+          "3229820797922"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "(tournesol oléique&quot",
+        "normalized": "tournesol oleique quot",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8855,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "F (Annatto).",
+        "normalized": "f annatto",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8681,
+        "example_product_codes": [
+          "5053990107339"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Sirop d'anis",
+        "normalized": "sirop d anis",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8635,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "tamines (E",
+        "normalized": "tamines e",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.854,
+        "example_product_codes": [
+          "3175681308190"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Farine de froment",
+        "normalized": "farine de froment",
+        "matched_dictionary_term": "soy flour",
+        "similarity": 0.8527,
+        "example_product_codes": [
+          "3362600001106",
+          "3362600011006",
+          "3362600011044",
+          "8000500273296"
+        ],
+        "n_products_seen_in": 4,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "graham flour",
+        "normalized": "graham flour",
+        "matched_dictionary_term": "soy flour",
+        "similarity": 0.8517,
+        "example_product_codes": [
+          "855538004040"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "farine d'avoine*",
+        "normalized": "farine d avoine",
+        "matched_dictionary_term": "soy flour",
+        "similarity": 0.8511,
+        "example_product_codes": [
+          "3175681026766",
+          "3175681077324",
+          "3178530407396",
+          "3229820769165",
+          "5010477348395"
+        ],
+        "n_products_seen_in": 6,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "lte de cevada",
+        "normalized": "lte de cevada",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8443,
+        "example_product_codes": [
+          "8480000095367"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "maïs doux*",
+        "normalized": "mais doux",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8412,
+        "example_product_codes": [
+          "3175681028111"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "(azúcar de caña&quot",
+        "normalized": "azucar de cana quot",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.837,
+        "example_product_codes": [
+          "3560071407650"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "amidon de maïs",
+        "normalized": "amidon de mais",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8311,
+        "example_product_codes": [
+          "3175680011442",
+          "3175681066632",
+          "3456300014556",
+          "3660140948258",
+          "3760020505936"
+        ],
+        "n_products_seen_in": 17,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "açúcar de cana",
+        "normalized": "acucar de cana",
+        "matched_dictionary_term": "edamame",
+        "similarity": 0.8281,
+        "example_product_codes": [
+          "4056489424918"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ],
+    "wheat_gluten": [
+      {
+        "candidate_term": "пшенично брашно",
+        "normalized": "пшенично брашно",
+        "matched_dictionary_term": "wheat flour",
+        "similarity": 0.953,
+        "example_product_codes": [
+          "3800230300720"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "fibres d’agrumes",
+        "normalized": "fibres d agrumes",
+        "matched_dictionary_term": "fibres de ble",
+        "similarity": 0.9499,
+        "example_product_codes": [
+          "3770016162043",
+          "7613035694989",
+          "7613036021265"
+        ],
+        "n_products_seen_in": 3,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "fibre de pois",
+        "normalized": "fibre de pois",
+        "matched_dictionary_term": "fibres de ble",
+        "similarity": 0.9375,
+        "example_product_codes": [
+          "3017800510872"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "حمض الستريك",
+        "normalized": "حمض الستريك",
+        "matched_dictionary_term": "vehnajauho",
+        "similarity": 0.9218,
+        "example_product_codes": [
+          "5449000132277"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "fibres (agrumes",
+        "normalized": "fibres agrumes",
+        "matched_dictionary_term": "fibres de ble",
+        "similarity": 0.9171,
+        "example_product_codes": [
+          "3770016162098"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "farine d'avoine*",
+        "normalized": "farine d avoine",
+        "matched_dictionary_term": "farine complete de ble",
+        "similarity": 0.9143,
+        "example_product_codes": [
+          "3175681026766",
+          "3175681077324",
+          "3178530407396",
+          "3229820769165",
+          "5010477348395"
+        ],
+        "n_products_seen_in": 6,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "skrobia kukurydziana",
+        "normalized": "skrobia kukurydziana",
+        "matched_dictionary_term": "pszenica",
+        "similarity": 0.9142,
+        "example_product_codes": [
+          "7613033629303"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Farine de froment",
+        "normalized": "farine de froment",
+        "matched_dictionary_term": "farine complete de ble",
+        "similarity": 0.9131,
+        "example_product_codes": [
+          "3362600001106",
+          "3362600011006",
+          "3362600011044",
+          "8000500273296"
+        ],
+        "n_products_seen_in": 4,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "fibres de chicorée",
+        "normalized": "fibres de chicoree",
+        "matched_dictionary_term": "fibres de ble",
+        "similarity": 0.9129,
+        "example_product_codes": [
+          "3175681026766",
+          "3175681851849",
+          "3251491787810"
+        ],
+        "n_products_seen_in": 3,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Sirop d'anis",
+        "normalized": "sirop d anis",
+        "matched_dictionary_term": "espelta",
+        "similarity": 0.9089,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "amidon de maïs",
+        "normalized": "amidon de mais",
+        "matched_dictionary_term": "epeautre",
+        "similarity": 0.904,
+        "example_product_codes": [
+          "3175680011442",
+          "3175681066632",
+          "3456300014556",
+          "3660140948258",
+          "3760020505936"
+        ],
+        "n_products_seen_in": 17,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "fibres d'avoine",
+        "normalized": "fibres d avoine",
+        "matched_dictionary_term": "fibres de ble",
+        "similarity": 0.9032,
+        "example_product_codes": [
+          "3175680011534",
+          "3175681039599",
+          "3175681077324",
+          "3175681135895",
+          "3251490320001"
+        ],
+        "n_products_seen_in": 5,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "provitamine A",
+        "normalized": "provitamine a",
+        "matched_dictionary_term": "espelta",
+        "similarity": 0.9024,
+        "example_product_codes": [
+          "9002515601018"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "fibre de chicorée",
+        "normalized": "fibre de chicoree",
+        "matched_dictionary_term": "fibres de ble",
+        "similarity": 0.9004,
+        "example_product_codes": [
+          "3228857002191",
+          "3228857002221",
+          "3228857002245",
+          "3228857002351",
+          "3272770015516"
+        ],
+        "n_products_seen_in": 5,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "lte de cevada",
+        "normalized": "lte de cevada",
+        "matched_dictionary_term": "espelta",
+        "similarity": 0.8946,
+        "example_product_codes": [
+          "8480000095367"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ],
+    "fish": [
+      {
+        "candidate_term": ". &quot",
+        "normalized": "quot",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.9367,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "F (Annatto).",
+        "normalized": "f annatto",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.9098,
+        "example_product_codes": [
+          "5053990107339"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Sirop d'anis",
+        "normalized": "sirop d anis",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.9091,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "gomme gellane",
+        "normalized": "gomme gellane",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.9058,
+        "example_product_codes": [
+          "3229820797922"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "tamines (E",
+        "normalized": "tamines e",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.896,
+        "example_product_codes": [
+          "3175681308190"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "provitamine A",
+        "normalized": "provitamine a",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.8906,
+        "example_product_codes": [
+          "9002515601018"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "(tournesol oléique&quot",
+        "normalized": "tournesol oleique quot",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.8894,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "(azúcar de caña&quot",
+        "normalized": "azucar de cana quot",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.8813,
+        "example_product_codes": [
+          "3560071407650"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "lte de cevada",
+        "normalized": "lte de cevada",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.8463,
+        "example_product_codes": [
+          "8480000095367"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "sel de mer",
+        "normalized": "sel de mer",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.8436,
+        "example_product_codes": [
+          "3175680011442",
+          "3175680011534",
+          "3175681028098",
+          "3175681028111",
+          "3175681037854"
+        ],
+        "n_products_seen_in": 23,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "son d'avoine",
+        "normalized": "son d avoine",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.8431,
+        "example_product_codes": [
+          "3175681105423"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "açúcar de cana",
+        "normalized": "acucar de cana",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.8426,
+        "example_product_codes": [
+          "4056489424918"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "du lupin",
+        "normalized": "du lupin",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.842,
+        "example_product_codes": [
+          "3175681066632",
+          "3175681110106",
+          "3175681302679",
+          "3175681308190"
+        ],
+        "n_products_seen_in": 4,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "sel. *ingr",
+        "normalized": "sel ingr",
+        "matched_dictionary_term": "sei",
+        "similarity": 0.8389,
+        "example_product_codes": [
+          "3256228686558"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "malté torréfié*",
+        "normalized": "malte torrefie",
+        "matched_dictionary_term": "maquereaux",
+        "similarity": 0.8366,
+        "example_product_codes": [
+          "3760049798029"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ],
+    "sesame": [
+      {
+        "candidate_term": "semillas de mostaza",
+        "normalized": "semillas de mostaza",
+        "matched_dictionary_term": "semillas de sesamo",
+        "similarity": 0.9695,
+        "example_product_codes": [
+          "7804659650035"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Basil seed",
+        "normalized": "basil seed",
+        "matched_dictionary_term": "semillas de sesamo",
+        "similarity": 0.9247,
+        "example_product_codes": [
+          "8855044052285"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Graines de tournesol*",
+        "normalized": "graines de tournesol",
+        "matched_dictionary_term": "semillas de sesamo",
+        "similarity": 0.9136,
+        "example_product_codes": [
+          "3229820129488",
+          "3229820797946",
+          "4056489235798",
+          "5010477348678",
+          "5010477356277"
+        ],
+        "n_products_seen_in": 5,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": ". &quot",
+        "normalized": "quot",
+        "matched_dictionary_term": "sesam",
+        "similarity": 0.9007,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "gomme gellane",
+        "normalized": "gomme gellane",
+        "matched_dictionary_term": "sesam",
+        "similarity": 0.8989,
+        "example_product_codes": [
+          "3229820797922"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "F (Annatto).",
+        "normalized": "f annatto",
+        "matched_dictionary_term": "sesam",
+        "similarity": 0.8944,
+        "example_product_codes": [
+          "5053990107339"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Sirop d'anis",
+        "normalized": "sirop d anis",
+        "matched_dictionary_term": "sesam",
+        "similarity": 0.8895,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "provitamine A",
+        "normalized": "provitamine a",
+        "matched_dictionary_term": "sesam",
+        "similarity": 0.8873,
+        "example_product_codes": [
+          "9002515601018"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "de graines de tournesol",
+        "normalized": "de graines de tournesol",
+        "matched_dictionary_term": "semillas de sesamo",
+        "similarity": 0.8843,
+        "example_product_codes": [
+          "6111246910023"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "tamines (E",
+        "normalized": "tamines e",
+        "matched_dictionary_term": "sesam",
+        "similarity": 0.8818,
+        "example_product_codes": [
+          "3175681308190"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "(azúcar de caña&quot",
+        "normalized": "azucar de cana quot",
+        "matched_dictionary_term": "sesam",
+        "similarity": 0.8752,
+        "example_product_codes": [
+          "3560071407650"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "(tournesol oléique&quot",
+        "normalized": "tournesol oleique quot",
+        "matched_dictionary_term": "sesam",
+        "similarity": 0.8682,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "(semillas de girasol",
+        "normalized": "semillas de girasol",
+        "matched_dictionary_term": "semillas de sesamo",
+        "similarity": 0.8656,
+        "example_product_codes": [
+          "3560071407650"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "poppy seeds",
+        "normalized": "poppy seeds",
+        "matched_dictionary_term": "semillas de sesamo",
+        "similarity": 0.859,
+        "example_product_codes": [
+          "606541920380"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Graines de courge*.",
+        "normalized": "graines de courge",
+        "matched_dictionary_term": "semillas de sesamo",
+        "similarity": 0.8492,
+        "example_product_codes": [
+          "3229820797946"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ],
+    "tree_nut": [
+      {
+        "candidate_term": "fruit à coques",
+        "normalized": "fruit a coques",
+        "matched_dictionary_term": "fruits a coque",
+        "similarity": 0.9757,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "frutos de cáscara",
+        "normalized": "frutos de cascara",
+        "matched_dictionary_term": "frutos de casca rija",
+        "similarity": 0.9736,
+        "example_product_codes": [
+          "8710445020878"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "açúcar de cana",
+        "normalized": "acucar de cana",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.9152,
+        "example_product_codes": [
+          "4056489424918"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "malté torréfié*",
+        "normalized": "malte torrefie",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.9117,
+        "example_product_codes": [
+          "3760049798029"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "lte de cevada",
+        "normalized": "lte de cevada",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.9052,
+        "example_product_codes": [
+          "8480000095367"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Tournesol. Colza)",
+        "normalized": "tournesol colza",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.9049,
+        "example_product_codes": [
+          "6111024001530"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Puede contener trazas de frutos de cáscara",
+        "normalized": "puede contener trazas de frutos de cascara",
+        "matched_dictionary_term": "frutos de casca rija",
+        "similarity": 0.9029,
+        "example_product_codes": [
+          "8402001010873"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "حمض الستريك",
+        "normalized": "حمض الستريك",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.9008,
+        "example_product_codes": [
+          "5449000132277"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Sirop d'anis",
+        "normalized": "sirop d anis",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.8999,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Pectine de fruits",
+        "normalized": "pectine de fruits",
+        "matched_dictionary_term": "fruits a coque",
+        "similarity": 0.8946,
+        "example_product_codes": [
+          "6111242882263"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "provitamine A",
+        "normalized": "provitamine a",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.8865,
+        "example_product_codes": [
+          "9002515601018"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "_fruits coque_",
+        "normalized": "_fruits coque_",
+        "matched_dictionary_term": "fruits a coque",
+        "similarity": 0.8819,
+        "example_product_codes": [
+          "3228857000913"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "préparations de fruits",
+        "normalized": "preparations de fruits",
+        "matched_dictionary_term": "fruits a coque",
+        "similarity": 0.8804,
+        "example_product_codes": [
+          "6111032010135"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "de tournesol",
+        "normalized": "de tournesol",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.8799,
+        "example_product_codes": [
+          "3168930009795"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "gomme gellane",
+        "normalized": "gomme gellane",
+        "matched_dictionary_term": "mantelrouge",
+        "similarity": 0.8798,
+        "example_product_codes": [
+          "3229820797922"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ],
+    "shellfish": [
+      {
+        "candidate_term": "حمض الستريك",
+        "normalized": "حمض الستريك",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.9062,
+        "example_product_codes": [
+          "5449000132277"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Sirop d'anis",
+        "normalized": "sirop d anis",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.9001,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "malté torréfié*",
+        "normalized": "malte torrefie",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8957,
+        "example_product_codes": [
+          "3760049798029"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Tournesol. Colza)",
+        "normalized": "tournesol colza",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8893,
+        "example_product_codes": [
+          "6111024001530"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "gomme gellane",
+        "normalized": "gomme gellane",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8779,
+        "example_product_codes": [
+          "3229820797922"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "açúcar de cana",
+        "normalized": "acucar de cana",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8768,
+        "example_product_codes": [
+          "4056489424918"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "sel de mer",
+        "normalized": "sel de mer",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8755,
+        "example_product_codes": [
+          "3175680011442",
+          "3175680011534",
+          "3175681028098",
+          "3175681028111",
+          "3175681037854"
+        ],
+        "n_products_seen_in": 23,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "faina de grâu",
+        "normalized": "faina de grau",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8696,
+        "example_product_codes": [
+          "5053990101573"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "sel. *ingr",
+        "normalized": "sel ingr",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8684,
+        "example_product_codes": [
+          "3256228686558"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": ". &quot",
+        "normalized": "quot",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8669,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "αρωματική μες ύλη",
+        "normalized": "αρωματικη μες υλη",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8655,
+        "example_product_codes": [
+          "5201037508858"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "lte de cevada",
+        "normalized": "lte de cevada",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8626,
+        "example_product_codes": [
+          "8480000095367"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "levure sel",
+        "normalized": "levure sel",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8612,
+        "example_product_codes": [
+          "3760049790252"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "F (Annatto).",
+        "normalized": "f annatto",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.8467,
+        "example_product_codes": [
+          "5053990107339"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "tamines (E",
+        "normalized": "tamines e",
+        "matched_dictionary_term": "crabe",
+        "similarity": 0.846,
+        "example_product_codes": [
+          "3175681308190"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ],
+    "peanut": [
+      {
+        "candidate_term": "açúcar de cana",
+        "normalized": "acucar de cana",
+        "matched_dictionary_term": "cacahuetes",
+        "similarity": 0.835,
+        "example_product_codes": [
+          "4056489424918"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "baies de genièvre",
+        "normalized": "baies de genievre",
+        "matched_dictionary_term": "cacahuetes",
+        "similarity": 0.833,
+        "example_product_codes": [
+          "3302740047367"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "citrato sódico)",
+        "normalized": "citrato sodico",
+        "matched_dictionary_term": "cacahuetes",
+        "similarity": 0.8238,
+        "example_product_codes": [
+          "50112784",
+          "8480000038524"
+        ],
+        "n_products_seen_in": 2,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "malté torréfié*",
+        "normalized": "malte torrefie",
+        "matched_dictionary_term": "cacahuetes",
+        "similarity": 0.822,
+        "example_product_codes": [
+          "3760049798029"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "حمض الستريك",
+        "normalized": "حمض الستريك",
+        "matched_dictionary_term": "cacahuetes",
+        "similarity": 0.8219,
+        "example_product_codes": [
+          "5449000132277"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Tournesol. Colza)",
+        "normalized": "tournesol colza",
+        "matched_dictionary_term": "cacahuetes",
+        "similarity": 0.8214,
+        "example_product_codes": [
+          "6111024001530"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ],
+    "egg": [
+      {
+        "candidate_term": "أصفر البيض، خردل*، ملح",
+        "normalized": "اصفر البيض خردل ملح",
+        "matched_dictionary_term": "oeufs entiers",
+        "similarity": 0.9087,
+        "example_product_codes": [
+          "6111184000619"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": ". &quot",
+        "normalized": "quot",
+        "matched_dictionary_term": "eiklar",
+        "similarity": 0.8917,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "nic n",
+        "normalized": "nic n",
+        "matched_dictionary_term": "eiklar",
+        "similarity": 0.8844,
+        "example_product_codes": [
+          "5060195908975"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "Sirop d'anis",
+        "normalized": "sirop d anis",
+        "matched_dictionary_term": "eiklar",
+        "similarity": 0.8471,
+        "example_product_codes": [
+          "2486777044085"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "gomme gellane",
+        "normalized": "gomme gellane",
+        "matched_dictionary_term": "eiklar",
+        "similarity": 0.8439,
+        "example_product_codes": [
+          "3229820797922"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "(tournesol oléique&quot",
+        "normalized": "tournesol oleique quot",
+        "matched_dictionary_term": "eiklar",
+        "similarity": 0.8391,
+        "example_product_codes": [
+          "3175681132467"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      },
+      {
+        "candidate_term": "tamines (E",
+        "normalized": "tamines e",
+        "matched_dictionary_term": "eiklar",
+        "similarity": 0.8249,
+        "example_product_codes": [
+          "3175681308190"
+        ],
+        "n_products_seen_in": 1,
+        "approved": null,
+        "reviewer_notes": ""
+      }
+    ]
+  }
+}

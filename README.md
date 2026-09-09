@@ -393,24 +393,169 @@ This behavior is important for the research evaluation and is treated as a limit
 
 # OCR Evaluation
 
-The OCR pipeline is implemented and integrated with the allergen matching engine.
+The controlled OCR research benchmark is now **complete and frozen**.
 
-The final research benchmark is being constructed using food-label ingredient images with controlled supported languages.
+## Benchmark Composition
 
-The planned evaluation measures include:
+- **50** candidate images were selected across 7 controlled languages (French, English, German, Spanish, Dutch, Italian, Portuguese).
+- **11** images were excluded after manual review (blurry, cropped, or otherwise not legitimately transcribable) and were never treated as ground truth.
+- **39** images form the final evaluated benchmark.
 
-- Character Error Rate (CER)
-- Word Error Rate (WER)
-- Ingredient-section extraction accuracy
-- Declared allergen precision, recall, and F1
-- Trace allergen precision, recall, and F1
-- Risk classification accuracy
-- Clean-text vs. OCR-text performance comparison
-- OCR error analysis
+A manually verified transcription set was produced specifically for this evaluation, so OCR quality is measured against genuine human-verified ground truth rather than solely against Open Food Facts metadata.
 
-A manually verified transcription set is being used specifically for the OCR evaluation so that OCR quality is not evaluated solely against Open Food Facts metadata.
+## OCR Text Quality
 
-**Final OCR benchmark numbers will be added after the benchmark is frozen and evaluated.**
+| Metric | Value |
+|---|---:|
+| Mean OCR Confidence | 0.5531 |
+| Mean Character Error Rate (CER) | 0.6568 |
+| Mean Word Error Rate (WER) | 0.9368 |
+| Ingredient-Section Extraction Rate | 74.36% |
+
+## Declared and Trace Allergen Detection: OCR Text vs. Clean Text
+
+Results are reported for two conditions: the actual OCR pipeline output ("OCR pipeline"), and the same matcher run directly on the manually verified transcription ("clean-text upper bound"). The gap between them isolates how much OCR noise costs the system, separately from the matcher's own limitations.
+
+### Declared Allergens
+
+| Metric | OCR Pipeline | Clean-Text Upper Bound |
+|---|---:|---:|
+| Precision | 0.8214 | 0.8857 |
+| Recall | 0.5111 | 0.6889 |
+| F1 Score | 0.6301 | 0.7750 |
+| Exact Agreement | 0.4615 | 0.6667 |
+
+### Trace Allergens
+
+| Metric | OCR Pipeline | Clean-Text Upper Bound |
+|---|---:|---:|
+| Precision | 0.6667 | 0.8182 |
+| Recall | 0.1500 | 0.2250 |
+| F1 Score | 0.2449 | 0.3529 |
+| Exact Agreement | 0.5128 | 0.5641 |
+
+### Risk Classification Accuracy
+
+| Condition | Accuracy |
+|---|---:|
+| OCR Pipeline | 51.28% (20/39) |
+| Clean-Text Upper Bound | 82.05% (32/39) |
+
+## Error Analysis
+
+- **10 of 39** images failed ingredient-section extraction entirely.
+- Of the declared-allergen false negatives measured on OCR text, **9** are directly attributable to OCR text loss (the matcher would have caught them on the clean transcription), while **13** remain missed even on clean text — a matcher-side limitation independent of OCR.
+- Of the trace-allergen false negatives measured on OCR text, **6** are attributable to OCR text loss, while **28** remain missed even on clean text, reinforcing that trace/precautionary recall is the system's dominant weakness independent of OCR quality.
+
+## Per-Language OCR Performance
+
+| Language | Samples | Mean CER | Mean WER | Extraction Rate |
+|---|---:|---:|---:|---:|
+| German | 4 | 0.5472 | 0.7753 | 75.00% |
+| English | 5 | 0.5908 | 0.8483 | 80.00% |
+| Spanish | 5 | 0.2660 | 0.5505 | 100.00% |
+| French | 15 | 0.7927 | 1.0081 | 60.00% |
+| Italian | 3 | 1.2549 | 2.0000 | 66.67% |
+| Dutch | 4 | 0.4932 | 0.8226 | 100.00% |
+| Portuguese | 3 | 0.5053 | 0.6762 | 66.67% |
+
+## Interpretation
+
+The gap between OCR-pipeline and clean-text-upper-bound results shows that OCR and ingredient-section extraction quality are significant, measurable sources of end-to-end error, independent of the allergen matcher itself. Declared-allergen detection degrades substantially under OCR noise (F1 0.7750 → 0.6301), and trace-allergen detection — already the weaker of the two on clean text — degrades further still (F1 0.3529 → 0.2449).
+
+As with the text-only evaluation, the `declared_allergens`/`trace_allergens` reference labels used here are Open Food Facts metadata, treated as reference annotation rather than ground truth. The manually transcribed ingredient text, by contrast, is genuine human-verified OCR ground truth, transcribed directly from each image.
+
+---
+
+# ML Extension and Research Evaluation
+
+Beyond the deterministic matcher described above, the project includes a separate research investigation into whether statistical and machine-learning methods could improve on the ontology-driven matching approach. This was carried out as an additional experimental track, not as a redesign of the live system.
+
+**The existing rule-based matcher remains the final live matching architecture.** None of the ML components described below are part of the deployed allergen-matching path.
+
+Full experimental records, before/after benchmarks, and decision logs for every phase are documented in `ML_EXTENSION_PLAN.md` and `data/research/ml/`.
+
+## Phase 1: Weak-Supervised Trace/Declared Classifier
+
+A classifier (TF-IDF word and character n-gram features with Logistic Regression) was trained on weak labels derived from the existing rule-based declared/trace splitter, and evaluated on a leak-free development subset of the main dataset (excluding all products present in the 300-product held-out set).
+
+The classifier did not outperform the deterministic baseline on either declared or trace detection. It was **not integrated into the live pipeline**.
+
+## Phase 2: Multilingual Embedding Candidate Generation
+
+Frozen, pretrained multilingual sentence embeddings were evaluated as a candidate-generation layer intended to propose allergen mentions the exact/fuzzy dictionary matcher might miss, with candidates verified through the existing negation and context-exclusion rules before being counted.
+
+This did not outperform the deterministic approach for final allergen matching. Two specific failure modes were identified during evaluation:
+
+- Unreliable embeddings for very short, single-word ingredient phrases.
+- Structural false positives, where semantically unrelated ingredients sharing the same grammatical pattern (for example, different types of seeds) were incorrectly grouped together by embedding similarity.
+
+This candidate-generation approach was **not integrated into live matching**. It was, however, useful as the underlying mechanism for semi-automatic synonym and ontology discovery (Phase 3).
+
+## Phase 3: Human-Approved Synonym Expansion
+
+Using the same frozen embeddings, 118 candidate synonym terms were generated from the dataset's ingredient vocabulary and reviewed individually, allergen group by allergen group.
+
+- **118** candidate terms generated
+- **9** terms approved after human review
+- **109** terms rejected
+
+The 9 approved terms were added to `data/allergen_dictionary.json`:
+
+- 4 milk terms
+- 3 tree_nut terms
+- 2 wheat_gluten terms
+
+No existing dictionary entries were removed or modified, and the matching logic in `scripts/allergen_matcher.py` was not changed. A backup of the dictionary from immediately before this change is preserved at `data/research/ml/synonym_proposals_v1/backup/allergen_dictionary.pre_synonym_v1.json`.
+
+### Before/After Validation (963-Product Leak-Free Set)
+
+This 963-product set excludes every product present in the 300-product held-out set, so the held-out set was not used to make this decision.
+
+**Declared Allergens**
+
+| Metric | Before | After |
+|---|---:|---:|
+| Precision | 0.9395 | 0.9381 |
+| Recall | 0.7883 | 0.7977 |
+| F1 Score | 0.8573 | 0.8622 |
+| Exact Agreement | 0.7902 | 0.7975 |
+
+**Trace Allergens**
+
+| Metric | Before | After |
+|---|---:|---:|
+| Precision | 0.9474 | 0.9480 |
+| Recall | 0.4016 | 0.4064 |
+| F1 Score | 0.5640 | 0.5689 |
+| Exact Agreement | 0.6978 | 0.6999 |
+
+F1 score and exact-match agreement improved for both declared and trace allergen detection after the addition.
+
+A small decrease in declared precision was also observed (0.9395 → 0.9381). This is disclosed rather than omitted: the products responsible for this decrease were investigated individually rather than treated as acceptable noise. In both cases, the product's ingredient text clearly indicated milk content, while the corresponding Open Food Facts reference tags were empty. These are treated as likely reference-label gaps in the Open Food Facts metadata rather than confirmed matcher errors, consistent with this project's existing position that Open Food Facts metadata is a reference annotation source and not verified ground truth.
+
+Full diff and validation evidence: `data/research/ml/synonym_proposals_v1/dictionary_application_result.json`.
+
+## Phase 4: Confidence-Aware Abstention
+
+This phase was marked **not applicable**. No ML or embedding signal from Phases 1, 2, or 5 performed well enough to justify deployment as a gating or abstention mechanism, so no speculative confidence-abstention component was added to the system.
+
+## Phase 5: OCR-Confidence Correlation
+
+A pre-registered statistical test checked whether the OCR pipeline's existing confidence score correlates with OCR text quality (character error rate) on the 39-image OCR benchmark, as a precondition for using it in downstream confidence-aware flagging.
+
+- Pre-registered Pearson correlation: r = -0.227, p = 0.165 (not significant)
+- Exploratory Spearman correlation: r = -0.346, p = 0.031 (significant, but not the pre-registered test)
+
+Because the pre-registered criterion was not met, OCR confidence was **not wired into the live pipeline**. The Spearman result is reported here explicitly as an exploratory finding, not a confirmatory one.
+
+## Overall Conclusion
+
+Across this evaluation, applying machine-learning methods directly to the live allergen-matching path (Phases 1, 2, and 5) did not improve on the existing deterministic, ontology-driven matcher under this project's current low-resource multilingual setting.
+
+The only validated improvement came from a human-reviewed application of the same embedding technology to ontology and synonym expansion (Phase 3), where every addition was manually approved before being added to the dictionary.
+
+The system's final deployed allergen-matching architecture therefore remains deterministic, ontology-driven, explainable, and personalized, exactly as described earlier in this document. The ML experiments in this section serve as a documented research evaluation and as tooling for ontology maintenance, not as a replacement for the verified rule-based matcher.
 
 ---
 
@@ -708,18 +853,19 @@ The system is a research and decision-support prototype. It cannot guarantee the
 - Matcher error analysis
 - OCR implementation
 - OCR-to-matcher integration
+- Controlled OCR benchmark finalized and evaluated (39 images, 7 languages)
+- OCR error analysis
 - FastAPI backend
 - Personalized risk assessment
 - React/Vite frontend
 - End-to-end application architecture
+- Five-phase ML extension evaluation (weak-supervised classifier, embedding candidate generation, human-approved synonym expansion, confidence-abstention assessment, OCR-confidence correlation test)
+- Human-approved synonym expansion validated and applied (9 terms added to the allergen dictionary)
 
 ## Remaining Research Work
 
-- Finalize the controlled OCR benchmark
-- Manually verify ingredient-section transcriptions for the OCR benchmark
-- Run final OCR evaluation
-- Compare clean-text and OCR-text performance
-- Complete OCR error analysis
+The controlled OCR benchmark, manual transcription verification, final OCR evaluation, clean-text vs. OCR-text comparison, and OCR error analysis are now complete (see [OCR Evaluation](#ocr-evaluation) above). The five-phase ML extension evaluation is also complete (see [ML Extension and Research Evaluation](#ml-extension-and-research-evaluation) above).
+
 - Update final research results
 - Freeze the experimental version
 - Prepare the final research paper

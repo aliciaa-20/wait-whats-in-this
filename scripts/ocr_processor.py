@@ -28,6 +28,125 @@ INGREDIENT_WORDS = [
     "ingredienser",
 ]
 
+# Multilingual heading terms used for FUZZY matching in
+# extract_ingredient_section(), scoped to this project's actually
+# supported OCR languages only (en, fr, de, es, nl, it, pt).
+#
+# Deliberately narrower than INGREDIENT_WORDS above: including an
+# out-of-scope term (e.g. Scandinavian "ingredienser") in fuzzy
+# matching caused a real false-positive collision during testing -
+# German "intensiver" (a common marketing word) matched it at 0.64
+# similarity, which would have anchored extraction on the wrong line
+# entirely. Exact-match usage of INGREDIENT_WORDS is unaffected.
+#
+# Keyed by language so fuzzy matching only ever compares against
+# terms for the language actually being OCR'd - checking every
+# language's term against every image is itself a source of false
+# positives, independent of the term-length issue below: French
+# "graines" (seeds) matched Spanish/Portuguese "ingredientes" at
+# 0.632 on a French-language image, which had nothing to do with
+# either language's OCR quality - it was purely an artifact of
+# comparing against an irrelevant language's vocabulary.
+FUZZY_HEADING_TERMS_BY_LANGUAGE = {
+    "en": ["ingredients", "ingredient"],
+    "fr": ["ingrédients", "ingrédient"],
+    "de": ["zutaten"],
+    "es": ["ingredientes", "ingrediente"],
+    "pt": ["ingredientes", "ingrediente"],
+    "it": ["ingredienti"],
+    "nl": ["ingrediënten", "ingrediënt"],
+}
+
+# Fuzzy word length is a real threshold-selection variable: short
+# terms (e.g. "zutaten", 7 chars) have far less room for
+# discriminative edit distance than long ones (e.g. "ingredients"/
+# "ingrediënten", 11-12 chars). A fixed ratio let short, unrelated
+# words collide - German "enthalten" (used in "kann ... enthalten"
+# trace-allergen phrasing, i.e. actual label text, not noise)
+# matched "zutaten" at 0.62. Scaling the bar by term length is a
+# general rule, not a patch for that one collision.
+_FUZZY_SHORT_TERM_THRESHOLD = 0.75
+_FUZZY_LONG_TERM_THRESHOLD = 0.62
+_FUZZY_SHORT_TERM_MAX_LEN = 8
+_FUZZY_MIN_WORD_LEN = 5
+
+# A genuine heading line is short - essentially just the heading
+# word itself, maybe with a colon/qualifier. Without this, a fuzzy
+# match buried in the middle of an unrelated, multi-word garbled
+# line (e.g. a scrambled multi-language/multi-column label reading
+# "Rrked plntenertracten, met zoetstollen Lreredinten: sprankelend")
+# gets treated the same as a clean, isolated match (e.g. a line that
+# is just "Ingredlento") - even though the former is far less
+# trustworthy. This caps how many OTHER substantial words are
+# allowed on a line for a fuzzy match on it to be trusted.
+_FUZZY_MAX_OTHER_SIGNIFICANT_WORDS = 1
+
+
+def _fuzzy_threshold_for_term(term):
+    if len(term) <= _FUZZY_SHORT_TERM_MAX_LEN:
+        return _FUZZY_SHORT_TERM_THRESHOLD
+    return _FUZZY_LONG_TERM_THRESHOLD
+
+
+def _line_has_fuzzy_heading(line_normalized, language):
+    """
+    Detect a heading word the exact patterns miss, tolerating OCR
+    character corruption (e.g. "Ingredlento" for "Ingredients") and
+    OCR spacing errors that fuse the heading to one adjacent word
+    (e.g. a heading glued to the next word with no space between
+    them), without scanning across unrelated marketing/nutrition
+    text where coincidental letter overlap causes false positives.
+
+    Two passes, both scoped to individual word tokens only:
+    1. Whole-token fuzzy match against each heading term.
+    2. A sliding window WITHIN a single (longer) token, to catch a
+       heading fused to part of the next word.
+
+    Both passes are scoped to the terms for `language` only, and
+    both require the matched line to be mostly just the heading
+    word (see _FUZZY_MAX_OTHER_SIGNIFICANT_WORDS) - a match deep
+    inside an otherwise unrelated sentence is not trusted.
+    """
+
+    terms = FUZZY_HEADING_TERMS_BY_LANGUAGE.get(language, [])
+    if not terms:
+        return False
+
+    words = line_normalized.split()
+    significant_words = [w for w in words if len(w) >= _FUZZY_MIN_WORD_LEN]
+
+    for word in words:
+        if len(word) < _FUZZY_MIN_WORD_LEN:
+            continue
+
+        other_significant_words = len(significant_words) - 1
+
+        for term in terms:
+            ratio = SequenceMatcher(None, word, term).ratio()
+            if (
+                ratio >= _fuzzy_threshold_for_term(term)
+                and other_significant_words
+                <= _FUZZY_MAX_OTHER_SIGNIFICANT_WORDS
+            ):
+                return True
+
+            term_len = len(term)
+            if len(word) > term_len:
+                # Substring matching is inherently riskier (many
+                # windows tried per word), so it always uses at
+                # least the stricter, length-scaled bar.
+                bar = max(_fuzzy_threshold_for_term(term), 0.70)
+                for start in range(0, len(word) - term_len + 1):
+                    window = word[start:start + term_len]
+                    if (
+                        SequenceMatcher(None, window, term).ratio() >= bar
+                        and other_significant_words
+                        <= _FUZZY_MAX_OTHER_SIGNIFICANT_WORDS
+                    ):
+                        return True
+
+    return False
+
 STOP_MARKERS = [
     "nutrition facts",
     "nutrition",
@@ -420,9 +539,16 @@ def clean_ocr_text(text):
 
 def extract_ingredient_section(
     ocr_text: str,
+    language: str = "en",
 ) -> tuple[str, bool]:
     """
     Extract the ingredient section from OCR text.
+
+    `language` scopes the fuzzy-matching fallback to that language's
+    heading terms only (see FUZZY_HEADING_TERMS_BY_LANGUAGE) - the
+    exact-regex fast path below still checks all supported languages
+    unconditionally, since an exact whole-word match carries
+    essentially no false-positive risk regardless of language.
 
     Returns:
         ingredient_text, extraction_found
@@ -469,14 +595,20 @@ def extract_ingredient_section(
             ingredient_start = index
             break
 
-        # OCR may distort the heading.
         normalized = normalize_for_matching(line)
 
-        if (
-            "ingredien" in normalized
-            or "ingredienh" in normalized
-            or "ingicaienti" in normalized
-        ):
+        # Cheap, generic substring check for minor mid-word
+        # corruption of "ingredien..." itself.
+        if "ingredien" in normalized:
+            ingredient_start = index
+            break
+
+        # Fuzzy fallback for heavier OCR corruption (garbled
+        # characters, or the heading fused to an adjacent word with
+        # no space) that the checks above miss. See
+        # _line_has_fuzzy_heading() for what it does and does not
+        # catch, and why.
+        if _line_has_fuzzy_heading(normalized, language):
             ingredient_start = index
             break
 
@@ -527,9 +659,23 @@ def extract_ingredient_section(
     )
 
     # Continue after the heading.
+    found_stop_marker = False
+
+    # Empirically justified, not arbitrary: the longest manually
+    # verified ingredient section in this project's benchmark ground
+    # truth is 1039 characters (max across 39 samples; median 211).
+    # 1500 gives real lists headroom for OCR noise inflating length,
+    # while still being far short of what a runaway capture produces
+    # (a scrambled multi-language/multi-column label pulled in
+    # several thousand characters of nutrition table, barcode, and
+    # repeated-language text once heading detection got more
+    # tolerant - see MAX_INGREDIENT_SECTION_CHARS below).
+    MAX_INGREDIENT_SECTION_CHARS = 1500
+
     for line in lines[ingredient_start + 1:]:
 
         if stop_regex.search(line):
+            found_stop_marker = True
             break
 
         normalized = normalize_for_matching(line)
@@ -539,10 +685,7 @@ def extract_ingredient_section(
 
         collected.append(line)
 
-        # Prevent enormous sections from swallowing the entire label.
-        if len(
-            " ".join(collected)
-        ) > 3000:
+        if len(" ".join(collected)) > MAX_INGREDIENT_SECTION_CHARS:
             break
 
     ingredient_text = " ".join(
@@ -550,6 +693,19 @@ def extract_ingredient_section(
     ).strip()
 
     if not ingredient_text:
+        return "", False
+
+    # A genuine ingredient section on packaged food is reliably
+    # followed by SOME recognizable stop marker (nutrition table,
+    # storage/date info, barcode) - that combination is close to
+    # universal on real labels. Running this long without ever
+    # hitting one is a signal that the captured span isn't a bounded
+    # ingredient section at all, most likely a heading match (often
+    # a fuzzy one) on a label whose OCR reading order is scrambled
+    # across languages/columns, dragging in unrelated content. In
+    # that situation, reporting failure is more honest - and more
+    # useful downstream - than returning a large, mostly-wrong blob.
+    if not found_stop_marker and len(ingredient_text) > MAX_INGREDIENT_SECTION_CHARS:
         return "", False
 
     return ingredient_text, True
@@ -587,7 +743,8 @@ def process_image(
 
     ingredient_text, extraction_found = (
         extract_ingredient_section(
-            raw_text
+            raw_text,
+            language=str(language or "en").strip().lower(),
         )
     )
 

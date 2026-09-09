@@ -1,0 +1,14 @@
+{
+  "requested": 50,
+  "downloaded": 50,
+  "failed": 0,
+  "by_target_language": {
+    "fr": 20,
+    "en": 10,
+    "de": 5,
+    "es": 5,
+    "nl": 4,
+    "it": 3,
+    "pt": 3
+  }
+}

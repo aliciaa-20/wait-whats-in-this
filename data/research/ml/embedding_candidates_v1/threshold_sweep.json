@@ -1,0 +1,1329 @@
+{
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "evaluation_set": "963-product leak-free dev set, same as ml_trace_classifier.py",
+  "held_out_300_touched": false,
+  "rule_only_baseline": {
+    "declared": {
+      "precision": 0.9395,
+      "recall": 0.7883,
+      "f1": 0.8573,
+      "exact_match": 0.7902
+    },
+    "trace": {
+      "precision": 0.9474,
+      "recall": 0.4016,
+      "f1": 0.564,
+      "exact_match": 0.6978
+    }
+  },
+  "sweep": {
+    "0.6": {
+      "declared": {
+        "precision": 0.2275,
+        "recall": 0.9643,
+        "f1": 0.3682,
+        "exact_match": 0.1952
+      },
+      "trace": {
+        "precision": 0.6201,
+        "recall": 0.4306,
+        "f1": 0.5083,
+        "exact_match": 0.6127
+      },
+      "n_candidates_confirmed": 3892,
+      "evidence_sample": [
+        {
+          "code": "6111242106949",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "ferments lactiques\nmati\u00e8re grasse 21%",
+          "matched_dictionary_term": "graines de soja",
+          "similarity": 0.6415
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "8 %",
+          "matched_dictionary_term": "eiklar",
+          "similarity": 0.656
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "8 %",
+          "matched_dictionary_term": "amandes",
+          "similarity": 0.6685
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "8 %",
+          "matched_dictionary_term": "thon",
+          "similarity": 0.6747
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "8 %",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.6675
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "8 %",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.6095
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "cacahuetes",
+          "similarity": 0.7368
+        },
+        {
+          "code": "7622210449283",
+          "section": "trace",
+          "allergen": "soy",
+          "phrase": "Peut contenir \u0153uf.",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.6507
+        },
+        {
+          "code": "7622210449283",
+          "section": "trace",
+          "allergen": "wheat_gluten",
+          "phrase": "Peut contenir \u0153uf.",
+          "matched_dictionary_term": "farine complete de ble",
+          "similarity": 0.6331
+        },
+        {
+          "code": "3760049790214",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "wheat flour* 44%",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.7033
+        },
+        {
+          "code": "3760049790214",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "rapeseed oil*",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.702
+        },
+        {
+          "code": "5449000054227",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "fructose - glucose syrup",
+          "matched_dictionary_term": "lactose",
+          "similarity": 0.6459
+        },
+        {
+          "code": "6111032009665",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "\u062d\u0644\u064a\u0628 \u0646\u0635\u0641 \u062f\u0633\u0645\u060c 15 \u063a/\u0644 \u0645\u0646 \u0627\u0644\u0645\u0648\u0627\u062f \u0627\u0644\u062f\u0633\u0645\u0629",
+          "matched_dictionary_term": "lait ecreme en poudre",
+          "similarity": 0.8473
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "Farine de BL\u00c9* 41 %",
+          "matched_dictionary_term": "su\u00dfmolkenpulver",
+          "similarity": 0.6885
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "Farine de BL\u00c9* 41 %",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.6725
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "graines de lin brun 6",
+          "matched_dictionary_term": "schalenfruchte",
+          "similarity": 0.6484
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "graines de lin brun 6",
+          "matched_dictionary_term": "semillas de sesamo",
+          "similarity": 0.7621
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "1 %",
+          "matched_dictionary_term": "ovo",
+          "similarity": 0.7326
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "1 %",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.7214
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "1 %",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.7225
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "farine de SEIGLE 5",
+          "matched_dictionary_term": "amendoins",
+          "similarity": 0.6138
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "sirop de glucose",
+          "matched_dictionary_term": "lactose",
+          "similarity": 0.6432
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "huile de tournesol",
+          "matched_dictionary_term": "soy oil",
+          "similarity": 0.7677
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "huile de tournesol",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.7785
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "_noix de P\u00e9can_ (1",
+          "matched_dictionary_term": "cacahuetes",
+          "similarity": 0.6527
+        }
+      ]
+    },
+    "0.65": {
+      "declared": {
+        "precision": 0.2717,
+        "recall": 0.9417,
+        "f1": 0.4217,
+        "exact_match": 0.2918
+      },
+      "trace": {
+        "precision": 0.6973,
+        "recall": 0.4268,
+        "f1": 0.5295,
+        "exact_match": 0.6386
+      },
+      "n_candidates_confirmed": 2986,
+      "evidence_sample": [
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "8 %",
+          "matched_dictionary_term": "eiklar",
+          "similarity": 0.656
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "8 %",
+          "matched_dictionary_term": "amandes",
+          "similarity": 0.6685
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "8 %",
+          "matched_dictionary_term": "thon",
+          "similarity": 0.6747
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "8 %",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.6675
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "2 %)",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.6714
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "cacahuetes",
+          "similarity": 0.7368
+        },
+        {
+          "code": "7622210449283",
+          "section": "trace",
+          "allergen": "soy",
+          "phrase": "Peut contenir \u0153uf.",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.6507
+        },
+        {
+          "code": "3760049790214",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "wheat flour* 44%",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.7033
+        },
+        {
+          "code": "3760049790214",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "rapeseed oil*",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.702
+        },
+        {
+          "code": "6111032009665",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "\u062d\u0644\u064a\u0628 \u0646\u0635\u0641 \u062f\u0633\u0645\u060c 15 \u063a/\u0644 \u0645\u0646 \u0627\u0644\u0645\u0648\u0627\u062f \u0627\u0644\u062f\u0633\u0645\u0629",
+          "matched_dictionary_term": "lait ecreme en poudre",
+          "similarity": 0.8473
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "Farine de BL\u00c9* 41 %",
+          "matched_dictionary_term": "su\u00dfmolkenpulver",
+          "similarity": 0.6885
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "Farine de BL\u00c9* 41 %",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.6725
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "graines de lin brun 6",
+          "matched_dictionary_term": "semillas de sesamo",
+          "similarity": 0.7621
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "1 %",
+          "matched_dictionary_term": "ovo",
+          "similarity": 0.7326
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "1 %",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.7239
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "1 %",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.7214
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "1 %",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.7225
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "extrait de malt d'ORGE",
+          "matched_dictionary_term": "cacahuetes",
+          "similarity": 0.721
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "huile de tournesol",
+          "matched_dictionary_term": "soy oil",
+          "similarity": 0.7677
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "huile de tournesol",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.7785
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "_noix de P\u00e9can_ (1",
+          "matched_dictionary_term": "cacahuetes",
+          "similarity": 0.6527
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "_noix de P\u00e9can_ (1",
+          "matched_dictionary_term": "pecan",
+          "similarity": 0.673
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "_noix de P\u00e9can_ (1",
+          "matched_dictionary_term": "seigle",
+          "similarity": 0.6681
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "ar\u00f4mes naturels",
+          "matched_dictionary_term": "su\u00dfmolkenpulver",
+          "similarity": 0.67
+        },
+        {
+          "code": "6175700",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "Farine de sarrasin.",
+          "matched_dictionary_term": "buttermilk",
+          "similarity": 0.7042
+        }
+      ]
+    },
+    "0.7": {
+      "declared": {
+        "precision": 0.3359,
+        "recall": 0.9135,
+        "f1": 0.4911,
+        "exact_match": 0.4133
+      },
+      "trace": {
+        "precision": 0.7874,
+        "recall": 0.4239,
+        "f1": 0.5511,
+        "exact_match": 0.675
+      },
+      "n_candidates_confirmed": 2117,
+      "evidence_sample": [
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "2 %)",
+          "matched_dictionary_term": "ovo",
+          "similarity": 0.7207
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "2 %)",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.7052
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "2 %)",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.7073
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "2 %)",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.7085
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "cacahuetes",
+          "similarity": 0.7368
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8956
+        },
+        {
+          "code": "3760049790214",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "wheat flour* 44%",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.7033
+        },
+        {
+          "code": "3760049790214",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "rapeseed oil*",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.702
+        },
+        {
+          "code": "6111032009665",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "\u062d\u0644\u064a\u0628 \u0646\u0635\u0641 \u062f\u0633\u0645\u060c 15 \u063a/\u0644 \u0645\u0646 \u0627\u0644\u0645\u0648\u0627\u062f \u0627\u0644\u062f\u0633\u0645\u0629",
+          "matched_dictionary_term": "lait ecreme en poudre",
+          "similarity": 0.8473
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "graines de lin brun 6",
+          "matched_dictionary_term": "graines de soja",
+          "similarity": 0.7391
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "graines de lin brun 6",
+          "matched_dictionary_term": "semillas de sesamo",
+          "similarity": 0.7621
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "1 %",
+          "matched_dictionary_term": "koemelk",
+          "similarity": 0.762
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "1 %",
+          "matched_dictionary_term": "ovo",
+          "similarity": 0.7326
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "1 %",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.7239
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "1 %",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.7214
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "1 %",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.7225
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "extrait de malt d'ORGE",
+          "matched_dictionary_term": "cacahuetes",
+          "similarity": 0.721
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "huile de tournesol",
+          "matched_dictionary_term": "soy oil",
+          "similarity": 0.7677
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "huile de tournesol",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.7785
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "farine de _bl\u00e9_",
+          "matched_dictionary_term": "farine complete de ble",
+          "similarity": 0.7484
+        },
+        {
+          "code": "6175700",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "Farine de sarrasin.",
+          "matched_dictionary_term": "buttermilk",
+          "similarity": 0.7042
+        },
+        {
+          "code": "6175700",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "Farine de sarrasin.",
+          "matched_dictionary_term": "farine complete de ble",
+          "similarity": 0.733
+        },
+        {
+          "code": "3046920022651",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "P\u00e2te de cacao",
+          "matched_dictionary_term": "cacahuete",
+          "similarity": 0.7532
+        },
+        {
+          "code": "3046920022651",
+          "section": "trace",
+          "allergen": "peanut",
+          "phrase": "du soja et des graines de s\u00e9same.",
+          "matched_dictionary_term": "peanut",
+          "similarity": 0.7034
+        },
+        {
+          "code": "3017620422003",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "vanilline. Sans gluten.",
+          "matched_dictionary_term": "cereales contenant du gluten",
+          "similarity": 0.781
+        }
+      ]
+    },
+    "0.75": {
+      "declared": {
+        "precision": 0.4167,
+        "recall": 0.8702,
+        "f1": 0.5635,
+        "exact_match": 0.4839
+      },
+      "trace": {
+        "precision": 0.8273,
+        "recall": 0.418,
+        "f1": 0.5554,
+        "exact_match": 0.6864
+      },
+      "n_candidates_confirmed": 1412,
+      "evidence_sample": [
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "eiklar",
+          "similarity": 0.7926
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.8557
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.878
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.8271
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8956
+        },
+        {
+          "code": "6111032009665",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "\u062d\u0644\u064a\u0628 \u0646\u0635\u0641 \u062f\u0633\u0645\u060c 15 \u063a/\u0644 \u0645\u0646 \u0627\u0644\u0645\u0648\u0627\u062f \u0627\u0644\u062f\u0633\u0645\u0629",
+          "matched_dictionary_term": "lait ecreme en poudre",
+          "similarity": 0.8473
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "graines de lin brun 6",
+          "matched_dictionary_term": "semillas de sesamo",
+          "similarity": 0.7621
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "1 %",
+          "matched_dictionary_term": "koemelk",
+          "similarity": 0.762
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "extrait de malt d'ORGE",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.79
+        },
+        {
+          "code": "3760049798609",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "extrait de malt d'ORGE",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.7554
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "huile de tournesol",
+          "matched_dictionary_term": "soy oil",
+          "similarity": 0.7677
+        },
+        {
+          "code": "3168930010265",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "huile de tournesol",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.7785
+        },
+        {
+          "code": "3046920022651",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "P\u00e2te de cacao",
+          "matched_dictionary_term": "cacahuete",
+          "similarity": 0.7532
+        },
+        {
+          "code": "3017620422003",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "vanilline. Sans gluten.",
+          "matched_dictionary_term": "cereales contenant du gluten",
+          "similarity": 0.781
+        },
+        {
+          "code": "3046920022606",
+          "section": "declared",
+          "allergen": "peanut",
+          "phrase": "P\u00e2te de cacao",
+          "matched_dictionary_term": "cacahuete",
+          "similarity": 0.7532
+        },
+        {
+          "code": "8052575090254",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "huile de tournesol*",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.7785
+        },
+        {
+          "code": "7311070032611",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "farine de bl\u00e9*",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.809
+        },
+        {
+          "code": "7311070032611",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "huile de colza*",
+          "matched_dictionary_term": "huile de sesame",
+          "similarity": 0.7855
+        },
+        {
+          "code": "7311070032611",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "malt d'orge",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.7523
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "koemelk",
+          "similarity": 0.8326
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "eiklar",
+          "similarity": 0.7635
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.8049
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "edamame",
+          "similarity": 0.8311
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "epeautre",
+          "similarity": 0.904
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.8281
+        }
+      ]
+    },
+    "0.8": {
+      "declared": {
+        "precision": 0.5854,
+        "recall": 0.8382,
+        "f1": 0.6894,
+        "exact_match": 0.6438
+      },
+      "trace": {
+        "precision": 0.8809,
+        "recall": 0.4161,
+        "f1": 0.5652,
+        "exact_match": 0.6947
+      },
+      "n_candidates_confirmed": 680,
+      "evidence_sample": [
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.8557
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.878
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.8271
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8956
+        },
+        {
+          "code": "6111032009665",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "\u062d\u0644\u064a\u0628 \u0646\u0635\u0641 \u062f\u0633\u0645\u060c 15 \u063a/\u0644 \u0645\u0646 \u0627\u0644\u0645\u0648\u0627\u062f \u0627\u0644\u062f\u0633\u0645\u0629",
+          "matched_dictionary_term": "lait ecreme en poudre",
+          "similarity": 0.8473
+        },
+        {
+          "code": "7311070032611",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "farine de bl\u00e9*",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.809
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "koemelk",
+          "similarity": 0.8326
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.8049
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "edamame",
+          "similarity": 0.8311
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "epeautre",
+          "similarity": 0.904
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.8281
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8185
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "koemelk",
+          "similarity": 0.8796
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "eiklar",
+          "similarity": 0.8016
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.8774
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "edamame",
+          "similarity": 0.8996
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.8932
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.8445
+        },
+        {
+          "code": "3229820160672",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "Farine de bl\u00e9",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.809
+        },
+        {
+          "code": "8076809513753",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "maize fibre",
+          "matched_dictionary_term": "wheat fibres",
+          "similarity": 0.8682
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "koemelk",
+          "similarity": 0.87
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "edamame",
+          "similarity": 0.8748
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.878
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.8271
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8956
+        }
+      ]
+    },
+    "0.85": {
+      "declared": {
+        "precision": 0.7312,
+        "recall": 0.8213,
+        "f1": 0.7736,
+        "exact_match": 0.7196
+      },
+      "trace": {
+        "precision": 0.9158,
+        "recall": 0.4113,
+        "f1": 0.5676,
+        "exact_match": 0.6957
+      },
+      "n_candidates_confirmed": 328,
+      "evidence_sample": [
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.8557
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.878
+        },
+        {
+          "code": "7622210449283",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8956
+        },
+        {
+          "code": "6111180000231",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "amidon de ma\u00efs",
+          "matched_dictionary_term": "epeautre",
+          "similarity": 0.904
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "koemelk",
+          "similarity": 0.8796
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "tree_nut",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "mantelrouge",
+          "similarity": 0.8774
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "edamame",
+          "similarity": 0.8996
+        },
+        {
+          "code": "7300400481588",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "germe de BL\u00c9",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.8932
+        },
+        {
+          "code": "8076809513753",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "maize fibre",
+          "matched_dictionary_term": "wheat fibres",
+          "similarity": 0.8682
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "milk",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "koemelk",
+          "similarity": 0.87
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "edamame",
+          "similarity": 0.8748
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.878
+        },
+        {
+          "code": "3175681851849",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "amidon de bl\u00e9",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8956
+        },
+        {
+          "code": "3608580065340",
+          "section": "trace",
+          "allergen": "tree_nut",
+          "phrase": "Peut contenir d'autres _fruits \u00e0 coque_.",
+          "matched_dictionary_term": "fruits a coque",
+          "similarity": 0.8522
+        },
+        {
+          "code": "3229820129488",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "Graines de tournesol*",
+          "matched_dictionary_term": "semillas de sesamo",
+          "similarity": 0.9136
+        },
+        {
+          "code": "3362600011044",
+          "section": "declared",
+          "allergen": "soy",
+          "phrase": "Farine de froment",
+          "matched_dictionary_term": "soy flour",
+          "similarity": 0.8527
+        },
+        {
+          "code": "3362600011044",
+          "section": "declared",
+          "allergen": "wheat_gluten",
+          "phrase": "Farine de froment",
+          "matched_dictionary_term": "farine complete de ble",
+          "similarity": 0.9131
+        },
+        {
+          "code": "3387390123210",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "semoule de ma\u00efs",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8577
+        },
+        {
+          "code": "5010477348678",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "graines de tournesol.",
+          "matched_dictionary_term": "semillas de sesamo",
+          "similarity": 0.9136
+        },
+        {
+          "code": "3256540000698",
+          "section": "declared",
+          "allergen": "egg",
+          "phrase": "_\u0152ufs_ frais 11%",
+          "matched_dictionary_term": "ovos",
+          "similarity": 0.8506
+        },
+        {
+          "code": "7613036669146",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "semoule de ma\u00efs*",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.8577
+        },
+        {
+          "code": "8000500310427",
+          "section": "declared",
+          "allergen": "fish",
+          "phrase": "son de BLE",
+          "matched_dictionary_term": "sei",
+          "similarity": 0.8916
+        },
+        {
+          "code": "8000500310427",
+          "section": "declared",
+          "allergen": "shellfish",
+          "phrase": "son de BLE",
+          "matched_dictionary_term": "crabe",
+          "similarity": 0.8691
+        },
+        {
+          "code": "8000500310427",
+          "section": "declared",
+          "allergen": "sesame",
+          "phrase": "son de BLE",
+          "matched_dictionary_term": "sesam",
+          "similarity": 0.882
+        },
+        {
+          "code": "3175681066632",
+          "section": "trace",
+          "allergen": "wheat_gluten",
+          "phrase": "du lupin",
+          "matched_dictionary_term": "durumhvede",
+          "similarity": 0.8725
+        }
+      ]
+    }
+  },
+  "best_threshold": "0.6",
+  "verdict": {
+    "go_live": false,
+    "declared_f1_delta": -0.4891,
+    "trace_f1_delta": -0.0557
+  }
+}

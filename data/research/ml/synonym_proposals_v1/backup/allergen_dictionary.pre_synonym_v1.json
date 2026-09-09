@@ -53,11 +53,7 @@
         "süßmolkenpulver",
         "sussmolkenpulver",
         "whey protein",
-        "milk solids",
-        "بروتينات الحليب",
-        "lactossoro em pó",
-        "مركزات بروتينات الحليب",
-        "حليب كامل الدسم"
+        "milk solids"
     ],
 
     "egg": [
@@ -136,10 +132,7 @@
         "schalenfruchte",
         "pähkinä",
         "pahkina",
-        "mantelrouge",
-        "fruit à coques",
-        "frutos de cáscara",
-        "fruits coque"
+        "mantelrouge"
     ],
 
     "soy": [
@@ -227,9 +220,7 @@
         "pšeničná",
         "pšeničná mouka",
         "vehna",
-        "vehňajauho",
-        "пшенично брашно",
-        "farine de froment"
+        "vehňajauho"
     ],
 
     "fish": [

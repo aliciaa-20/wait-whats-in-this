@@ -1,0 +1,9 @@
+{
+  "note": "Cross-validated against the classifier's own weak-label bootstrap source (the rule-based splitter). High scores here are expected and do NOT by themselves indicate the classifier improves on the rules - see downstream_comparison.json for the real evaluation.",
+  "precision": 0.8242,
+  "recall": 0.7989,
+  "f1": 0.8113,
+  "n_clauses": 1837,
+  "n_declared_clauses": 1479,
+  "n_trace_clauses": 358
+}

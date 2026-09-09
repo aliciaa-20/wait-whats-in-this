@@ -1,0 +1,42 @@
+{
+  "evaluation_set": "963-product leak-free dev set (1,263-product baseline minus all 300 held-out product codes, which fully overlap with it - see ML_EXTENSION_PLAN.md). NOT the same set as the historical 1,263-product matcher_summary.json, which includes the 300 held-out products and is therefore not a valid comparison basis for this ML work.",
+  "held_out_300_touched": false,
+  "n_products": 963,
+  "rule_only": {
+    "declared": {
+      "precision": 0.9395,
+      "recall": 0.7883,
+      "f1": 0.8573,
+      "support": 1063,
+      "exact_match": 0.7902
+    },
+    "trace": {
+      "precision": 0.9474,
+      "recall": 0.4016,
+      "f1": 0.564,
+      "support": 1031,
+      "exact_match": 0.6978
+    }
+  },
+  "ml_classifier": {
+    "declared": {
+      "precision": 0.9204,
+      "recall": 0.7827,
+      "f1": 0.846,
+      "support": 1063,
+      "exact_match": 0.7757
+    },
+    "trace": {
+      "precision": 0.9476,
+      "recall": 0.386,
+      "f1": 0.5486,
+      "support": 1031,
+      "exact_match": 0.6926
+    }
+  },
+  "verdict": {
+    "go_live": false,
+    "trace_f1_improved": false,
+    "declared_f1_not_meaningfully_worse": false
+  }
+}

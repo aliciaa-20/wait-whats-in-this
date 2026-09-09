@@ -24,4 +24,7 @@ dist/
 build/
 
 # Jupyter Notebook checkpoints
-.ipynb_checkpoints/venv/ 
+.ipynb_checkpoints/
+
+# Dev launcher logs
+.run/
