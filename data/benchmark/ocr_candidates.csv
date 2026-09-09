@@ -1,0 +1,51 @@
+code,product_name,product_language,target_language,image_languages,has_ingredient_image,declared_allergens,trace_allergens
+20003166,FLOCONS D'AVOINE,en,de,ca|de|es|fr|it|nl|pt,True,wheat_gluten,wheat_gluten
+20303013,,fr,de,de,True,,
+3046920016377,100% Cacao,nl,de,de|en|es|fr|it,True,soy,milk|soy|tree_nut
+5411188118961,Nature aux Amandes - Végétal soja & amande,fr,de,de|es|fr|it|nl,True,soy|tree_nut,tree_nut
+5411188130055,"Alpro Sojadrink, Schokoladen-Geschmack, Protein 1L",de,de,cs|de|en|fi|fr|it|pl|ro,True,soy,
+3155251205296,Tartine Doux,fr,en,en|fr,True,,
+3165433724019,Cassonade pure canne,en,en,en|fr,True,,
+3182180002115,Grilletine Blé Complet,en,en,en|fr|nl,True,milk|wheat_gluten,egg|peanut|soy|tree_nut
+3274080005003,isabelle,fr,en,en,True,,
+3760049790214,Pain De Mie Bio,en,en,en|fr,True,wheat_gluten,soy
+4056489361855,Miel crémeux français & responsable,fr,en,en|fr,True,,
+5080068776654,Maple and Pecan,en,en,en,True,egg|milk|tree_nut|wheat_gluten,
+6111242100305,jaouda Cremy,fr,en,ar|en|fr,True,milk,
+6111252421582,اكوافينا,ar,en,en|fr,True,,
+8480000093691,Pan de molde 100% integral,es,en,en|es,True,wheat_gluten,soy
+3033710065967,NESQUIK Cacao,fr,es,es|fr,True,soy,
+5000157024671,Beanz in a rich tomato sauce,en,es,de|en|es|fi|fr|pt|ru|sv,True,,
+5449000131836,Coca-Cola Zero 500ml,en,es,de|es|fr|ro|sv,True,,
+6410500090014,Knäckebrot mit Roggensauerteig,de,es,de|en|es|fr|ro,True,wheat_gluten,
+7311070032604,Krisprolls complets,fr,es,en|es|fr,True,wheat_gluten,
+3017760756198,Cookies Granola LU,fr,fr,fr,True,milk|soy|wheat_gluten,egg|tree_nut
+3088545004001,Miel de Fleurs Liquide Doseur 500g,fr,fr,fr|sv,True,,
+3155251205500,Beurre doux gastronomique,fr,fr,fr,True,milk,
+3168930010869,Cruesli Chocolat noir maxi format,fr,fr,fr,True,milk|soy|wheat_gluten,milk|tree_nut
+3228857000913,Pain de mie nature,fr,fr,fr,True,milk|wheat_gluten,egg|milk|soy|tree_nut
+3229820787015,Amande sans sucres,fr,fr,fr,True,tree_nut,tree_nut
+3229820792132,Avoine,fr,fr,en|fr,True,wheat_gluten,tree_nut
+3229820797946,Muesli sans sucres ajoutés raisin figue datte abricot,fr,fr,fr,True,wheat_gluten,milk|soy|tree_nut
+3240931547213,Gnocchi aux pommes de terre,fr,fr,fr,True,wheat_gluten,egg|milk|soy
+3329770076471,Calin Extra,fr,fr,fr,True,milk,
+3336971805038,Chips de lentilles saveur tomate mozza,fr,fr,en|es|fr,True,milk,peanut|soy|wheat_gluten
+5449000334343,Schweppes citron 1l,en,fr,fr,True,,
+6111035000027,6111035000027,fr,fr,ar|en|fr,True,,
+6111035003035,Oulmes natural carbonated water,en,fr,ar|fr,True,,
+6111035003523,,en,fr,en|fr,True,,
+6111128000071,Ain Saïss,fr,fr,fr,True,,
+6111246721964,Cream Cheese,en,fr,ar|en|fr,True,,
+6111251420135,Aïn Ifrane,fr,fr,fr,True,,
+6175700,Tartines craquantes au sarrasin imp,fr,fr,fr,True,,
+7613035859098,NESTLÉ DESSERT 70% Absolu 170g,fr,fr,en|fr,True,milk,tree_nut
+5060042641420,Chips sel de mer et poivre noir,fr,it,da|de|en|es|fr|it|nl|pt,True,,milk
+5411188127697,Barista Hafer,de,it,de|en|it|nl|pt,True,wheat_gluten,
+8076809523547,PESTO ROSSO,en,it,de|en|fr|it,True,egg|milk|tree_nut,tree_nut
+3124480185266,Orange citron,fr,nl,de|fr|nl,True,,
+3159470005071,Céréales Extra Pépites Chocolat Noisettes,fr,nl,fr|nl,True,milk|soy|tree_nut|wheat_gluten,tree_nut
+5050083296079,Cereales special K original,fr,nl,fr|nl,True,wheat_gluten,milk
+5449000133328,Cocacola zero sugar,fr,nl,en|fr|it|nl|pl|ro,True,,
+20022471,Čokoláda na vaření,en,pt,cs|de|en|es|fr|pt,True,,milk|peanut|soy|tree_nut|wheat_gluten
+20283360,Fiocchi di avena integrali,it,pt,de|en|fr|it|pt,True,wheat_gluten,wheat_gluten
+8000500310427,Biscuits NUTELLA Biscuits Noisettes et Cacao x22 - 304g,fr,pt,de|fr|it|pt,True,milk|soy|tree_nut|wheat_gluten,

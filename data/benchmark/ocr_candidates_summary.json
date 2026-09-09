@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "target": 50,
+  "selected": 50,
+  "excluded_existing_smoke_benchmark": true,
+  "language_targets": {
+    "fr": 20,
+    "en": 10,
+    "de": 5,
+    "es": 5,
+    "nl": 4,
+    "it": 3,
+    "pt": 3
+  },
+  "target_language_counts": {
+    "fr": 20,
+    "en": 10,
+    "de": 5,
+    "es": 5,
+    "nl": 4,
+    "it": 3,
+    "pt": 3
+  },
+  "shortfalls": {},
+  "declared_products": 29,
+  "trace_products": 21,
+  "both_products": 19,
+  "neither_products": 19
+}
