@@ -52,7 +52,7 @@ echo "Starting backend  (FastAPI/uvicorn) on port $BACKEND_PORT  -> $BACKEND_LOG
 BACKEND_PID=$!
 
 echo "Starting frontend (Vite dev server) on port $FRONTEND_PORT -> $FRONTEND_LOG"
-(cd frontend && npm run dev -- --port "$FRONTEND_PORT") \
+(cd frontend && npm run dev -- --port "$FRONTEND_PORT" --host 127.0.0.1) \
     > "$FRONTEND_LOG" 2>&1 &
 FRONTEND_PID=$!
 
