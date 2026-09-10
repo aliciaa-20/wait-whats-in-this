@@ -292,8 +292,76 @@ can override any of it.
       real number rather than fabricating one. `npm run build` passes.
 - [x] **Phase 8 — multi-signal confidence model. Data expanded, model trained, honest negative result — not shipped.**
       See full writeup below (data expansion + model result).
-- [ ] Phase 9 — Groq-backed LLM explanation layer (always-on)
+- [ ] Phase 9 — Groq-backed LLM explanation layer (always-on) — task list below
 - [ ] Phase 10 — OCR error-analysis extension (region-detection ROI check)
+
+### Phase 9 task list (handoff-ready)
+
+Decisions already locked in (see "Decisions" above) — don't re-litigate
+unless something concrete forces it: **provider = Groq**, **always-on**
+(not opt-in), **evidence-grounded only** — the LLM explains a result the
+deterministic matcher already produced, it never sees raw ingredient text
+and never gets to add/remove/change an allergen or risk verdict.
+
+1. **Config**
+   - [ ] Add `GROQ_API_KEY` to environment loading (`.env`, never
+         committed — `.gitignore` already excludes `.env*`).
+   - [ ] Add the Groq client to `requirements.txt` (Groq's API is
+         OpenAI-compatible — either their `groq` Python package or plain
+         `requests` against `https://api.groq.com/openai/v1/chat/completions`
+         both work; pick one, don't add both).
+
+2. **Backend: summary generation, isolated from the main pipeline**
+   - [ ] New module, e.g. `backend/llm_summary.py`, with one function:
+         `generate_scan_summary(declared_allergens, trace_allergens,
+         explanations, risk) -> str | None`.
+   - [ ] Prompt = ONLY the structured evidence already in the `/analyze`
+         response (`allergens.explanations`, `allergens.declared_names`,
+         `allergens.trace_names`, `risk`) — never `ingredients.ingredient_text`
+         or `ocr.raw_text`. This is the actual safety boundary for this
+         phase; don't loosen it for convenience.
+   - [ ] System prompt should explicitly forbid: naming any allergen not
+         present in the evidence, contradicting the evidence, and giving
+         medical advice beyond the app's existing disclaimer.
+   - [ ] On any failure (timeout, bad key, rate limit, malformed
+         response): return `None`, don't raise. Set a real timeout
+         (5-8s) — this must never hang the request.
+
+3. **Backend: wire into the API**
+   - [ ] Decide sync-in-`/analyze` vs. a separate `/summarize` endpoint
+         called after the main result renders. Recommended: separate
+         endpoint — the deterministic result (already fast) shouldn't
+         wait on an external API call every time. If going sync instead,
+         document why and make sure the timeout in step 2 is tight.
+   - [ ] Add `llm_summary: str | null` to whichever response carries it.
+         Never 500 the whole request because the LLM call failed — the
+         structured result must always come back regardless.
+
+4. **Frontend**
+   - [ ] `ResultsPage.jsx`: show the structured result immediately, don't
+         block on the summary.
+   - [ ] Add an "AI Summary" card with a loading state, and hide it
+         cleanly (not an error banner) if `llm_summary` is `null`.
+   - [ ] `services/api.js`: add the call for whichever endpoint shape
+         step 3 picked.
+
+5. **Testing before calling it done**
+   - [ ] Spot-check several real scan results: does the summary ever
+         mention an allergen that isn't in `explanations`? If yes, the
+         prompt constraint in step 2 isn't tight enough - fix before
+         shipping, don't ship with known hallucination risk.
+   - [ ] Missing/invalid `GROQ_API_KEY` → app still fully works, just no
+         summary (no crash, no broken result).
+   - [ ] Slow/unresponsive Groq → UI doesn't hang past the timeout.
+   - [ ] `npm run build` and the existing matcher/backend checks still
+         pass (this phase must not touch matcher logic — see ground rules
+         at the top of this file).
+
+6. **Docs**
+   - [ ] Note the `GROQ_API_KEY` requirement in the README's setup
+         instructions, and add Phase 9 to the "Post-Freeze
+         Maintenance and Extensions" section once shipped, matching the
+         existing write-up style for Phases 6-8.
 
 ### Phase 8 execution — data expansion + model result
 
