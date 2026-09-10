@@ -295,7 +295,6 @@ export default function ResultsPage() {
                   })}
                 </ul>
               </>
-            )
             ) : (
               <p className="text-xs text-stone-500 italic">
                 No precautionary ("May contain / Traces of") warnings matched.
