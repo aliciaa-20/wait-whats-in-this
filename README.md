@@ -124,8 +124,17 @@ Supported OCR languages currently include:
 - Dutch
 - Italian
 - Portuguese
+- Arabic
 
-If ingredient extraction fails, the system does not silently classify the product as safe. It returns an appropriate unknown/error state.
+If ingredient extraction fails, the system does not silently classify the product as safe. It returns an appropriate unknown/error state, and the state distinguishes *why* extraction failed rather than collapsing every failure into one generic outcome:
+
+| Reason code | Meaning |
+|---|---|
+| `OCR_NO_TEXT_DETECTED` | No text at all could be read from the image |
+| `INGREDIENT_SECTION_NOT_FOUND` | Text was read, but no ingredients heading was located |
+| `INGREDIENT_TEXT_EMPTY` | A heading was found, but no ingredient text followed it |
+
+If a recognized OCR language's model fails to initialize (for example, Arabic model weights cannot be downloaded), the system raises a clear, typed error instead of silently substituting the English OCR model and returning meaningless results.
 
 ---
 
@@ -165,6 +174,7 @@ The matching engine includes:
 - Precautionary/trace statement detection
 - Context-specific exclusion rules
 - Evidence extraction
+- Template-generated, per-allergen match explanations (e.g. `The ingredient list includes "lait écrémé en poudre", a recognized form of Milk / Dairy.`), built directly from the matched dictionary term rather than an LLM narrative, so every explanation is traceable back to the exact text that triggered it
 
 Examples of contextual exclusions include:
 
@@ -559,6 +569,71 @@ The system's final deployed allergen-matching architecture therefore remains det
 
 ---
 
+# Post-Freeze Maintenance and Extensions
+
+The experimental research version `research-v1.0-experimental` is frozen and untouched. The changes below were made afterward, each with its own backup, before/after benchmark on the same 963-product leak-free development set (all products from the 300-product held-out set excluded), and disclosed impact, following the same methodology as Phase 3 above. Full evidence for each change is preserved under `data/research/ml/`.
+
+## Dictionary Integrity Cleanup
+
+A full sweep of all 268 dictionary terms found one anomalous entry (`mantelrouge`, under `tree_nut`) that did not correspond to any recognizable word in any of the project's supported languages and had zero occurrences anywhere in the dataset. It was the sole cause of a false-positive embedding-attractor pattern during the Phase 3 synonym review. Removed after verification; the before/after benchmark showed **zero prediction changes and zero metric deltas**, confirming it was inert in live matching. Evidence: `data/research/ml/dictionary_cleanup_v1/`.
+
+## Trace-Recall False-Negative Diagnostic
+
+Every trace-allergen false negative across both the 1,263-product and 300-product evaluations (959 total) was programmatically categorized by failure mode:
+
+| Category | Share |
+|---|---:|
+| No textual evidence in the source text for the tagged trace allergen | 93.7% |
+| Ontology/dictionary gap | ~3-4% |
+| Trace-marker regex gap | 1.6% |
+| Section-splitting/context gap | 1.0% |
+| Matcher-logic edge case | 0.6% |
+
+The dominant finding: for the large majority of trace misses, the reference tag (Open Food Facts `traces_tags`) has no corresponding precautionary statement anywhere in the ingredient text supplied to the matcher — confirmed by cross-checking against the independently-collected human `trace_allergens` annotation in `ground_truth.csv`, which agreed with the OFF tag in every case checked. This is a data-source ceiling, not a matcher defect, and is consistent with the earlier finding that a dedicated ML trace-splitting classifier (Phase 1) did not outperform the rule-based splitter. Evidence: `data/research/ml/trace_fn_diagnostic_v1/`.
+
+## Targeted Trace-Recall Intervention
+
+Based on the diagnostic above, two narrowly-scoped, verified fixes were applied to close the addressable ~7%:
+
+- A German trace-marker regex gap (`"kann Haselnüsse, Mandeln, Milch enthalten"` — the allergen list sits between "kann" and "enthalten" rather than the two words being adjacent).
+- Eight confirmed ontology/dictionary terms across `egg`, `peanut`, `tree_nut`, `shellfish`, and `sesame` (German case inflections, missing Spanish/Portuguese/French forms). Ambiguous candidates (e.g. French `noix`, which collides with `noix de coco`/coconut) were explicitly excluded.
+
+| Metric | Before | After |
+|---|---:|---:|
+| Trace Recall | 0.4064 | 0.4258 |
+| Trace F1 | 0.5689 | 0.5877 |
+| Declared F1 | 0.8622 | 0.8646 |
+
+17 of the 30 diagnosed instances in-scope for these fixes resolved; zero new declared false positives were introduced. Evidence: `data/research/ml/trace_intervention_v1/`.
+
+## `normalize_text` Underscore Bug Fix
+
+Open Food Facts source text sometimes wraps allergen mentions in underscores for emphasis (e.g. `_soja_`, `_lait_`). Because `_` is a regex word character, the word-boundary check used for matching never matched the wrapped word even when the correct dictionary term was already present verbatim. Fixed by stripping underscores like any other separator before normalization.
+
+This turned out to be a substantially larger issue than the trace-only cases that surfaced it — the same markup appears throughout declared ingredient lists, not just precautionary statements:
+
+| Metric | Before | After |
+|---|---:|---:|
+| Declared Recall | 0.7959 | 0.8495 |
+| Declared F1 | 0.8646 | 0.8967 |
+| Declared Exact Match | 0.7985 | 0.8307 |
+| Trace Recall | 0.4258 | 0.4336 |
+
+Zero new false positives across all 963 products. Evidence: `data/research/ml/normalize_underscore_fix_v1/`.
+
+## Arabic OCR Support
+
+Arabic (`ar`) was added as a fully-wired OCR language, not just a matcher-level capability: EasyOCR's Arabic model, Arabic ingredient-heading terms (`المكونات`, `مكونات`) for ingredient-section extraction, and the frontend language selector. The allergen dictionary and matcher already had Arabic `TRACE_REGEXES`, `NEGATION_PATTERNS`, and dictionary terms from earlier work; these were left untouched.
+
+The EasyOCR Arabic model was confirmed to initialize and correctly read Arabic script. End-to-end extraction was verified against synthetic clean Arabic OCR text (heading detection through to allergen matching). No image in the dataset has genuinely Arabic-script ingredient text, so full pipeline validation against a real photo remains an open item — noted here rather than overstated.
+
+## Explainability Additions
+
+- **Per-match explanations**: each detected allergen now carries a template-generated sentence built from the exact dictionary term that matched (see Key Features above), surfaced in the `/analyze` response and the results UI.
+- **UNKNOWN reason codes**: `extraction_status: NOT_FOUND` now carries a specific `reason_code` (`OCR_NO_TEXT_DETECTED`, `INGREDIENT_SECTION_NOT_FOUND`, or `INGREDIENT_TEXT_EMPTY`) and a matching actionable message, instead of one generic failure state.
+
+---
+
 # Application Architecture
 
 ## Backend
@@ -577,6 +652,8 @@ The main `/analyze` endpoint accepts:
 - Food-label image
 - Selected allergy profile
 - OCR language
+
+It returns declared/trace allergens with match evidence, per-allergen match explanations, personalized and general risk, OCR metadata, and — when extraction fails — a specific `reason_code` explaining why.
 
 The backend invokes the existing research pipeline rather than implementing a separate simplified detection algorithm.
 
@@ -649,6 +726,9 @@ wait-whats-in-this/
 |   +-- diagnose_unmatched.py
 |   +-- get_openfoodfacts_data.py
 |   +-- test_allergen_matcher.py
+|   +-- remove_dictionary_anomaly.py
+|   +-- analyze_trace_false_negatives.py
+|   +-- benchmark_trace_intervention.py
 |
 +-- test_images/
 |
@@ -861,6 +941,12 @@ The system is a research and decision-support prototype. It cannot guarantee the
 - End-to-end application architecture
 - Five-phase ML extension evaluation (weak-supervised classifier, embedding candidate generation, human-approved synonym expansion, confidence-abstention assessment, OCR-confidence correlation test)
 - Human-approved synonym expansion validated and applied (9 terms added to the allergen dictionary)
+- Post-freeze dictionary integrity cleanup (anomalous term removal)
+- Post-freeze trace-recall false-negative diagnostic analysis across both evaluation sets
+- Post-freeze targeted trace-recall intervention (regex fix + verified ontology terms)
+- Post-freeze `normalize_text` underscore-handling bug fix
+- Arabic OCR language support (model, ingredient-heading detection, frontend selector)
+- Per-allergen match explanations and UNKNOWN reason codes
 
 ## Remaining Research Work
 
