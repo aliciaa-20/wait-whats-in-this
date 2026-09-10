@@ -24,6 +24,7 @@ if str(BASE_DIR) not in sys.path:
 
 from scripts.analyze_label import analyze_label
 from scripts.allergen_matcher import ALLERGENS, load_dictionary
+from scripts.ocr_processor import OCRLanguageInitError
 
 
 # ============================================================
@@ -76,6 +77,76 @@ ALLERGEN_NAMES = {
     "shellfish": "Shellfish",
     "sesame": "Sesame",
 }
+
+
+# ============================================================
+# ALLERGEN MATCH EXPLANATIONS
+#
+# Deliberately templated, not LLM-generated: the matcher already knows
+# exactly which dictionary term triggered the detection (`matched_term`),
+# so a rule-based sentence built from that is fully traceable back to the
+# label text with zero risk of the explanation itself being wrong. An
+# LLM-written narrative would read more naturally but could describe a
+# match that isn't actually what the matcher did - not worth it for a
+# safety-relevant explanation.
+# ============================================================
+
+def build_match_explanation(allergen_name, matched_term, section):
+    if section == "trace":
+        return (
+            f'The label\'s precautionary statement mentions "{matched_term}", '
+            f"a recognized form of {allergen_name}."
+        )
+
+    return (
+        f'The ingredient list includes "{matched_term}", '
+        f"a recognized form of {allergen_name}."
+    )
+
+
+def build_explanations(matches, trace_matches):
+
+    explanations = []
+
+    for match in matches:
+
+        name = ALLERGEN_NAMES.get(
+            match.get("allergen"),
+            match.get("allergen"),
+        )
+
+        explanations.append({
+            "allergen": match.get("allergen"),
+            "name": name,
+            "section": "declared",
+            "matched_term": match.get("matched_term"),
+            "text": build_match_explanation(
+                name,
+                match.get("matched_term"),
+                "declared",
+            ),
+        })
+
+    for match in trace_matches:
+
+        name = ALLERGEN_NAMES.get(
+            match.get("allergen"),
+            match.get("allergen"),
+        )
+
+        explanations.append({
+            "allergen": match.get("allergen"),
+            "name": name,
+            "section": "trace",
+            "matched_term": match.get("matched_term"),
+            "text": build_match_explanation(
+                name,
+                match.get("matched_term"),
+                "trace",
+            ),
+        })
+
+    return explanations
 
 
 # ============================================================
@@ -416,6 +487,14 @@ async def analyze_food_label(
             "UNKNOWN",
         )
 
+        unknown_reason = allergen_result.get(
+            "unknown_reason"
+        )
+
+        unknown_message = allergen_result.get(
+            "unknown_message"
+        )
+
 
         # ----------------------------------------------------
         # If OCR / ingredient extraction failed
@@ -430,8 +509,13 @@ async def analyze_food_label(
 
                 "risk": {
                     "status": "UNKNOWN",
+                    "reason_code": (
+                        unknown_reason
+                        or "INGREDIENT_TEXT_EMPTY"
+                    ),
                     "message": (
-                        "Ingredient information could not "
+                        unknown_message
+                        or "Ingredient information could not "
                         "be reliably extracted from the image."
                     ),
                 },
@@ -447,6 +531,10 @@ async def analyze_food_label(
 
                 "ingredients": {
                     "extraction_status": extraction_status,
+                    "reason_code": (
+                        unknown_reason
+                        or "INGREDIENT_TEXT_EMPTY"
+                    ),
                     "text": ocr_result.get(
                         "ingredient_text",
                         "",
@@ -581,6 +669,11 @@ async def analyze_food_label(
             for allergen in trace_allergens
         ]
 
+        explanations = build_explanations(
+            matches,
+            trace_matches,
+        )
+
 
         # ----------------------------------------------------
         # Return complete response
@@ -647,6 +740,8 @@ async def analyze_food_label(
 
                 "trace_matches": trace_matches,
 
+                "explanations": explanations,
+
             },
 
             "risk": {
@@ -681,6 +776,18 @@ async def analyze_food_label(
 
         raise HTTPException(
             status_code=400,
+            detail=str(exc),
+        )
+
+
+    except OCRLanguageInitError as exc:
+
+        print(
+            f"OCR language initialization error: {exc}"
+        )
+
+        raise HTTPException(
+            status_code=503,
             detail=str(exc),
         )
 

@@ -28,3 +28,6 @@ build/
 
 # Dev launcher logs
 .run/
+
+# Node.js dependencies
+node_modules/

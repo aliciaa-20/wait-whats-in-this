@@ -64,7 +64,7 @@ export async function getAllergens() {
  * Analyze food label image (POST /analyze)
  * @param {File} file - Uploaded image file
  * @param {string|Array} allergiesCommaSeparated - Array or comma-separated string of canonical IDs
- * @param {string} languageCode - Language code ('en', 'fr', 'de', 'es', 'nl', 'it', 'pt')
+ * @param {string} languageCode - Language code ('en', 'fr', 'de', 'es', 'nl', 'it', 'pt', 'ar')
  */
 export async function analyzeLabel(file, allergiesCommaSeparated = [], languageCode = 'en') {
   const formData = new FormData();

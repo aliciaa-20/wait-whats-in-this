@@ -82,9 +82,7 @@
         "œufs entiers",
         "vollei",
         "volledige eieren",
-        "kananmuna",
-        "huevo",
-        "huevos"
+        "kananmuna"
     ],
 
     "peanut": [
@@ -103,8 +101,7 @@
         "erdnüsse",
         "erdnuss",
         "erdnuss",
-        "erdnuss",
-        "erdnüssen"
+        "erdnuss"
     ],
 
     "tree_nut": [
@@ -137,13 +134,12 @@
         "fruits a coque",
         "schalenfrüchte",
         "schalenfruchte",
-        "schalenfrüchten",
         "pähkinä",
         "pahkina",
+        "mantelrouge",
         "fruit à coques",
         "frutos de cáscara",
-        "fruits coque",
-        "frutos secos"
+        "fruits coque"
     ],
 
     "soy": [
@@ -270,9 +266,6 @@
         "crustacean",
         "crustacés",
         "crustaces",
-        "crustacé",
-        "crustáceo",
-        "crustáceos",
         "shrimp",
         "prawn",
         "prawns",
@@ -298,7 +291,6 @@
         "semillas de sésamo",
         "sesame-seeds",
         "sezam",
-        "sesam",
-        "sésamo"
+        "sesam"
     ]
 }

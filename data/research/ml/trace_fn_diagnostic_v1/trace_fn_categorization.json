@@ -1,0 +1,602 @@
+{
+  "diagnostic_type": "trace_recall_false_negative_categorization",
+  "not_a_model_change": true,
+  "held_out_300_touched_for_tuning": false,
+  "dictionary_touched": false,
+  "matcher_touched": false,
+  "sources": {
+    "1263_off_tag_eval": "data/benchmark/matcher_results.csv",
+    "300_heldout_manual_eval": "data/research/heldout_predictions.csv"
+  },
+  "by_source": {
+    "1263_off_tag_eval": {
+      "source": "1263_off_tag_eval",
+      "total_trace_false_negatives": 788,
+      "category_counts": {
+        "off_reference_label_limitation": 735,
+        "section_splitting_context_gap": 10,
+        "ontology_dictionary_gap": 22,
+        "trace_marker_detection_gap": 15,
+        "matcher_logic_edge_case": 6
+      },
+      "category_percentages": {
+        "off_reference_label_limitation": 93.3,
+        "section_splitting_context_gap": 1.3,
+        "ontology_dictionary_gap": 2.8,
+        "trace_marker_detection_gap": 1.9,
+        "matcher_logic_edge_case": 0.8
+      },
+      "allergen_counts": {
+        "milk": 145,
+        "tree_nut": 232,
+        "egg": 62,
+        "sesame": 103,
+        "soy": 114,
+        "wheat_gluten": 71,
+        "peanut": 44,
+        "fish": 8,
+        "shellfish": 9
+      },
+      "language_counts": {
+        "fr": 589,
+        "en": 87,
+        "bg": 3,
+        "de": 20,
+        "nl": 22,
+        "ar": 9,
+        "it": 8,
+        "es": 35,
+        "cs": 10,
+        "fi": 3,
+        "pt": 2
+      },
+      "multilingual_uncovered_lang_count": 24,
+      "multilingual_uncovered_lang_pct": 3.0,
+      "category_by_allergen": {
+        "off_reference_label_limitation": {
+          "milk": 137,
+          "tree_nut": 211,
+          "egg": 58,
+          "sesame": 100,
+          "soy": 108,
+          "wheat_gluten": 68,
+          "peanut": 41,
+          "fish": 7,
+          "shellfish": 5
+        },
+        "section_splitting_context_gap": {
+          "tree_nut": 4,
+          "soy": 2,
+          "wheat_gluten": 3,
+          "milk": 1
+        },
+        "ontology_dictionary_gap": {
+          "tree_nut": 6,
+          "peanut": 2,
+          "shellfish": 3,
+          "egg": 4,
+          "sesame": 3,
+          "soy": 2,
+          "milk": 2
+        },
+        "trace_marker_detection_gap": {
+          "milk": 4,
+          "tree_nut": 6,
+          "soy": 2,
+          "peanut": 1,
+          "shellfish": 1,
+          "fish": 1
+        },
+        "matcher_logic_edge_case": {
+          "tree_nut": 5,
+          "milk": 1
+        }
+      },
+      "representative_examples": {
+        "off_reference_label_limitation": [
+          {
+            "code": "6111246721261",
+            "product_name": "Fromage Blanc Nature",
+            "allergen": "milk",
+            "lang": "fr",
+            "text_excerpt": "Lait de vache pasteurisé, Protéines de lait de vache, Crème de lait de vache, Ferment lactique, Amidon, Epaississant, Sorbate de potassium"
+          },
+          {
+            "code": "6111242101180",
+            "product_name": "uht jaouda 1L",
+            "allergen": "tree_nut",
+            "lang": "fr",
+            "text_excerpt": "Lait entier"
+          },
+          {
+            "code": "3046920029759",
+            "product_name": "Excellence Noir Prodigieux 90% Cacao",
+            "allergen": "tree_nut",
+            "lang": "fr",
+            "text_excerpt": "Pâte de cacao, beurre de cacao, cacao maigre, sucre, vanille."
+          },
+          {
+            "code": "6111242100206",
+            "product_name": "Le nature",
+            "allergen": "milk",
+            "lang": "fr",
+            "text_excerpt": "lait frais entier, poudre de lait écrémé, amidon, ferment lactique sélectionné"
+          }
+        ],
+        "section_splitting_context_gap": [
+          {
+            "code": "3608580065340",
+            "product_name": "Pâte à tartiner noisettes et cacao",
+            "allergen": "tree_nut",
+            "lang": "fr",
+            "text_excerpt": "sucre, _noisettes_ 20%, huiles végétales (tournesol, colza), _lait_ écrémé en poudre, cacao maigre en poudre 5,5%, beurre de cacao, émulsifiant : lécithine de tournesol, extrait de vanille.\n\nPeut contenir d'autres _fruit"
+          },
+          {
+            "code": "3330720237361",
+            "product_name": "Pâte à tartiner aux noisettes francaises et cacao",
+            "allergen": "tree_nut",
+            "lang": "fr",
+            "text_excerpt": "Sucre, huile de colza, noisette 16% (origine France), poudre de lait écrémé, poudre de cacão maigre 7%, émulsifiant: lécithine de tournesol. Traces possibles de sésame et autres fruits à coques. (*feves origine Afrique d"
+          },
+          {
+            "code": "3478820023184",
+            "product_name": "Pâte à tartiner Chocolat Noisette",
+            "allergen": "soy",
+            "lang": "fr",
+            "text_excerpt": "Sucre de canne*, huile de tournesol*, chocolat* 16,5% (sucre de canne*, poudre de cacao maigre*, beurre de cacao*), purée de NOISETTES* 10%, poudre de LAIT écrémé*, farine de SOJA*, émulsifiant : lécithines* (SOJA), extr"
+          },
+          {
+            "code": "8076809545396",
+            "product_name": "Pesto Basilico con Rucula",
+            "allergen": "tree_nut",
+            "lang": "de",
+            "text_excerpt": "Sonnenblumenöl, Basilikum 21,6%, Petersilie 12,2%, Käse Pecorino Romano g.U. (Schafmilch), Cashewkerne, Rucola 3,1%, Molkepulver (Milch), Zucker, Ricotta-Käse (Molke (Milch), Milch), Salz, Säureregulatoren: Milchsäure un"
+          }
+        ],
+        "ontology_dictionary_gap": [
+          {
+            "code": "5411188110835",
+            "product_name": "Alpro Mandeldrink, Original 1L",
+            "allergen": "tree_nut",
+            "lang": "de",
+            "text_excerpt": "Wasser, MANDELN (2,3%), Zucker, Calcium (Tricalciumphosphat), Meersalz, Stabilisatoren (Johannisbrotkernmehl, Gellan), Emulgator (Lecithine), natürliches Aroma, Vitamine (B2, B12, E, D2). Mandeln aus Spanien. Kann Spuren"
+          },
+          {
+            "code": "20047238",
+            "product_name": "Nussmix",
+            "allergen": "tree_nut",
+            "lang": "de",
+            "text_excerpt": "25% Walnusskerne, 25% Haselnusskerne, 25% Cashewkerne, 25% blanchierte Mandeln. Kann Spuren von anderen Schalenfrüchten und Erdnüssen enthalten."
+          },
+          {
+            "code": "20047238",
+            "product_name": "Nussmix",
+            "allergen": "peanut",
+            "lang": "de",
+            "text_excerpt": "25% Walnusskerne, 25% Haselnusskerne, 25% Cashewkerne, 25% blanchierte Mandeln. Kann Spuren von anderen Schalenfrüchten und Erdnüssen enthalten."
+          },
+          {
+            "code": "3083681148619",
+            "product_name": "Carottes rapees citron dnp 320g",
+            "allergen": "shellfish",
+            "lang": "fr",
+            "text_excerpt": "Carottes 81%, eau, huile de colza, vinaigre d'alcool, sucre, sel, jus de citron de Sicile 0,6%, MOUTARDE de Dijon, arôme naturel de citron (BLE), amidon de pomme de terre, antioxydant : acide ascorbique, épaississants : "
+          }
+        ],
+        "trace_marker_detection_gap": [
+          {
+            "code": "3046920029780",
+            "product_name": "Excellence Noir Subtil Doux 70% Cacao",
+            "allergen": "milk",
+            "lang": "nl",
+            "text_excerpt": "Kakaomasse, Zucker, Kakaobutter, Emulgator (Sojalecithin), Vanille. Kann Haselnüsse, Mandeln, Milch enthalten."
+          },
+          {
+            "code": "3046920029780",
+            "product_name": "Excellence Noir Subtil Doux 70% Cacao",
+            "allergen": "tree_nut",
+            "lang": "nl",
+            "text_excerpt": "Kakaomasse, Zucker, Kakaobutter, Emulgator (Sojalecithin), Vanille. Kann Haselnüsse, Mandeln, Milch enthalten."
+          },
+          {
+            "code": "3046920010047",
+            "product_name": "LINDT EXCELLENCE Smooth Dark 78%",
+            "allergen": "milk",
+            "lang": "nl",
+            "text_excerpt": "Kakao 78% mindesten\r\nkakaomasse, kakaobutter, Zucker, stark entölter Kakao, Buttereinfett.\r\nkann Schalenfrüchte, soja, sesamsamen, Weizen enthalten"
+          },
+          {
+            "code": "3046920010047",
+            "product_name": "LINDT EXCELLENCE Smooth Dark 78%",
+            "allergen": "tree_nut",
+            "lang": "nl",
+            "text_excerpt": "Kakao 78% mindesten\r\nkakaomasse, kakaobutter, Zucker, stark entölter Kakao, Buttereinfett.\r\nkann Schalenfrüchte, soja, sesamsamen, Weizen enthalten"
+          }
+        ],
+        "matcher_logic_edge_case": [
+          {
+            "code": "8402001010873",
+            "product_name": "Muesli Crunchy",
+            "allergen": "tree_nut",
+            "lang": "es",
+            "text_excerpt": "Copos de avena (gluten) (52%), fibras vegetales (achicoria, maiz), harina (20%) (arroz, trigo (gluten)), aceite de girasol alto oleico, extracto de malta de cebada (gluten), aromas, sal. Puede contener trazas de frutos d"
+          },
+          {
+            "code": "3760020505936",
+            "product_name": "Bouillon cube Légumes sans sel sans gluten",
+            "allergen": "milk",
+            "lang": "fr",
+            "text_excerpt": "INGRÉDIENTS DU BOUILLON DÉSHYDRATÉ :\nbeurre de karité*, légumes* 20% (tomates*, CELERI*, oignons*, carottes*, poireaux*, panais*), amidon de maïs*, sirop de glucose*, sucre de canne brut*, extrait de levure, jus de légum"
+          },
+          {
+            "code": "8410510012202",
+            "product_name": NaN,
+            "allergen": "tree_nut",
+            "lang": "es",
+            "text_excerpt": "Pasta de cacao, cacao desgrasado en polvo, azúcar, manteca de cacao, leche en polvo, pasta de almendras y avellanas, emulgentes (lecitinas (soja, girasol)), y aroma. Cacao 85% mínimo. Puede contener trazas de otros fruto"
+          },
+          {
+            "code": "8710445020878",
+            "product_name": "FIBRA & SÉSAMO",
+            "allergen": "tree_nut",
+            "lang": "en",
+            "text_excerpt": "Harina integral de centeno (gluten) 85%, semillas de sésamo 11%, sal. Puede contener trazas de trigo, avena, espelta, huevos, leche, frutos de cáscara, soja y mostaza."
+          }
+        ]
+      }
+    },
+    "300_heldout_manual_eval": {
+      "source": "300_heldout_manual_eval",
+      "total_trace_false_negatives": 171,
+      "category_counts": {
+        "off_reference_label_limitation": 164,
+        "ontology_dictionary_gap": 7
+      },
+      "category_percentages": {
+        "off_reference_label_limitation": 95.9,
+        "ontology_dictionary_gap": 4.1
+      },
+      "allergen_counts": {
+        "wheat_gluten": 20,
+        "milk": 34,
+        "tree_nut": 52,
+        "sesame": 18,
+        "peanut": 8,
+        "soy": 24,
+        "egg": 8,
+        "fish": 3,
+        "shellfish": 4
+      },
+      "language_counts": {
+        "fr": 106,
+        "en": 37,
+        "es": 8,
+        "de": 5,
+        "cs": 5,
+        "ar": 4,
+        "nl": 5,
+        "it": 1
+      },
+      "multilingual_uncovered_lang_count": 6,
+      "multilingual_uncovered_lang_pct": 3.5,
+      "category_by_allergen": {
+        "off_reference_label_limitation": {
+          "wheat_gluten": 20,
+          "milk": 34,
+          "tree_nut": 49,
+          "sesame": 17,
+          "peanut": 7,
+          "soy": 24,
+          "egg": 7,
+          "fish": 3,
+          "shellfish": 3
+        },
+        "ontology_dictionary_gap": {
+          "tree_nut": 3,
+          "shellfish": 1,
+          "egg": 1,
+          "sesame": 1,
+          "peanut": 1
+        }
+      },
+      "representative_examples": {
+        "off_reference_label_limitation": [
+          {
+            "code": "20713713",
+            "product_name": "Chocolat noir Equateur Bio",
+            "allergen": "wheat_gluten",
+            "lang": "fr",
+            "text_excerpt": "Pâte de cacao 50%, beurre de cacao 35%, sucre, extrait de vanille"
+          },
+          {
+            "code": "20713713",
+            "product_name": "Chocolat noir Equateur Bio",
+            "allergen": "milk",
+            "lang": "fr",
+            "text_excerpt": "Pâte de cacao 50%, beurre de cacao 35%, sucre, extrait de vanille"
+          },
+          {
+            "code": "20713713",
+            "product_name": "Chocolat noir Equateur Bio",
+            "allergen": "tree_nut",
+            "lang": "fr",
+            "text_excerpt": "Pâte de cacao 50%, beurre de cacao 35%, sucre, extrait de vanille"
+          },
+          {
+            "code": "6111021090049",
+            "product_name": "Concentré de tomates Aicha",
+            "allergen": "tree_nut",
+            "lang": "fr",
+            "text_excerpt": "tomate, sel,"
+          }
+        ],
+        "ontology_dictionary_gap": [
+          {
+            "code": "5411188122661",
+            "product_name": "Alpro Mandeldrink Weiß Ungesüßt, Ungeröstet 1 LT",
+            "allergen": "tree_nut",
+            "lang": "de",
+            "text_excerpt": "Wasser, MANDELN (2,3%), Calcium (Tricalciumphosphat), Meersalz, Stabilisatoren (Johannisbrotkernmehl, Gellan), Emulgator (Lecithine), natürliches Aroma, Vitamine (B2, B12, E, D2). Mandeln aus Italien und Spanien. Kann Sp"
+          },
+          {
+            "code": "8480017245670",
+            "product_name": "Cóctel de encurtidos",
+            "allergen": "shellfish",
+            "lang": "es",
+            "text_excerpt": "agua, aceitunas verdes, hortalizas en\nproporción variable (pepinillo, cebollita, ,zanahoria) (contiere\nsulfitos), sal, vinagre de alcohol, potenciadores del sabor\n(glutamato de monosodio, 5-ribonucleótidos de disodiol\nac"
+          },
+          {
+            "code": "8434165466333",
+            "product_name": "Krit krititas galletas saladas",
+            "allergen": "egg",
+            "lang": "es",
+            "text_excerpt": "Harina de _trigo_, aceite de girasol alto oleico (26%), azúcar, jarabe de glucosa y fructosa, extracto de malta de _cebada_, sal, gasificantes (carbonatos de amonio, carbonatos sodio), corrector de acidez (fosfatos de ca"
+          },
+          {
+            "code": "8434165466333",
+            "product_name": "Krit krititas galletas saladas",
+            "allergen": "sesame",
+            "lang": "es",
+            "text_excerpt": "Harina de _trigo_, aceite de girasol alto oleico (26%), azúcar, jarabe de glucosa y fructosa, extracto de malta de _cebada_, sal, gasificantes (carbonatos de amonio, carbonatos sodio), corrector de acidez (fosfatos de ca"
+          }
+        ]
+      }
+    }
+  },
+  "combined": {
+    "source": "combined",
+    "total_trace_false_negatives": 959,
+    "category_counts": {
+      "off_reference_label_limitation": 899,
+      "section_splitting_context_gap": 10,
+      "ontology_dictionary_gap": 29,
+      "trace_marker_detection_gap": 15,
+      "matcher_logic_edge_case": 6
+    },
+    "category_percentages": {
+      "off_reference_label_limitation": 93.7,
+      "section_splitting_context_gap": 1.0,
+      "ontology_dictionary_gap": 3.0,
+      "trace_marker_detection_gap": 1.6,
+      "matcher_logic_edge_case": 0.6
+    },
+    "allergen_counts": {
+      "milk": 179,
+      "tree_nut": 284,
+      "egg": 70,
+      "sesame": 121,
+      "soy": 138,
+      "wheat_gluten": 91,
+      "peanut": 52,
+      "fish": 11,
+      "shellfish": 13
+    },
+    "language_counts": {
+      "fr": 695,
+      "en": 124,
+      "bg": 3,
+      "de": 25,
+      "nl": 27,
+      "ar": 13,
+      "it": 9,
+      "es": 43,
+      "cs": 15,
+      "fi": 3,
+      "pt": 2
+    },
+    "multilingual_uncovered_lang_count": 30,
+    "multilingual_uncovered_lang_pct": 3.1,
+    "category_by_allergen": {
+      "off_reference_label_limitation": {
+        "milk": 171,
+        "tree_nut": 260,
+        "egg": 65,
+        "sesame": 117,
+        "soy": 132,
+        "wheat_gluten": 88,
+        "peanut": 48,
+        "fish": 10,
+        "shellfish": 8
+      },
+      "section_splitting_context_gap": {
+        "tree_nut": 4,
+        "soy": 2,
+        "wheat_gluten": 3,
+        "milk": 1
+      },
+      "ontology_dictionary_gap": {
+        "tree_nut": 9,
+        "peanut": 3,
+        "shellfish": 4,
+        "egg": 5,
+        "sesame": 4,
+        "soy": 2,
+        "milk": 2
+      },
+      "trace_marker_detection_gap": {
+        "milk": 4,
+        "tree_nut": 6,
+        "soy": 2,
+        "peanut": 1,
+        "shellfish": 1,
+        "fish": 1
+      },
+      "matcher_logic_edge_case": {
+        "tree_nut": 5,
+        "milk": 1
+      }
+    },
+    "representative_examples": {
+      "off_reference_label_limitation": [
+        {
+          "code": "6111246721261",
+          "product_name": "Fromage Blanc Nature",
+          "allergen": "milk",
+          "lang": "fr",
+          "text_excerpt": "Lait de vache pasteurisé, Protéines de lait de vache, Crème de lait de vache, Ferment lactique, Amidon, Epaississant, Sorbate de potassium"
+        },
+        {
+          "code": "6111242101180",
+          "product_name": "uht jaouda 1L",
+          "allergen": "tree_nut",
+          "lang": "fr",
+          "text_excerpt": "Lait entier"
+        },
+        {
+          "code": "3046920029759",
+          "product_name": "Excellence Noir Prodigieux 90% Cacao",
+          "allergen": "tree_nut",
+          "lang": "fr",
+          "text_excerpt": "Pâte de cacao, beurre de cacao, cacao maigre, sucre, vanille."
+        },
+        {
+          "code": "6111242100206",
+          "product_name": "Le nature",
+          "allergen": "milk",
+          "lang": "fr",
+          "text_excerpt": "lait frais entier, poudre de lait écrémé, amidon, ferment lactique sélectionné"
+        }
+      ],
+      "section_splitting_context_gap": [
+        {
+          "code": "3608580065340",
+          "product_name": "Pâte à tartiner noisettes et cacao",
+          "allergen": "tree_nut",
+          "lang": "fr",
+          "text_excerpt": "sucre, _noisettes_ 20%, huiles végétales (tournesol, colza), _lait_ écrémé en poudre, cacao maigre en poudre 5,5%, beurre de cacao, émulsifiant : lécithine de tournesol, extrait de vanille.\n\nPeut contenir d'autres _fruit"
+        },
+        {
+          "code": "3330720237361",
+          "product_name": "Pâte à tartiner aux noisettes francaises et cacao",
+          "allergen": "tree_nut",
+          "lang": "fr",
+          "text_excerpt": "Sucre, huile de colza, noisette 16% (origine France), poudre de lait écrémé, poudre de cacão maigre 7%, émulsifiant: lécithine de tournesol. Traces possibles de sésame et autres fruits à coques. (*feves origine Afrique d"
+        },
+        {
+          "code": "3478820023184",
+          "product_name": "Pâte à tartiner Chocolat Noisette",
+          "allergen": "soy",
+          "lang": "fr",
+          "text_excerpt": "Sucre de canne*, huile de tournesol*, chocolat* 16,5% (sucre de canne*, poudre de cacao maigre*, beurre de cacao*), purée de NOISETTES* 10%, poudre de LAIT écrémé*, farine de SOJA*, émulsifiant : lécithines* (SOJA), extr"
+        },
+        {
+          "code": "8076809545396",
+          "product_name": "Pesto Basilico con Rucula",
+          "allergen": "tree_nut",
+          "lang": "de",
+          "text_excerpt": "Sonnenblumenöl, Basilikum 21,6%, Petersilie 12,2%, Käse Pecorino Romano g.U. (Schafmilch), Cashewkerne, Rucola 3,1%, Molkepulver (Milch), Zucker, Ricotta-Käse (Molke (Milch), Milch), Salz, Säureregulatoren: Milchsäure un"
+        }
+      ],
+      "ontology_dictionary_gap": [
+        {
+          "code": "5411188110835",
+          "product_name": "Alpro Mandeldrink, Original 1L",
+          "allergen": "tree_nut",
+          "lang": "de",
+          "text_excerpt": "Wasser, MANDELN (2,3%), Zucker, Calcium (Tricalciumphosphat), Meersalz, Stabilisatoren (Johannisbrotkernmehl, Gellan), Emulgator (Lecithine), natürliches Aroma, Vitamine (B2, B12, E, D2). Mandeln aus Spanien. Kann Spuren"
+        },
+        {
+          "code": "20047238",
+          "product_name": "Nussmix",
+          "allergen": "tree_nut",
+          "lang": "de",
+          "text_excerpt": "25% Walnusskerne, 25% Haselnusskerne, 25% Cashewkerne, 25% blanchierte Mandeln. Kann Spuren von anderen Schalenfrüchten und Erdnüssen enthalten."
+        },
+        {
+          "code": "20047238",
+          "product_name": "Nussmix",
+          "allergen": "peanut",
+          "lang": "de",
+          "text_excerpt": "25% Walnusskerne, 25% Haselnusskerne, 25% Cashewkerne, 25% blanchierte Mandeln. Kann Spuren von anderen Schalenfrüchten und Erdnüssen enthalten."
+        },
+        {
+          "code": "3083681148619",
+          "product_name": "Carottes rapees citron dnp 320g",
+          "allergen": "shellfish",
+          "lang": "fr",
+          "text_excerpt": "Carottes 81%, eau, huile de colza, vinaigre d'alcool, sucre, sel, jus de citron de Sicile 0,6%, MOUTARDE de Dijon, arôme naturel de citron (BLE), amidon de pomme de terre, antioxydant : acide ascorbique, épaississants : "
+        }
+      ],
+      "trace_marker_detection_gap": [
+        {
+          "code": "3046920029780",
+          "product_name": "Excellence Noir Subtil Doux 70% Cacao",
+          "allergen": "milk",
+          "lang": "nl",
+          "text_excerpt": "Kakaomasse, Zucker, Kakaobutter, Emulgator (Sojalecithin), Vanille. Kann Haselnüsse, Mandeln, Milch enthalten."
+        },
+        {
+          "code": "3046920029780",
+          "product_name": "Excellence Noir Subtil Doux 70% Cacao",
+          "allergen": "tree_nut",
+          "lang": "nl",
+          "text_excerpt": "Kakaomasse, Zucker, Kakaobutter, Emulgator (Sojalecithin), Vanille. Kann Haselnüsse, Mandeln, Milch enthalten."
+        },
+        {
+          "code": "3046920010047",
+          "product_name": "LINDT EXCELLENCE Smooth Dark 78%",
+          "allergen": "milk",
+          "lang": "nl",
+          "text_excerpt": "Kakao 78% mindesten\r\nkakaomasse, kakaobutter, Zucker, stark entölter Kakao, Buttereinfett.\r\nkann Schalenfrüchte, soja, sesamsamen, Weizen enthalten"
+        },
+        {
+          "code": "3046920010047",
+          "product_name": "LINDT EXCELLENCE Smooth Dark 78%",
+          "allergen": "tree_nut",
+          "lang": "nl",
+          "text_excerpt": "Kakao 78% mindesten\r\nkakaomasse, kakaobutter, Zucker, stark entölter Kakao, Buttereinfett.\r\nkann Schalenfrüchte, soja, sesamsamen, Weizen enthalten"
+        }
+      ],
+      "matcher_logic_edge_case": [
+        {
+          "code": "8402001010873",
+          "product_name": "Muesli Crunchy",
+          "allergen": "tree_nut",
+          "lang": "es",
+          "text_excerpt": "Copos de avena (gluten) (52%), fibras vegetales (achicoria, maiz), harina (20%) (arroz, trigo (gluten)), aceite de girasol alto oleico, extracto de malta de cebada (gluten), aromas, sal. Puede contener trazas de frutos d"
+        },
+        {
+          "code": "3760020505936",
+          "product_name": "Bouillon cube Légumes sans sel sans gluten",
+          "allergen": "milk",
+          "lang": "fr",
+          "text_excerpt": "INGRÉDIENTS DU BOUILLON DÉSHYDRATÉ :\nbeurre de karité*, légumes* 20% (tomates*, CELERI*, oignons*, carottes*, poireaux*, panais*), amidon de maïs*, sirop de glucose*, sucre de canne brut*, extrait de levure, jus de légum"
+        },
+        {
+          "code": "8410510012202",
+          "product_name": NaN,
+          "allergen": "tree_nut",
+          "lang": "es",
+          "text_excerpt": "Pasta de cacao, cacao desgrasado en polvo, azúcar, manteca de cacao, leche en polvo, pasta de almendras y avellanas, emulgentes (lecitinas (soja, girasol)), y aroma. Cacao 85% mínimo. Puede contener trazas de otros fruto"
+        },
+        {
+          "code": "8710445020878",
+          "product_name": "FIBRA & SÉSAMO",
+          "allergen": "tree_nut",
+          "lang": "en",
+          "text_excerpt": "Harina integral de centeno (gluten) 85%, semillas de sésamo 11%, sal. Puede contener trazas de trigo, avena, espelta, huevos, leche, frutos de cáscara, soja y mostaza."
+        }
+      ]
+    }
+  }
+}

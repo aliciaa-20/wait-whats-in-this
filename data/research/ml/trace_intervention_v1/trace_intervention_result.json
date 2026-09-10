@@ -1,0 +1,297 @@
+{
+  "change_type": "targeted_rule_ontology_correction",
+  "not_a_new_ml_method": true,
+  "date": "2026-09-10",
+  "evaluation_set": "963-product leak-free dev set (same as Phase 3 synonym audit and mantelrouge cleanup)",
+  "held_out_300_touched_for_tuning": false,
+  "research_v1.0_experimental_untouched": true,
+  "changes": {
+    "regex_added": "\\bkann\\b[^.]{0,80}\\benthalten\\b (German 'kann ... enthalten' bounded-clause trace marker)",
+    "dictionary_terms_added": {
+      "egg": [
+        "huevo",
+        "huevos"
+      ],
+      "peanut": [
+        "erdnüssen"
+      ],
+      "tree_nut": [
+        "schalenfrüchten",
+        "frutos secos"
+      ],
+      "shellfish": [
+        "crustacé",
+        "crustáceo",
+        "crustáceos"
+      ],
+      "sesame": [
+        "sésamo"
+      ]
+    },
+    "excluded_ambiguous_or_out_of_scope": {
+      "noix (fr, tree_nut)": "ambiguous - collides with 'noix de coco' (coconut, not an EU-regulated tree-nut allergen)",
+      "underscore-wrapped OFF terms (e.g. '_soja_', '_lait_', '_sesamo...huevo._')": "term already correct in dictionary; failure is a normalize_text/phrase_in_text word-boundary bug where '_' counts as \\w - out of scope for a dictionary/regex-only change"
+    }
+  },
+  "before": {
+    "declared": {
+      "precision": 0.9381,
+      "recall": 0.7977,
+      "f1": 0.8622,
+      "exact_match": 0.7975
+    },
+    "trace": {
+      "precision": 0.948,
+      "recall": 0.4064,
+      "f1": 0.5689,
+      "exact_match": 0.6999
+    }
+  },
+  "after": {
+    "declared": {
+      "precision": 0.9463,
+      "recall": 0.7959,
+      "f1": 0.8646,
+      "exact_match": 0.7985
+    },
+    "trace": {
+      "precision": 0.9482,
+      "recall": 0.4258,
+      "f1": 0.5877,
+      "exact_match": 0.7113
+    }
+  },
+  "deltas": {
+    "declared_precision": 0.0082,
+    "declared_recall": -0.0018,
+    "declared_f1": 0.0024,
+    "declared_exact_match": 0.001,
+    "trace_precision": 0.0002,
+    "trace_recall": 0.0194,
+    "trace_f1": 0.0188,
+    "trace_exact_match": 0.0114
+  },
+  "products_with_changed_prediction": 15,
+  "new_declared_false_positives_introduced": 0,
+  "new_trace_false_positives_introduced": 1,
+  "diagnosed_false_negative_recovery": {
+    "targeted_categories": [
+      "trace_marker_detection_gap",
+      "ontology_dictionary_gap"
+    ],
+    "diagnosed_instances_in_this_dev_set": 30,
+    "resolved_after_intervention": 17,
+    "detail": [
+      {
+        "code": "20047238",
+        "allergen": "tree_nut",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "20047238",
+        "allergen": "peanut",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3046920029780",
+        "allergen": "milk",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3046920029780",
+        "allergen": "tree_nut",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3046920010047",
+        "allergen": "milk",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "3046920010047",
+        "allergen": "tree_nut",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3046920010047",
+        "allergen": "soy",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3083681148619",
+        "allergen": "shellfish",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "4014400400007",
+        "allergen": "tree_nut",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "4014400400007",
+        "allergen": "peanut",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3046920016377",
+        "allergen": "milk",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3046920016377",
+        "allergen": "tree_nut",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3046920016377",
+        "allergen": "soy",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "8410376009415",
+        "allergen": "tree_nut",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3083681148640",
+        "allergen": "shellfish",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "7622300336738",
+        "allergen": "milk",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "5010477348555",
+        "allergen": "tree_nut",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "8710445020878",
+        "allergen": "egg",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "8480000095367",
+        "allergen": "sesame",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      },
+      {
+        "code": "3228857000913",
+        "allergen": "egg",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "3228857000913",
+        "allergen": "soy",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "3228857000913",
+        "allergen": "milk",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "3228857000913",
+        "allergen": "sesame",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "8001665704182",
+        "allergen": "shellfish",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "8001665704182",
+        "allergen": "tree_nut",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "8001665704182",
+        "allergen": "fish",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "5410358464778",
+        "allergen": "milk",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "5410358464778",
+        "allergen": "soy",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "5900020023025",
+        "allergen": "tree_nut",
+        "category": "trace_marker_detection_gap",
+        "was_fn_before": true,
+        "resolved_after": false
+      },
+      {
+        "code": "8480024819697",
+        "allergen": "egg",
+        "category": "ontology_dictionary_gap",
+        "was_fn_before": true,
+        "resolved_after": true
+      }
+    ]
+  }
+}

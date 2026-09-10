@@ -21,8 +21,8 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { to: '/profile', label: 'Profile', icon: UserCheck },
-    { to: '/', label: 'Scan', icon: Camera },
+    { to: '/', label: 'Profile', icon: UserCheck },
+    { to: '/scan', label: 'Scan', icon: Camera },
     { to: '/history', label: 'History', icon: History },
     { to: '/about', label: 'About', icon: Info },
   ];
@@ -80,7 +80,7 @@ export default function Navbar() {
             }`}
             title={isOnline ? 'Backend API connected (http://127.0.0.1:8000)' : 'Backend API offline or connecting...'}
           >
-            <span className={`w-2 h-2 rounded-full ${isOnline ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+            <span className={`w-2 h-2 rounded-full ${isOnline ? 'bg-emerald-400 motion-safe:animate-pulse' : 'bg-amber-400'}`} />
             <span>{isOnline ? 'API Connected' : 'API Offline'}</span>
           </div>
         </div>

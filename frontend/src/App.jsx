@@ -17,8 +17,8 @@ export default function App() {
         {/* Page Content Routes */}
         <main className="flex-1 pb-12">
           <Routes>
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/" element={<ScanPage />} />
+            <Route path="/" element={<ProfilePage />} />
+            <Route path="/scan" element={<ScanPage />} />
             <Route path="/results" element={<ResultsPage />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/about" element={<AboutPage />} />

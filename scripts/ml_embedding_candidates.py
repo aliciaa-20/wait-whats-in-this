@@ -121,7 +121,15 @@ def split_ingredient_phrases(text: str) -> list[str]:
     """
     if not text:
         return []
-    phrases = re.split(r"[,;]", text)
+    # Includes Arabic comma (،, U+060C) and Arabic semicolon (؛, U+061B)
+    # alongside the ASCII forms - the original ASCII-only split left
+    # Arabic-language ingredient lists as one unsplit compound phrase
+    # (e.g. egg candidate "أصفر البيض، خردل*، ملح" in the Phase 3 review,
+    # which contained genuine "egg yolk" content but was rejected as a
+    # messy compound rather than a clean atomic term). This fix affects
+    # future runs only - it does not retroactively change the frozen
+    # Phase 2/3 v1 results, which were already reviewed and applied.
+    phrases = re.split(r"[,;،؛]", text)
     return [
         p.strip() for p in phrases
         if len(p.strip()) >= 3 and len(p.strip().split()) >= MIN_PHRASE_WORDS

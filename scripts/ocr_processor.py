@@ -26,11 +26,13 @@ INGREDIENT_WORDS = [
     "ingredientes",
     "ingrediënten",
     "ingredienser",
+    "المكونات",
+    "مكونات",
 ]
 
 # Multilingual heading terms used for FUZZY matching in
 # extract_ingredient_section(), scoped to this project's actually
-# supported OCR languages only (en, fr, de, es, nl, it, pt).
+# supported OCR languages only (en, fr, de, es, nl, it, pt, ar).
 #
 # Deliberately narrower than INGREDIENT_WORDS above: including an
 # out-of-scope term (e.g. Scandinavian "ingredienser") in fuzzy
@@ -55,6 +57,7 @@ FUZZY_HEADING_TERMS_BY_LANGUAGE = {
     "pt": ["ingredientes", "ingrediente"],
     "it": ["ingredienti"],
     "nl": ["ingrediënten", "ingrediënt"],
+    "ar": ["المكونات", "مكونات"],
 }
 
 # Fuzzy word length is a real threshold-selection variable: short
@@ -324,7 +327,16 @@ EASYOCR_LANGUAGE_MAP = {
     "nl": ["nl"],
     "it": ["it"],
     "pt": ["pt"],
+    "ar": ["ar"],
 }
+
+
+class OCRLanguageInitError(RuntimeError):
+    """Raised when a recognized OCR language's EasyOCR model fails to
+    initialize. Deliberately NOT caught and silently replaced with an
+    English reader - the caller must surface this to the user instead of
+    returning OCR results run against the wrong language's model."""
+
 
 _READER_CACHE = {}
 
@@ -333,12 +345,19 @@ def get_ocr_reader(language="en"):
     """
     Return a cached EasyOCR reader for the requested language.
 
-    Unsupported languages fall back to English.
+    Languages not in EASYOCR_LANGUAGE_MAP fall back to English (unchanged
+    prior behavior). A RECOGNIZED language whose EasyOCR model fails to
+    initialize (e.g. Arabic, if the model weights can't be downloaded)
+    raises OCRLanguageInitError instead of silently substituting English -
+    running Arabic-script text through an English OCR model would produce
+    meaningless output rather than a visible failure.
     """
 
     language = str(
         language or "en"
     ).strip().lower()
+
+    is_recognized = language in EASYOCR_LANGUAGE_MAP
 
     languages = EASYOCR_LANGUAGE_MAP.get(
         language,
@@ -354,10 +373,17 @@ def get_ocr_reader(language="en"):
             f"for language: {language}"
         )
 
-        _READER_CACHE[cache_key] = easyocr.Reader(
-            languages,
-            gpu=False,
-        )
+        try:
+            _READER_CACHE[cache_key] = easyocr.Reader(
+                languages,
+                gpu=False,
+            )
+        except Exception as exc:
+            if is_recognized:
+                raise OCRLanguageInitError(
+                    f"Could not initialize OCR for language '{language}': {exc}"
+                ) from exc
+            raise
 
     return _READER_CACHE[cache_key]
 
@@ -581,6 +607,8 @@ def extract_ingredient_section(
         r"\bingredienser\b",
         r"\bingredienserna\b",
         r"\bsastojci\b",
+        r"\bالمكونات\b",
+        r"\bمكونات\b",
     ]
 
     heading_regex = re.compile(

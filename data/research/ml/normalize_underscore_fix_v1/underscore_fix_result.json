@@ -1,0 +1,49 @@
+{
+  "change_type": "bug_fix_normalize_text_underscore_stripping",
+  "not_a_new_ml_method": true,
+  "date": "2026-09-10",
+  "description": "normalize_text() treated '_' as a word character (regex \\w), so OFF's underscore-wrapped allergen emphasis markup (e.g. '_soja_', '_lait_') never satisfied phrase_in_text()'s word-boundary check even when the correct dictionary term was present verbatim. Fixed by stripping underscores to spaces before boundary matching, same as any other separator.",
+  "evaluation_set": "963-product leak-free dev set (same as prior Phase 3/B experiments)",
+  "held_out_300_touched_for_tuning": false,
+  "research_v1.0_experimental_untouched": true,
+  "before": {
+    "declared": {
+      "precision": 0.9463,
+      "recall": 0.7959,
+      "f1": 0.8646,
+      "exact_match": 0.7985
+    },
+    "trace": {
+      "precision": 0.9482,
+      "recall": 0.4258,
+      "f1": 0.5877,
+      "exact_match": 0.7113
+    }
+  },
+  "after": {
+    "declared": {
+      "precision": 0.9495,
+      "recall": 0.8495,
+      "f1": 0.8967,
+      "exact_match": 0.8307
+    },
+    "trace": {
+      "precision": 0.949,
+      "recall": 0.4336,
+      "f1": 0.5952,
+      "exact_match": 0.7144
+    }
+  },
+  "deltas": {
+    "declared_precision": 0.0032,
+    "declared_recall": 0.0536,
+    "declared_f1": 0.0321,
+    "declared_exact_match": 0.0322,
+    "trace_precision": 0.0008,
+    "trace_recall": 0.0078,
+    "trace_f1": 0.0075,
+    "trace_exact_match": 0.0031
+  },
+  "products_with_changed_prediction": 37,
+  "new_false_positives_introduced": 0
+}

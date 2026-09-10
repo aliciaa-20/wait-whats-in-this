@@ -236,11 +236,6 @@ TRACE_REGEXES = [
     r"\bkann spuren enthalten\b",
     r"\bkann spuren von\b",
     r"\bspuren von\b",
-    # "kann Haselnüsse, Mandeln, Milch enthalten" - the allergen list sits
-    # between "kann" and "enthalten" rather than the two words being
-    # adjacent, which the patterns above require. Bounded to one clause
-    # (no period) so this doesn't reach across unrelated sentences.
-    r"\bkann\b[^.]{0,80}\benthalten\b",
     r"\bhergestellt in einem betrieb\b",
     r"\bhergestellt in einer anlage\b",
 
@@ -291,14 +286,6 @@ def normalize_text(text):
     text = text.replace("—", "-")
     text = text.replace("œ", "oe")
     text = text.replace("æ", "ae")
-
-    # OFF source text sometimes wraps allergen mentions in underscores
-    # for emphasis (e.g. "_soja_", "_lait_"). "_" is a \w character, so
-    # leaving it in place breaks the word-boundary check in
-    # phrase_in_text() - "soja" inside "_soja_" never matches because
-    # there is no boundary between "_" and "s". Strip it like any other
-    # separator instead of treating it as part of the word.
-    text = text.replace("_", " ")
 
     decomposed = unicodedata.normalize("NFKD", text)
     text = "".join(

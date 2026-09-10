@@ -33,7 +33,7 @@ export default function ResultsPage() {
           Please upload or capture a food label first to view the assessment results.
         </p>
         <Link
-          to="/"
+          to="/scan"
           className="inline-block px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-2xl shadow transition-colors"
         >
           Go to Label Scanner
@@ -64,7 +64,7 @@ export default function ResultsPage() {
     AVOID: {
       title: 'AVOID - ALLERGEN DETECTED',
       badgeClass: 'badge-avoid',
-      icon: <XCircle className="w-8 h-8 text-rose-700" />,
+      icon: <XCircle className="w-8 h-8 text-rose-700 motion-safe:animate-pulse" />,
       bannerBg: 'bg-rose-50 border-rose-300',
     },
     UNKNOWN: {
@@ -77,12 +77,72 @@ export default function ResultsPage() {
 
   const currentConfig = VERDICT_CONFIG[verdict] || VERDICT_CONFIG.UNKNOWN;
 
-  const declaredList = allergens?.declared_names || allergens?.declared || [];
-  const traceList = allergens?.trace_names || allergens?.trace || [];
+  // declared/trace lists use display names, but the matcher's evidence
+  // objects key by allergen id (e.g. "milk", not "Milk / Dairy") - pair
+  // them up by position against the id lists, not by name, and read the
+  // API's actual field name (`matched_term`, singular).
+  const declaredIds = allergens?.declared || [];
+  const traceIds = allergens?.trace || [];
+  const declaredList = allergens?.declared_names || declaredIds;
+  const traceList = allergens?.trace_names || traceIds;
   const declaredMatches = allergens?.matches || [];
   const traceMatches = allergens?.trace_matches || [];
 
-  const confidenceScore = ocr?.confidence ? (ocr.confidence * 100).toFixed(1) : '95.0';
+  const evidenceFor = (matches, ids, index) => {
+    const id = ids[index];
+    const match = matches.find((m) => m.allergen === id);
+    return match?.matched_term || null;
+  };
+
+  // Backend-built, template-generated explanations (not LLM narrative) -
+  // one sentence per matched allergen, traceable straight back to the
+  // dictionary term that triggered it. Falls back to nothing for older
+  // history entries saved before this field existed.
+  const explanations = allergens?.explanations || [];
+  const explanationFor = (section, allergenId) =>
+    explanations.find((e) => e.section === section && e.allergen === allergenId)?.text || null;
+
+  // No fabricated fallback: if the API didn't return a confidence
+  // value, say so rather than implying a specific measured number.
+  const hasConfidence = typeof ocr?.confidence === 'number';
+  const confidencePct = hasConfidence ? ocr.confidence * 100 : null;
+  const confidenceScore = hasConfidence ? confidencePct.toFixed(1) : null;
+  const confidenceLevel =
+    confidencePct === null ? 'unknown' : confidencePct < 40 ? 'low' : confidencePct < 70 ? 'medium' : 'high';
+  const CONFIDENCE_BAR_COLOR = {
+    low: 'bg-rose-500',
+    medium: 'bg-amber-500',
+    high: 'bg-emerald-500',
+    unknown: 'bg-stone-300',
+  }[confidenceLevel];
+
+  // Surfaced near the verdict itself, not just in the collapsed
+  // accordion - the OCR benchmark work on this project measured real,
+  // meaningful accuracy degradation under poor OCR conditions, so a
+  // user should be able to tell at a glance whether THIS result came
+  // from a clean read or a struggling one, not just the final verdict.
+  const OCR_QUALITY_CONFIG = {
+    high: {
+      label: 'OCR read clearly',
+      icon: <CheckCircle2 className="w-3.5 h-3.5" />,
+      className: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+    },
+    medium: {
+      label: 'OCR moderately confident — worth a quick check',
+      icon: <Info className="w-3.5 h-3.5" />,
+      className: 'bg-amber-50 text-amber-800 border-amber-200',
+    },
+    low: {
+      label: 'OCR struggled — verify this label yourself',
+      icon: <AlertTriangle className="w-3.5 h-3.5" />,
+      className: 'bg-rose-50 text-rose-800 border-rose-200',
+    },
+    unknown: {
+      label: 'OCR confidence not reported',
+      icon: <HelpCircle className="w-3.5 h-3.5" />,
+      className: 'bg-stone-100 text-stone-600 border-stone-200',
+    },
+  }[confidenceLevel];
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
@@ -104,9 +164,18 @@ export default function ResultsPage() {
             </div>
           </div>
 
-          <span className={`self-start sm:self-auto px-4 py-2 rounded-2xl text-base font-extrabold border ${currentConfig.badgeClass}`}>
-            {verdict}
-          </span>
+          <div className="flex flex-col items-start sm:items-end gap-1.5 self-start sm:self-auto">
+            <span className={`px-4 py-2 rounded-2xl text-base font-extrabold border ${currentConfig.badgeClass}`}>
+              {verdict}
+            </span>
+            <span
+              className={`px-2.5 py-1 rounded-xl text-[11px] font-bold border flex items-center gap-1.5 ${OCR_QUALITY_CONFIG.className}`}
+              title={hasConfidence ? `OCR confidence: ${confidenceScore}%` : undefined}
+            >
+              {OCR_QUALITY_CONFIG.icon}
+              {OCR_QUALITY_CONFIG.label}
+            </span>
+          </div>
         </div>
 
         {/* Backend Explanation Text */}
@@ -156,20 +225,34 @@ export default function ResultsPage() {
             </h3>
 
             {declaredList.length > 0 ? (
-              <div className="flex flex-wrap gap-2">
-                {declaredList.map((alg, idx) => {
-                  const matchObj = declaredMatches.find((m) => m.allergen === alg || m.allergen_id === alg);
-                  const matchedTerm = matchObj ? matchObj.matches?.join(', ') : null;
-                  return (
-                    <span
-                      key={idx}
-                      className="px-3 py-1.5 bg-rose-50 text-rose-900 border border-rose-200 rounded-xl text-xs font-bold flex items-center gap-1.5"
-                    >
-                      ⚠️ {alg} {matchedTerm && <span className="text-[11px] text-rose-600 font-normal">({matchedTerm})</span>}
-                    </span>
-                  );
-                })}
-              </div>
+              <>
+                <div className="flex flex-wrap gap-2">
+                  {declaredList.map((alg, idx) => {
+                    const matchedTerm = evidenceFor(declaredMatches, declaredIds, idx);
+                    const explanation = explanationFor('declared', declaredIds[idx]);
+                    return (
+                      <span
+                        key={idx}
+                        title={explanation || undefined}
+                        className="px-3 py-1.5 bg-rose-50 text-rose-900 border border-rose-200 rounded-xl text-xs font-bold flex items-center gap-1.5"
+                      >
+                        ⚠️ {alg} {matchedTerm && <span className="text-[11px] text-rose-600 font-normal">({matchedTerm})</span>}
+                      </span>
+                    );
+                  })}
+                </div>
+                <ul className="space-y-1 pt-1">
+                  {declaredIds.map((id, idx) => {
+                    const explanation = explanationFor('declared', id);
+                    if (!explanation) return null;
+                    return (
+                      <li key={idx} className="text-[11px] text-stone-500 leading-snug">
+                        {declaredList[idx]}: {explanation}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
             ) : (
               <p className="text-xs text-stone-500 italic">
                 No direct declared allergens detected for your profile.
@@ -184,20 +267,35 @@ export default function ResultsPage() {
             </h3>
 
             {traceList.length > 0 ? (
-              <div className="flex flex-wrap gap-2">
-                {traceList.map((alg, idx) => {
-                  const matchObj = traceMatches.find((m) => m.allergen === alg || m.allergen_id === alg);
-                  const matchedTerm = matchObj ? matchObj.matches?.join(', ') : null;
-                  return (
-                    <span
-                      key={idx}
-                      className="px-3 py-1.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-xl text-xs font-bold flex items-center gap-1.5"
-                    >
-                      ⚡ {alg} {matchedTerm && <span className="text-[11px] text-amber-700 font-normal">({matchedTerm})</span>}
-                    </span>
-                  );
-                })}
-              </div>
+              <>
+                <div className="flex flex-wrap gap-2">
+                  {traceList.map((alg, idx) => {
+                    const matchedTerm = evidenceFor(traceMatches, traceIds, idx);
+                    const explanation = explanationFor('trace', traceIds[idx]);
+                    return (
+                      <span
+                        key={idx}
+                        title={explanation || undefined}
+                        className="px-3 py-1.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-xl text-xs font-bold flex items-center gap-1.5"
+                      >
+                        ⚡ {alg} {matchedTerm && <span className="text-[11px] text-amber-700 font-normal">({matchedTerm})</span>}
+                      </span>
+                    );
+                  })}
+                </div>
+                <ul className="space-y-1 pt-1">
+                  {traceIds.map((id, idx) => {
+                    const explanation = explanationFor('trace', id);
+                    if (!explanation) return null;
+                    return (
+                      <li key={idx} className="text-[11px] text-stone-500 leading-snug">
+                        {traceList[idx]}: {explanation}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            )
             ) : (
               <p className="text-xs text-stone-500 italic">
                 No precautionary ("May contain / Traces of") warnings matched.
@@ -234,8 +332,21 @@ export default function ResultsPage() {
                   Supporting OCR Confidence
                 </span>
                 <span className="text-sm font-extrabold text-stone-900 mt-0.5 block">
-                  {confidenceScore}%
+                  {hasConfidence ? `${confidenceScore}%` : 'Not reported'}
                 </span>
+                <div
+                  className="mt-1.5 h-1.5 w-full rounded-full bg-stone-200 overflow-hidden"
+                  role="meter"
+                  aria-label="OCR confidence"
+                  aria-valuenow={hasConfidence ? Math.round(confidencePct) : undefined}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                >
+                  <div
+                    className={`h-full rounded-full ${CONFIDENCE_BAR_COLOR} transition-[width] duration-500`}
+                    style={{ width: hasConfidence ? `${confidencePct}%` : '0%' }}
+                  />
+                </div>
               </div>
               <div className="p-3 bg-white rounded-2xl border border-stone-200">
                 <span className="text-[11px] text-stone-500 font-bold uppercase block">
@@ -252,6 +363,11 @@ export default function ResultsPage() {
                 <span className="text-sm font-extrabold text-stone-900 mt-0.5 block">
                   {ingredients?.extraction_status || 'FOUND'}
                 </span>
+                {ingredients?.reason_code && (
+                  <span className="text-[10px] text-stone-500 font-mono mt-0.5 block">
+                    {ingredients.reason_code}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -278,7 +394,7 @@ export default function ResultsPage() {
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
         <Link
-          to="/"
+          to="/scan"
           className="w-full sm:w-auto px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold text-xs rounded-2xl shadow flex items-center justify-center gap-2 transition-colors"
         >
           <Camera className="w-4 h-4" /> Scan Another Label

@@ -1,10 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { History, Download, Trash2, ChevronRight, Camera, FileText } from 'lucide-react';
+import {
+  History,
+  Download,
+  Trash2,
+  ChevronRight,
+  Camera,
+  FileText,
+  ShieldCheck,
+  AlertTriangle,
+  XCircle,
+  HelpCircle,
+} from 'lucide-react';
+
+const VERDICT_ICON = {
+  SAFE: ShieldCheck,
+  CAUTION: AlertTriangle,
+  AVOID: XCircle,
+  UNKNOWN: HelpCircle,
+};
+
+const FILTERS = ['ALL', 'SAFE', 'CAUTION', 'AVOID', 'UNKNOWN'];
 
 export default function HistoryPage() {
   const navigate = useNavigate();
   const [history, setHistory] = useState([]);
+  const [activeFilter, setActiveFilter] = useState('ALL');
 
   useEffect(() => {
     const saved = localStorage.getItem('wait-whats-in-this-history');
@@ -45,6 +66,19 @@ export default function HistoryPage() {
     }
   };
 
+  const verdictOf = (entry) =>
+    entry.result?.risk?.personalized || entry.result?.risk?.general || 'UNKNOWN';
+
+  const filteredHistory =
+    activeFilter === 'ALL' ? history : history.filter((entry) => verdictOf(entry) === activeFilter);
+
+  const stats = {
+    total: history.length,
+    SAFE: history.filter((e) => verdictOf(e) === 'SAFE').length,
+    CAUTION: history.filter((e) => verdictOf(e) === 'CAUTION').length,
+    AVOID: history.filter((e) => verdictOf(e) === 'AVOID').length,
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
       
@@ -77,6 +111,48 @@ export default function HistoryPage() {
         )}
       </div>
 
+      {/* Summary Statistics */}
+      {history.length > 0 && (
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block">Total Scans</span>
+            <span className="text-2xl font-extrabold text-stone-900 block mt-0.5 font-mono tabular-nums">{stats.total}</span>
+          </div>
+          <div className="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 block">Safe</span>
+            <span className="text-2xl font-extrabold text-emerald-800 block mt-0.5 font-mono tabular-nums">{stats.SAFE}</span>
+          </div>
+          <div className="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-amber-700 block">Caution</span>
+            <span className="text-2xl font-extrabold text-amber-800 block mt-0.5 font-mono tabular-nums">{stats.CAUTION}</span>
+          </div>
+          <div className="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-rose-700 block">Avoid</span>
+            <span className="text-2xl font-extrabold text-rose-800 block mt-0.5 font-mono tabular-nums">{stats.AVOID}</span>
+          </div>
+        </div>
+      )}
+
+      {/* Verdict Filter Bar */}
+      {history.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Filter history by verdict">
+          {FILTERS.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActiveFilter(f)}
+              aria-pressed={activeFilter === f}
+              className={`px-3.5 py-1.5 rounded-2xl text-xs font-bold border transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 ${
+                activeFilter === f
+                  ? 'bg-stone-900 text-white border-stone-900'
+                  : 'bg-white text-stone-600 border-stone-200 hover:border-stone-300'
+              }`}
+            >
+              {f === 'ALL' ? 'All' : f.charAt(0) + f.slice(1).toLowerCase()}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* History List Container */}
       {history.length === 0 ? (
         <div className="bg-white rounded-3xl p-12 text-center border border-stone-200 space-y-3">
@@ -89,16 +165,28 @@ export default function HistoryPage() {
           </p>
           <div className="pt-2">
             <Link
-              to="/"
+              to="/scan"
               className="inline-flex items-center gap-2 px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-2xl shadow transition-colors"
             >
               <Camera className="w-4 h-4" /> Scan First Label
             </Link>
           </div>
         </div>
+      ) : filteredHistory.length === 0 ? (
+        <div className="bg-white rounded-3xl p-10 text-center border border-stone-200 space-y-2">
+          <p className="text-sm font-bold text-stone-700">
+            No scans match the "{activeFilter.charAt(0) + activeFilter.slice(1).toLowerCase()}" filter.
+          </p>
+          <button
+            onClick={() => setActiveFilter('ALL')}
+            className="text-xs font-bold text-emerald-700 hover:text-emerald-800 underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 rounded"
+          >
+            Clear filter
+          </button>
+        </div>
       ) : (
         <div className="space-y-3">
-          {history.map((entry, idx) => {
+          {filteredHistory.map((entry, idx) => {
             const verdict = entry.result?.risk?.personalized || entry.result?.risk?.general || 'UNKNOWN';
             const badgeClass =
               verdict === 'SAFE'
@@ -108,16 +196,17 @@ export default function HistoryPage() {
                 : verdict === 'AVOID'
                 ? 'badge-avoid'
                 : 'badge-unknown';
+            const VerdictIcon = VERDICT_ICON[verdict] || HelpCircle;
 
             const declared = entry.result?.allergens?.declared_names || entry.result?.allergens?.declared || [];
             const trace = entry.result?.allergens?.trace_names || entry.result?.allergens?.trace || [];
             const allFlagged = [...declared, ...trace];
 
             return (
-              <div
+              <button
                 key={entry.id || idx}
                 onClick={() => handleOpenScan(entry)}
-                className="bg-white hover:bg-stone-50/80 p-5 rounded-3xl border border-stone-200 shadow-sm transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 group"
+                className="w-full text-left bg-white hover:bg-stone-50/80 p-5 rounded-3xl border border-stone-200 shadow-sm transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
               >
                 <div className="flex items-start sm:items-center gap-4">
                   {entry.imagePreview ? (
@@ -161,12 +250,13 @@ export default function HistoryPage() {
                 </div>
 
                 <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-stone-100">
-                  <span className={`px-3 py-1 rounded-xl text-xs font-extrabold border ${badgeClass}`}>
+                  <span className={`px-3 py-1 rounded-xl text-xs font-extrabold border flex items-center gap-1.5 ${badgeClass}`}>
+                    <VerdictIcon className="w-3.5 h-3.5" aria-hidden="true" />
                     {verdict}
                   </span>
                   <ChevronRight className="w-5 h-5 text-stone-400 group-hover:text-stone-700 transition-colors" />
                 </div>
-              </div>
+              </button>
             );
           })}
         </div>

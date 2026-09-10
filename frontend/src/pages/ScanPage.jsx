@@ -16,11 +16,33 @@ export default function ScanPage() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [dragActive, setDragActive] = useState(false);
+  const [analyzingStage, setAnalyzingStage] = useState(0);
+
+  // Perceived-progress sequence while waiting on the real OCR/matcher
+  // call - the stages don't track real backend progress (the API is a
+  // single request/response), they just give the user a sense of what
+  // is happening during the wait instead of one static spinner.
+  const ANALYZING_STAGES = [
+    'Reading label...',
+    'Matching ingredients...',
+    'Calculating risk...',
+  ];
+
+  useEffect(() => {
+    if (!isAnalyzing) {
+      setAnalyzingStage(0);
+      return;
+    }
+    const interval = setInterval(() => {
+      setAnalyzingStage((prev) => (prev + 1) % ANALYZING_STAGES.length);
+    }, 1600);
+    return () => clearInterval(interval);
+  }, [isAnalyzing]);
 
   useEffect(() => {
     const saved = localStorage.getItem('wait-whats-in-this-allergies');
     if (!saved) {
-      navigate('/profile');
+      navigate('/');
     } else {
       try {
         setAllergies(JSON.parse(saved));
@@ -38,6 +60,7 @@ export default function ScanPage() {
     { code: 'nl', label: '🇳🇱 Dutch (nl)' },
     { code: 'it', label: '🇮🇹 Italian (it)' },
     { code: 'pt', label: '🇵🇹 Portuguese (pt)' },
+    { code: 'ar', label: '🇸🇦 Arabic (ar)' },
   ];
 
   const handleFileChange = (file) => {
@@ -149,7 +172,7 @@ export default function ScanPage() {
         </div>
 
         <Link
-          to="/profile"
+          to="/"
           className="px-4 py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold rounded-2xl border border-stone-300 flex items-center justify-center gap-1.5 shrink-0 transition-colors"
         >
           <Edit className="w-3.5 h-3.5" /> Edit Profile
@@ -176,7 +199,7 @@ export default function ScanPage() {
             <select
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
-              className="bg-transparent text-xs font-bold text-stone-900 focus:outline-none cursor-pointer"
+              className="bg-transparent text-xs font-bold text-stone-900 rounded cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
             >
               {LANGUAGES.map((lang) => (
                 <option key={lang.code} value={lang.code}>
@@ -230,11 +253,15 @@ export default function ScanPage() {
                     className="w-full h-56 object-cover"
                   />
                   {isAnalyzing && (
-                    <div className="absolute inset-0 bg-black/60 backdrop-blur-xs flex flex-col items-center justify-center text-white">
-                      <div className="scanner-beam" />
-                      <RefreshCw className="w-8 h-8 text-emerald-400 animate-spin mb-2" />
+                    <div
+                      className="absolute inset-0 bg-black/60 backdrop-blur-xs flex flex-col items-center justify-center text-white"
+                      role="status"
+                      aria-live="polite"
+                    >
+                      <div className="scanner-beam motion-reduce:hidden" />
+                      <RefreshCw className="w-8 h-8 text-emerald-400 animate-spin motion-reduce:animate-none mb-2" />
                       <span className="text-xs font-bold uppercase tracking-wider">
-                        Analyzing label...
+                        {ANALYZING_STAGES[analyzingStage]}
                       </span>
                     </div>
                   )}
@@ -316,7 +343,7 @@ export default function ScanPage() {
               >
                 {isAnalyzing ? (
                   <>
-                    <RefreshCw className="w-5 h-5 animate-spin" /> Analyzing label...
+                    <RefreshCw className="w-5 h-5 animate-spin motion-reduce:animate-none" /> Analyzing label...
                   </>
                 ) : (
                   <>
