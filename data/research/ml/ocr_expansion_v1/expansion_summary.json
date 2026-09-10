@@ -1,0 +1,19 @@
+{
+  "total_candidates": 47,
+  "usable": 44,
+  "excluded": 3,
+  "excluded_detail": [
+    {
+      "code": "5060088700112",
+      "reason": "Small multilingual print, too blurry to transcribe reliably across languages."
+    },
+    {
+      "code": "3366321051983",
+      "reason": "Image rotated and too blurry at usable resolution to transcribe reliably."
+    },
+    {
+      "code": "5900951311505",
+      "reason": "Ingredient panel is in Turkish, not a project-supported language despite OFF product_language='en' - excluded as out of language scope, not a quality issue."
+    }
+  ]
+}

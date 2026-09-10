@@ -77,6 +77,25 @@ export default function ResultsPage() {
 
   const currentConfig = VERDICT_CONFIG[verdict] || VERDICT_CONFIG.UNKNOWN;
 
+  // Actionable next-step tips per UNKNOWN reason code - the backend
+  // message already explains *what* happened, this adds *what to try*.
+  const UNKNOWN_TIPS = {
+    OCR_NO_TEXT_DETECTED: [
+      'Move closer so the ingredient text fills more of the frame',
+      'Make sure the label is well-lit and not glared over',
+      'Hold the camera steady and in focus',
+    ],
+    INGREDIENT_SECTION_NOT_FOUND: [
+      'Make sure the "Ingredients" heading itself is visible in the photo',
+      'Try photographing the ingredient panel directly, not the whole package',
+      'Check that the selected OCR language matches the label\'s language',
+    ],
+    INGREDIENT_TEXT_EMPTY: [
+      'Recapture with the full ingredient list visible below the heading',
+    ],
+  };
+  const unknownTips = UNKNOWN_TIPS[risk?.reason_code] || null;
+
   // declared/trace lists use display names, but the matcher's evidence
   // objects key by allergen id (e.g. "milk", not "Milk / Dairy") - pair
   // them up by position against the id lists, not by name, and read the
@@ -93,6 +112,13 @@ export default function ResultsPage() {
     const match = matches.find((m) => m.allergen === id);
     return match?.matched_term || null;
   };
+
+  const MATCH_TYPE_LABELS = {
+    direct: 'Exact match',
+    semantic: 'Semantic match',
+  };
+  const matchTypeFor = (matches, allergenId) =>
+    MATCH_TYPE_LABELS[matches.find((m) => m.allergen === allergenId)?.match_type] || null;
 
   // Backend-built, template-generated explanations (not LLM narrative) -
   // one sentence per matched allergen, traceable straight back to the
@@ -191,6 +217,22 @@ export default function ResultsPage() {
             <span><strong>General Label Risk:</strong> {risk.general}</span>
           </div>
         )}
+
+        {/* Actionable tips for UNKNOWN, specific to why extraction failed */}
+        {verdict === 'UNKNOWN' && unknownTips && (
+          <div className="p-4 bg-white/90 rounded-2xl border border-stone-200 space-y-2">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block">
+              Try this
+            </span>
+            <ul className="space-y-1">
+              {unknownTips.map((tip, idx) => (
+                <li key={idx} className="text-xs text-stone-700 flex items-start gap-1.5">
+                  <span className="text-stone-400 mt-0.5">•</span> {tip}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* Image Preview & Evidence Section */}
@@ -245,9 +287,15 @@ export default function ResultsPage() {
                   {declaredIds.map((id, idx) => {
                     const explanation = explanationFor('declared', id);
                     if (!explanation) return null;
+                    const matchType = matchTypeFor(declaredMatches, id);
                     return (
                       <li key={idx} className="text-[11px] text-stone-500 leading-snug">
                         {declaredList[idx]}: {explanation}
+                        {matchType && (
+                          <span className="ml-1.5 px-1.5 py-0.5 bg-stone-100 text-stone-500 rounded-md text-[9px] font-bold uppercase tracking-wide">
+                            {matchType}
+                          </span>
+                        )}
                       </li>
                     );
                   })}
@@ -287,9 +335,15 @@ export default function ResultsPage() {
                   {traceIds.map((id, idx) => {
                     const explanation = explanationFor('trace', id);
                     if (!explanation) return null;
+                    const matchType = matchTypeFor(traceMatches, id);
                     return (
                       <li key={idx} className="text-[11px] text-stone-500 leading-snug">
                         {traceList[idx]}: {explanation}
+                        {matchType && (
+                          <span className="ml-1.5 px-1.5 py-0.5 bg-stone-100 text-stone-500 rounded-md text-[9px] font-bold uppercase tracking-wide">
+                            {matchType}
+                          </span>
+                        )}
                       </li>
                     );
                   })}

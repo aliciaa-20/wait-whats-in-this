@@ -1,0 +1,86 @@
+{
+  "model_type": "logistic_regression_confidence_scorer",
+  "not_an_allergen_detector": true,
+  "scope": "scores trust in matches the deterministic matcher already made; never adds/removes a detection",
+  "training_data": {
+    "total_instances": 104,
+    "original_39_image_instances": 37,
+    "expansion_44_image_instances": 67,
+    "train_n": 72,
+    "test_n": 32
+  },
+  "caveat": "238 instances total, ~70 in the held-out test split, is still a modest sample for calibration - the 3-bucket calibration table below is coarse evidence, not a fine-grained reliability curve. Treat this as a first honest attempt, not a final calibrated probability model.",
+  "test_metrics": {
+    "brier_score": 0.2044,
+    "roc_auc": 0.6778,
+    "baseline_accuracy": 0.8438,
+    "naive_baseline_brier": 0.1321,
+    "beats_naive_baseline": false
+  },
+  "calibration_by_bucket": [
+    {
+      "bucket": "low (0-0.4)",
+      "n": 5,
+      "mean_predicted_prob": 0.286,
+      "actual_accuracy": 0.6
+    },
+    {
+      "bucket": "medium (0.4-0.7)",
+      "n": 16,
+      "mean_predicted_prob": 0.494,
+      "actual_accuracy": 0.812
+    },
+    {
+      "bucket": "high (0.7-1.0)",
+      "n": 11,
+      "mean_predicted_prob": 0.832,
+      "actual_accuracy": 1.0
+    }
+  ],
+  "feature_coefficients": {
+    "is_trace": -1.8043,
+    "ocr_confidence": 1.0863,
+    "extraction_found": -0.0046,
+    "text_length": 0.0024,
+    "lang_de": -0.7914,
+    "lang_en": -0.2693,
+    "lang_es": -0.1579,
+    "lang_fr": 1.4184,
+    "lang_it": -0.8677,
+    "lang_nl": 0.3712,
+    "lang_pt": 0.2921
+  },
+  "verdict": {
+    "go_live": false,
+    "reason": "Trained model Brier score is WORSE than a naive constant base-rate predictor on this test split - with only 104 match instances (73 train / 31 test), the model is not beating the simplest possible baseline. AUC 0.68 shows some real ranking signal, but calibration is not yet good enough to ship, per the plan's own stated bar (\"ship only if calibration is good\")."
+  },
+  "reduced_feature_experiments": {
+    "1_feature_ocr_conf_only": {
+      "features": [
+        "ocr_confidence"
+      ],
+      "brier": 0.2412,
+      "naive_baseline_brier": 0.1321,
+      "beats_naive": false,
+      "auc": 0.5111,
+      "coef": {
+        "ocr_confidence": 0.8011
+      }
+    },
+    "2_feature_ocr_conf_plus_trace": {
+      "features": [
+        "ocr_confidence",
+        "is_trace"
+      ],
+      "brier": 0.2617,
+      "naive_baseline_brier": 0.1321,
+      "beats_naive": false,
+      "auc": 0.4556,
+      "coef": {
+        "ocr_confidence": 0.9169,
+        "is_trace": -1.0149
+      }
+    }
+  },
+  "reduced_feature_conclusion": "Both reduced-feature variants performed WORSE than the full 4-feature model, not better: OCR-confidence-alone gets AUC 0.511 (barely above random), OCR-confidence+trace gets AUC 0.456 (worse than random). Neither beats the naive baseline Brier score either. This confirms the bottleneck is sample size (104 instances), not feature over-engineering - the fuller feature set was carrying real signal the reduced sets lost, and reducing dimensionality did not fix calibration. Reinforces the Phase 5 finding that OCR confidence alone is a weak signal."
+}

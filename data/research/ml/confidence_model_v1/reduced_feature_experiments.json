@@ -1,0 +1,28 @@
+{
+  "1_feature_ocr_conf_only": {
+    "features": [
+      "ocr_confidence"
+    ],
+    "brier": 0.2412,
+    "naive_baseline_brier": 0.1321,
+    "beats_naive": false,
+    "auc": 0.5111,
+    "coef": {
+      "ocr_confidence": 0.8011
+    }
+  },
+  "2_feature_ocr_conf_plus_trace": {
+    "features": [
+      "ocr_confidence",
+      "is_trace"
+    ],
+    "brier": 0.2617,
+    "naive_baseline_brier": 0.1321,
+    "beats_naive": false,
+    "auc": 0.4556,
+    "coef": {
+      "ocr_confidence": 0.9169,
+      "is_trace": -1.0149
+    }
+  }
+}

@@ -1,0 +1,661 @@
+{
+  "audit_type": "ontology_dictionary_consistency_and_coverage",
+  "read_only": true,
+  "dictionary_modified": false,
+  "products_scanned": 1263,
+  "total_terms_audited": 276,
+  "findings": {
+    "zero_occurrence_terms": {
+      "milk": [
+        "caseina",
+        "caseina de leche",
+        "koemelk",
+        "milchpulver",
+        "milk solids",
+        "protein of milk",
+        "proteine di latte",
+        "proteína de leche",
+        "suero de leche",
+        "sussmolkenpulver"
+      ],
+      "egg": [
+        "albumen",
+        "egg white",
+        "ovo",
+        "ovos",
+        "volledige eieren",
+        "vollei"
+      ],
+      "peanut": [
+        "groundnut",
+        "groundnuts"
+      ],
+      "tree_nut": [
+        "brazil nut",
+        "haselnuss",
+        "pahkina",
+        "pecans",
+        "pähkinä",
+        "walnut",
+        "walnuts"
+      ],
+      "soy": [
+        "lecithin de soja",
+        "lecithina de soja",
+        "sauce de soja",
+        "soja lecithin",
+        "sojaprotein",
+        "sojas",
+        "soy sauce"
+      ],
+      "wheat_gluten": [
+        "bulgur",
+        "cereals with gluten",
+        "hartweizengriess",
+        "pszenica",
+        "trigo espelta",
+        "vehna",
+        "wheat fibres"
+      ],
+      "fish": [
+        "anchovies",
+        "anchovy",
+        "caballas",
+        "cod",
+        "maquereau",
+        "peixe",
+        "pesce",
+        "salmon",
+        "sardine",
+        "tuna"
+      ],
+      "shellfish": [
+        "crab",
+        "crabe",
+        "crevette",
+        "crustacean",
+        "crustaceans",
+        "crustáceo",
+        "gambas",
+        "homard",
+        "lobster",
+        "molluscs",
+        "mollusks",
+        "prawn",
+        "prawns"
+      ],
+      "sesame": [
+        "sezam"
+      ]
+    },
+    "exact_duplicate_terms": {
+      "milk": [
+        "butterreinfett",
+        "creme",
+        "lait ecreme",
+        "leite em po",
+        "suero lacteo"
+      ],
+      "egg": [
+        "jaune d oeuf",
+        "oeuf",
+        "oeufs",
+        "oeufs entiers",
+        "poudre d oeuf"
+      ],
+      "peanut": [
+        "cacahuetes",
+        "erdnuss"
+      ],
+      "tree_nut": [
+        "fruits a coque",
+        "pahkina",
+        "schalenfruchte"
+      ],
+      "soy": [
+        "feves de soja",
+        "lecithine de soja"
+      ],
+      "wheat_gluten": [
+        "ble",
+        "ble complet",
+        "cereales contenant du gluten",
+        "epeautre",
+        "farine complete de ble",
+        "farine de ble",
+        "fibres de ble",
+        "weizenmehl",
+        "weizenstarke"
+      ],
+      "shellfish": [
+        "crustaces"
+      ],
+      "sesame": [
+        "graines de sesame",
+        "huile de sesame",
+        "sesame seeds"
+      ]
+    },
+    "near_duplicate_terms": {
+      "milk": [
+        {
+          "a": "casein",
+          "b": "caseina",
+          "similarity": 0.923
+        },
+        {
+          "a": "proteine del latte",
+          "b": "proteine di latte",
+          "similarity": 0.914
+        },
+        {
+          "a": "sussmolkenpulver",
+          "b": "sußmolkenpulver",
+          "similarity": 0.903
+        },
+        {
+          "a": "caseina",
+          "b": "caseinate",
+          "similarity": 0.875
+        }
+      ],
+      "egg": [
+        {
+          "a": "huevo",
+          "b": "huevos",
+          "similarity": 0.909
+        },
+        {
+          "a": "oeuf",
+          "b": "oeufs",
+          "similarity": 0.889
+        },
+        {
+          "a": "egg",
+          "b": "eggs",
+          "similarity": 0.857
+        },
+        {
+          "a": "ovo",
+          "b": "ovos",
+          "similarity": 0.857
+        }
+      ],
+      "peanut": [
+        {
+          "a": "cacahuete",
+          "b": "cacahuetes",
+          "similarity": 0.947
+        },
+        {
+          "a": "groundnut",
+          "b": "groundnuts",
+          "similarity": 0.947
+        },
+        {
+          "a": "arachide",
+          "b": "arachides",
+          "similarity": 0.941
+        },
+        {
+          "a": "erdnusse",
+          "b": "erdnussen",
+          "similarity": 0.941
+        },
+        {
+          "a": "erdnuss",
+          "b": "erdnusse",
+          "similarity": 0.933
+        },
+        {
+          "a": "peanut",
+          "b": "peanuts",
+          "similarity": 0.923
+        },
+        {
+          "a": "arachides",
+          "b": "arachis",
+          "similarity": 0.875
+        },
+        {
+          "a": "erdnuss",
+          "b": "erdnussen",
+          "similarity": 0.875
+        }
+      ],
+      "tree_nut": [
+        {
+          "a": "schalenfruchte",
+          "b": "schalenfruchten",
+          "similarity": 0.966
+        },
+        {
+          "a": "haselnuss",
+          "b": "haselnusse",
+          "similarity": 0.947
+        },
+        {
+          "a": "pistachio",
+          "b": "pistachios",
+          "similarity": 0.947
+        },
+        {
+          "a": "hazelnut",
+          "b": "hazelnuts",
+          "similarity": 0.941
+        },
+        {
+          "a": "noisette",
+          "b": "noisettes",
+          "similarity": 0.941
+        },
+        {
+          "a": "fruit a coques",
+          "b": "fruits a coque",
+          "similarity": 0.929
+        },
+        {
+          "a": "almond",
+          "b": "almonds",
+          "similarity": 0.923
+        },
+        {
+          "a": "amande",
+          "b": "amandes",
+          "similarity": 0.923
+        },
+        {
+          "a": "fruits a coque",
+          "b": "fruits coque",
+          "similarity": 0.923
+        },
+        {
+          "a": "walnut",
+          "b": "walnuts",
+          "similarity": 0.923
+        },
+        {
+          "a": "frutos de casca rija",
+          "b": "frutos de cascara",
+          "similarity": 0.919
+        },
+        {
+          "a": "pecan",
+          "b": "pecans",
+          "similarity": 0.909
+        }
+      ],
+      "soy": [
+        {
+          "a": "lecithin de soja",
+          "b": "lecithina de soja",
+          "similarity": 0.97
+        },
+        {
+          "a": "lecithin de soja",
+          "b": "lecithine de soja",
+          "similarity": 0.97
+        },
+        {
+          "a": "lecithina de soja",
+          "b": "lecitina de soja",
+          "similarity": 0.97
+        },
+        {
+          "a": "soja lecithin",
+          "b": "sojalecithin",
+          "similarity": 0.96
+        },
+        {
+          "a": "sojalecithin",
+          "b": "sojalecithine",
+          "similarity": 0.96
+        },
+        {
+          "a": "lecithina de soja",
+          "b": "lecithine de soja",
+          "similarity": 0.941
+        },
+        {
+          "a": "lecithin de soja",
+          "b": "lecitina de soja",
+          "similarity": 0.938
+        },
+        {
+          "a": "soybean",
+          "b": "soybeans",
+          "similarity": 0.933
+        },
+        {
+          "a": "soja lecithin",
+          "b": "sojalecithine",
+          "similarity": 0.923
+        },
+        {
+          "a": "lecithine de soja",
+          "b": "lecitina de soja",
+          "similarity": 0.909
+        },
+        {
+          "a": "soja",
+          "b": "sojas",
+          "similarity": 0.889
+        },
+        {
+          "a": "soja lecithin",
+          "b": "soy lecithin",
+          "similarity": 0.88
+        },
+        {
+          "a": "sauce de soja",
+          "b": "sauce soja",
+          "similarity": 0.87
+        },
+        {
+          "a": "soy",
+          "b": "soya",
+          "similarity": 0.857
+        }
+      ],
+      "wheat_gluten": [
+        {
+          "a": "hartweizengriess",
+          "b": "hartweizengrieß",
+          "similarity": 0.903
+        },
+        {
+          "a": "psenicna",
+          "b": "pszenica",
+          "similarity": 0.875
+        },
+        {
+          "a": "boulgour",
+          "b": "bulgur",
+          "similarity": 0.857
+        }
+      ],
+      "fish": [
+        {
+          "a": "maquereau",
+          "b": "maquereaux",
+          "similarity": 0.947
+        },
+        {
+          "a": "caballa",
+          "b": "caballas",
+          "similarity": 0.933
+        },
+        {
+          "a": "poisson",
+          "b": "poissons",
+          "similarity": 0.933
+        },
+        {
+          "a": "sardine",
+          "b": "sardines",
+          "similarity": 0.933
+        },
+        {
+          "a": "anchois",
+          "b": "anchovies",
+          "similarity": 0.875
+        }
+      ],
+      "shellfish": [
+        {
+          "a": "crustacean",
+          "b": "crustaceans",
+          "similarity": 0.952
+        },
+        {
+          "a": "crustaceo",
+          "b": "crustaceos",
+          "similarity": 0.947
+        },
+        {
+          "a": "crustaceos",
+          "b": "crustaces",
+          "similarity": 0.947
+        },
+        {
+          "a": "crevette",
+          "b": "crevettes",
+          "similarity": 0.941
+        },
+        {
+          "a": "crustace",
+          "b": "crustaceo",
+          "similarity": 0.941
+        },
+        {
+          "a": "crustace",
+          "b": "crustaces",
+          "similarity": 0.941
+        },
+        {
+          "a": "prawn",
+          "b": "prawns",
+          "similarity": 0.909
+        },
+        {
+          "a": "crustaceans",
+          "b": "crustaces",
+          "similarity": 0.9
+        },
+        {
+          "a": "crab",
+          "b": "crabe",
+          "similarity": 0.889
+        },
+        {
+          "a": "crustace",
+          "b": "crustacean",
+          "similarity": 0.889
+        },
+        {
+          "a": "crustace",
+          "b": "crustaceos",
+          "similarity": 0.889
+        },
+        {
+          "a": "crustaceo",
+          "b": "crustaces",
+          "similarity": 0.889
+        },
+        {
+          "a": "molluscs",
+          "b": "mollusks",
+          "similarity": 0.875
+        },
+        {
+          "a": "crustaceans",
+          "b": "crustaceos",
+          "similarity": 0.857
+        }
+      ],
+      "sesame": [
+        {
+          "a": "sesam",
+          "b": "sesame",
+          "similarity": 0.909
+        },
+        {
+          "a": "sesam",
+          "b": "sesamo",
+          "similarity": 0.909
+        }
+      ]
+    },
+    "cross_allergen_conflicts": {},
+    "morphological_variant_candidates": {
+      "milk": [
+        {
+          "base_term": "lait",
+          "candidate": "laitiere",
+          "corpus_frequency": 10
+        },
+        {
+          "base_term": "lait",
+          "candidate": "laitiers",
+          "corpus_frequency": 7
+        },
+        {
+          "base_term": "lait",
+          "candidate": "laitier",
+          "corpus_frequency": 4
+        },
+        {
+          "base_term": "creme",
+          "candidate": "cremes",
+          "corpus_frequency": 2
+        },
+        {
+          "base_term": "crème",
+          "candidate": "cremes",
+          "corpus_frequency": 2
+        },
+        {
+          "base_term": "milk",
+          "candidate": "milkfat",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "milk",
+          "candidate": "milky",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "lait",
+          "candidate": "laitieres",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "milch",
+          "candidate": "milchsaure",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "melk",
+          "candidate": "melkvet",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "melk",
+          "candidate": "melkesyre",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "cream",
+          "candidate": "creamy",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "creme",
+          "candidate": "cremeuh",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "crème",
+          "candidate": "cremeuh",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "nata",
+          "candidate": "natamycin",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "beurre",
+          "candidate": "beurres",
+          "corpus_frequency": 1
+        }
+      ],
+      "egg": [
+        {
+          "base_term": "yolk",
+          "candidate": "yolks",
+          "corpus_frequency": 1
+        }
+      ],
+      "tree_nut": [
+        {
+          "base_term": "cashew",
+          "candidate": "cashews",
+          "corpus_frequency": 3
+        },
+        {
+          "base_term": "cashew",
+          "candidate": "cashewkerne",
+          "corpus_frequency": 2
+        },
+        {
+          "base_term": "haselnuss",
+          "candidate": "haselnusskerne",
+          "corpus_frequency": 1
+        }
+      ],
+      "soy": [
+        {
+          "base_term": "sojalecithin",
+          "candidate": "sojalecithinen",
+          "corpus_frequency": 2
+        },
+        {
+          "base_term": "sojalecithine",
+          "candidate": "sojalecithinen",
+          "corpus_frequency": 2
+        },
+        {
+          "base_term": "soja",
+          "candidate": "sojabonen",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "soja",
+          "candidate": "sojal",
+          "corpus_frequency": 1
+        }
+      ],
+      "sesame": [
+        {
+          "base_term": "sezam",
+          "candidate": "sezamu",
+          "corpus_frequency": 1
+        },
+        {
+          "base_term": "sesam",
+          "candidate": "sesamsamen",
+          "corpus_frequency": 1
+        }
+      ]
+    },
+    "language_coverage_gaps": {
+      "milk": [
+        "dairy",
+        "laiti"
+      ],
+      "peanut": [
+        "arachidi"
+      ],
+      "tree_nut": [
+        "avellana",
+        "noce",
+        "noix",
+        "pistache"
+      ],
+      "wheat_gluten": [
+        "farina",
+        "grano"
+      ]
+    }
+  },
+  "counts": {
+    "zero_occurrence_terms": 63,
+    "exact_duplicate_terms": 30,
+    "near_duplicate_pairs": 66,
+    "cross_allergen_conflicts": 0,
+    "morphological_variant_candidates": 26,
+    "language_coverage_gaps": 9
+  },
+  "note": "Every finding here is a candidate for human review, not an applied change. None of this modifies the live dictionary. IMPORTANT CAVEAT for zero_occurrence_terms specifically: absence from THIS dataset is a necessary but not sufficient condition for 'anomalous' - a real, correctly-spelled word (e.g. 'salmon', 'lobster') can legitimately have zero occurrences simply because this dataset's products don't happen to contain that ingredient. The mantelrouge removal earlier in this project was justified because it ALSO failed a second, independent check (not a recognizable word in any supported language) - this tool only automates the zero-occurrence half of that process, not the language-recognizability half, so treat this list as 'worth a human glance', not 'confirmed anomalies'."
+}
